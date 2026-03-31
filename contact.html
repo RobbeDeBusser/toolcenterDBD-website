@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <load src="src/components/meta.html" />
+    <title>Contact - ToolCenter</title>
+  </head>
+
+  <body class="bg-gray-50 flex flex-col min-h-screen">
+    <div
+      id="page-loader"
+      class="fixed inset-0 z-[9999] bg-white flex items-center justify-center transition-opacity duration-100"
+    >
+      <div
+        class="w-12 h-12 border-4 border-gray-200 border-t-tool-red rounded-full animate-spin"
+      ></div>
+    </div>
+    <load src="src/components/layout/header.html" />
+
+    <main class="flex-grow">
+      <section
+        class="relative bg-gray-900 h-96 flex items-center justify-center text-center overflow-hidden"
+      >
+        <div
+          class="absolute inset-0 opacity-40 bg-[url('/images/werkplaats.jpg')] bg-cover bg-center"
+        ></div>
+
+        <div class="relative z-10 px-4">
+          <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 shadow-lg">
+            Professioneel kookpo
+          </h1>
+          <a
+            href="/contact.html"
+            class="inline-block bg-tool-red text-white px-8 py-3 font-bold uppercase hover:bg-red-700 transition"
+          >
+            Neem Contact Op
+          </a>
+        </div>
+      </section>
+
+      <section class="container mx-auto px-4 py-12">
+        <h2
+          class="text-3xl font-bold text-center mb-8 border-b-4 border-tool-red inline-block pb-2"
+        >
+          Aanbiedingen
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white p-6 shadow-lg rounded-lg">
+            <h3 class="text-xl font-bold mb-2">Snap-on Hot Tools</h3>
+            <div
+              class="h-48 bg-gray-300 mb-4 flex items-center justify-center text-gray-500"
+            >
+              Foto hier
+            </div>
+            <p>Bekijk de folder voor Q4.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <load src="src/components/layout/footer.html" />
+
+    <load src="src/components/scripts.html" />
+  </body>
+</html>

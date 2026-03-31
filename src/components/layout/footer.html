@@ -1,0 +1,138 @@
+<footer class="bg-[#111111] text-white pt-16">
+  <div class="container mx-auto px-4 pb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div>
+        <h3 class="text-2xl font-bold mb-6 text-white">Contact</h3>
+
+        <div class="space-y-4 text-gray-300">
+          <a
+            href="tel:0476320431"
+            class="flex items-center group hover:text-white transition"
+          >
+            <div
+              class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full mr-3 group-hover:bg-tool-red transition"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
+              </svg>
+            </div>
+            <span class="text-lg">0476 32 04 31</span>
+          </a>
+
+          <a
+            href="mailto:info@toolcenterdirkdebusser.be"
+            class="flex items-center group hover:text-white transition"
+          >
+            <div
+              class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full mr-3 group-hover:bg-tool-red transition"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <span>info@toolcenterdirkdebusser.be</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="md:text-right flex flex-col md:items-end">
+        <h3 class="text-2xl font-bold mb-6 text-white">Quick Links</h3>
+
+        <nav
+          id="nav-footer"
+          class="flex flex-col md:flex-row gap-4 md:gap-8 text-gray-400 font-medium mb-8"
+        >
+          <a href="/index.html" class="hover:text-tool-red transition">Home</a>
+          <a href="/aanbiedingen.html" class="hover:text-tool-red transition"
+            >Aanbiedingen</a
+          >
+          <a href="/catalogus.html" class="hover:text-tool-red transition"
+            >Catalogus</a
+          >
+          <a href="/contact.html" class="hover:text-tool-red transition"
+            >Contact</a
+          >
+        </nav>
+
+        <div class="flex gap-4">
+          <a
+            href="#"
+            target="_blank"
+            class="bg-gray-800 hover:bg-red-700 text-white p-2 rounded transition shadow-lg hover:shadow-red-900/50"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-tool-red text-white py-4 text-sm font-medium">
+    <div
+      class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-2"
+    >
+      <div class="flex gap-6">
+        <span>© 2026 ToolCenter Dirk De Busser</span>
+        <a href="#" class="hover:underline opacity-80 hover:opacity-100"
+          >Privacy Policy</a
+        >
+      </div>
+
+      <div
+        class="flex items-center gap-2 opacity-90 hover:opacity-100 transition"
+      >
+        <span class="bg-black/20 px-2 py-1 rounded font-bold">
+          Made by Robbe De Busser
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const currentPath = window.location.pathname;
+      const navLinks = document.querySelectorAll("#nav-footer a");
+
+      navLinks.forEach((link) => {
+        if (
+          currentPath === link.getAttribute("href") ||
+          (currentPath === "/" && link.getAttribute("href") === "/index.html")
+        ) {
+          link.classList.remove("text-gray-400");
+          link.classList.add("text-tool-red");
+        }
+      });
+    });
+  </script>
+</footer>

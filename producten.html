@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <load src="src/components/meta.html" />
+    <title>ToolCenter Dirk De Busser - Categorieën</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      h1,
+      h2,
+      h3,
+      .teko-font {
+        font-family: "Teko", sans-serif;
+        letter-spacing: 0.05em;
+      }
+      .bg-tech-light {
+        background-color: #f8fafc;
+        background-image:
+          linear-gradient(#e2e8f0 1px, transparent 1px),
+          linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
+        background-size: 40px 40px;
+        background-position: center top;
+      }
+      .hero-clip-small {
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      }
+    </style>
+  </head>
+
+  <body class="bg-tech-light text-slate-800 overflow-x-hidden antialiased">
+    <load src="src/components/layout/header.html" />
+
+    <main class="flex-grow">
+      <section
+        class="relative h-[50vh] flex items-center justify-center overflow-hidden hero-clip-small bg-black border-b-4 border-tool-red p-10"
+      >
+        <div class="absolute inset-0 z-0 bg-black"></div>
+
+        <div
+          class="container mx-auto px-4 relative z-10 text-center flex flex-col justify-center h-full pt-10"
+        >
+          <h1
+            class="text-6xl md:text-8xl font-bold text-white uppercase drop-shadow-xl teko-font leading-none"
+          >
+            ONZE <span class="text-tool-red">PRODUCTEN</span>
+          </h1>
+
+          <div class="w-24 h-1 bg-tool-red mx-auto mt-6 mb-6"></div>
+
+          <p
+            class="text-xl text-gray-300 max-w-2xl mx-auto font-light tracking-wide"
+          >
+            De hoogste standaard in de industrie. Kies een categorie hieronder
+            en ontdek het volledige assortiment.
+          </p>
+        </div>
+      </section>
+
+      <section class="py-20 -mt-10">
+        <div class="container mx-auto px-4 max-w-6xl">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <a
+              href="/handtools.html"
+              class="group relative bg-white border border-gray-200 h-80 overflow-hidden hover:border-tool-red hover:shadow-2xl transition-all duration-500 rounded-sm shadow-md flex items-center justify-center"
+            >
+              <div
+                class="absolute inset-0 p-10 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
+              >
+                <img
+                  src="/images/Snap-on-Handgereedschap.png"
+                  alt="Handtools"
+                  class="max-h-full max-w-full object-contain"
+                />
+              </div>
+              <div
+                class="absolute bottom-0 left-0 w-full p-6 z-20 bg-gradient-to-t from-white via-white/90 to-transparent"
+              >
+                <div
+                  class="h-1 w-12 bg-tool-red mb-2 group-hover:w-full transition-all duration-500"
+                ></div>
+                <h3
+                  class="text-3xl text-slate-900 font-bold uppercase italic teko-font tracking-wide"
+                >
+                  Handtools
+                </h3>
+              </div>
+            </a>
+
+            <a
+              href="/powertools.html"
+              class="group relative bg-white border border-gray-200 h-80 overflow-hidden hover:border-tool-red hover:shadow-2xl transition-all duration-500 rounded-sm shadow-md flex items-center justify-center"
+            >
+              <div
+                class="absolute inset-0 p-10 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
+              >
+                <img
+                  src="/images/Snap-on-Power-Tools.png"
+                  alt="Power Tools"
+                  class="max-h-full max-w-full object-contain"
+                />
+              </div>
+              <div
+                class="absolute bottom-0 left-0 w-full p-6 z-20 bg-gradient-to-t from-white via-white/90 to-transparent"
+              >
+                <div
+                  class="h-1 w-12 bg-tool-red mb-2 group-hover:w-full transition-all duration-500"
+                ></div>
+                <h3
+                  class="text-3xl text-slate-900 font-bold uppercase italic teko-font tracking-wide"
+                >
+                  Power Tools
+                </h3>
+              </div>
+            </a>
+
+            <a
+              href="/diagnose.html"
+              class="group relative bg-white border border-gray-200 h-80 overflow-hidden hover:border-tool-red hover:shadow-2xl transition-all duration-500 rounded-sm shadow-md flex items-center justify-center"
+            >
+              <div
+                class="absolute inset-0 p-10 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
+              >
+                <img
+                  src="/images/Snap-on-Diagnose.png"
+                  alt="Diagnose"
+                  class="max-h-full max-w-full object-contain"
+                />
+              </div>
+              <div
+                class="absolute bottom-0 left-0 w-full p-6 z-20 bg-gradient-to-t from-white via-white/90 to-transparent"
+              >
+                <div
+                  class="h-1 w-12 bg-tool-red mb-2 group-hover:w-full transition-all duration-500"
+                ></div>
+                <h3
+                  class="text-3xl text-slate-900 font-bold uppercase italic teko-font tracking-wide"
+                >
+                  Diagnose
+                </h3>
+              </div>
+            </a>
+
+            <a
+              href="/specials.html"
+              class="group relative bg-white border border-gray-200 h-80 overflow-hidden hover:border-tool-red hover:shadow-2xl transition-all duration-500 rounded-sm shadow-md flex items-center justify-center"
+            >
+              <div
+                class="absolute inset-0 p-10 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
+              >
+                <img
+                  src="/images/Snap-on-Equipment.png"
+                  alt="Specials"
+                  class="max-h-full max-w-full object-contain"
+                />
+              </div>
+              <div
+                class="absolute bottom-0 left-0 w-full p-6 z-20 bg-gradient-to-t from-white via-white/90 to-transparent"
+              >
+                <div
+                  class="h-1 w-12 bg-tool-red mb-2 group-hover:w-full transition-all duration-500"
+                ></div>
+                <h3
+                  class="text-3xl text-slate-900 font-bold uppercase italic teko-font tracking-wide"
+                >
+                  Specials & Eq.
+                </h3>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <load src="src/components/layout/footer.html" />
+    <load src="src/components/scripts.html" />
+  </body>
+</html>
