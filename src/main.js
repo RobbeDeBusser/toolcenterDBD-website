@@ -1,5 +1,21 @@
 import "./styles/style.css";
 
+document.addEventListener("DOMContentLoaded", () => {
+  const overlay = document.getElementById("intro-overlay");
+
+  if (overlay) {
+    if (!sessionStorage.getItem("introGezien")) {
+      overlay.style.display = "flex";
+      setTimeout(() => {
+        overlay.remove();
+        sessionStorage.setItem("introGezien", "true");
+      }, 1400);
+    } else {
+      overlay.remove();
+    }
+  }
+});
+
 // 1. Functie om de loader te verbergen (Gordijn open)
 function verbergLoader() {
   const loader = document.getElementById("page-loader");
@@ -36,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setTimeout(() => {
           window.location.href = doel;
-        }, 10);
+        }, 150);
       }
     });
   });

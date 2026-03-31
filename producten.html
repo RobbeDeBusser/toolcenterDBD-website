@@ -19,42 +19,58 @@
         font-family: "Teko", sans-serif;
         letter-spacing: 0.05em;
       }
-      .bg-tech-light {
-        background-color: #f8fafc;
-        background-image:
-          linear-gradient(#e2e8f0 1px, transparent 1px),
-          linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
-        background-size: 40px 40px;
-        background-position: center top;
-      }
       .hero-clip-small {
         clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
       }
     </style>
   </head>
 
-  <body class="bg-tech-light text-slate-800 overflow-x-hidden antialiased">
+  <body class="bg-[#f4f4f4] text-slate-800 overflow-x-hidden antialiased">
+    <div
+      id="page-loader"
+      class="fixed inset-0 z-[9999] bg-gray-900 flex items-center justify-center transition-opacity duration-100"
+    >
+      <div
+        class="w-12 h-12 border-4 border-gray-200 border-t-tool-red rounded-full animate-spin"
+      ></div>
+    </div>
     <load src="src/components/layout/header.html" />
 
     <main class="flex-grow">
       <section
-        class="relative h-[50vh] flex items-center justify-center overflow-hidden hero-clip-small bg-black border-b-4 border-tool-red p-10"
+        class="relative h-[50vh] flex items-center justify-center overflow-hidden hero-clip-small bg-black border-b-4 border-tool-red p-8 md:p-12"
       >
-        <div class="absolute inset-0 z-0 bg-black"></div>
+        <div class="absolute inset-0 z-0">
+          <div class="absolute inset-0 bg-[#0a0a0a]"></div>
+          <div
+            class="absolute inset-0 bg-[radial-gradient(circle_at_center,#1a1a1a_0%,#000000_100%)]"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-red-900/20 to-transparent"
+          ></div>
+        </div>
 
         <div
           class="container mx-auto px-4 relative z-10 text-center flex flex-col justify-center h-full pt-10"
         >
+          <span
+            class="text-tool-red font-bold tracking-[0.2em] mb-4 uppercase text-sm drop-shadow-md"
+            >Kies uw gereedschap</span
+          >
           <h1
             class="text-6xl md:text-8xl font-bold text-white uppercase drop-shadow-xl teko-font leading-none"
           >
-            ONZE <span class="text-tool-red">PRODUCTEN</span>
+            ONZE
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-b from-red-400 to-tool-red drop-shadow-md"
+              >PRODUCTEN</span
+            >
           </h1>
 
-          <div class="w-24 h-1 bg-tool-red mx-auto mt-6 mb-6"></div>
+          <div class="w-24 h-1 bg-tool-red mx-auto mt-3 mb-3"></div>
 
           <p
-            class="text-xl text-gray-300 max-w-2xl mx-auto font-light tracking-wide"
+            class="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto font-light drop-shadow-md p-8"
           >
             De hoogste standaard in de industrie. Kies een categorie hieronder
             en ontdek het volledige assortiment.
@@ -62,116 +78,201 @@
         </div>
       </section>
 
-      <section class="py-20 -mt-10">
-        <div class="container mx-auto px-4 max-w-6xl">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section class="relative py-24 bg-[#f4f4f4] overflow-hidden -mt-10 pt-24">
+        <div
+          class="absolute top-0 right-0 w-1/3 h-full bg-gray-200 skew-x-12 opacity-50 z-0 translate-x-20 pointer-events-none"
+        ></div>
+
+        <div class="container mx-auto px-4 max-w-6xl relative z-10">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
             <a
               href="/handtools.html"
-              class="group relative bg-white border border-gray-200 h-80 overflow-hidden hover:border-tool-red hover:shadow-2xl transition-all duration-500 rounded-sm shadow-md flex items-center justify-center"
+              class="group relative bg-white border border-gray-200 h-96 overflow-hidden hover:border-tool-red hover:shadow-2xl transition-all duration-500 rounded-sm shadow-md flex items-center justify-center"
             >
               <div
-                class="absolute inset-0 p-10 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
+                class="absolute inset-0 p-12 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
               >
                 <img
                   src="/images/Snap-on-Handgereedschap.png"
                   alt="Handtools"
-                  class="max-h-full max-w-full object-contain"
+                  class="max-h-full max-w-full object-contain drop-shadow-lg"
                 />
               </div>
               <div
-                class="absolute bottom-0 left-0 w-full p-6 z-20 bg-gradient-to-t from-white via-white/90 to-transparent"
+                class="absolute bottom-0 left-0 w-full p-8 z-20 bg-gradient-to-t from-white via-white/95 to-transparent"
               >
                 <div
-                  class="h-1 w-12 bg-tool-red mb-2 group-hover:w-full transition-all duration-500"
+                  class="h-1 w-12 bg-tool-red mb-3 group-hover:w-full transition-all duration-500"
                 ></div>
                 <h3
-                  class="text-3xl text-slate-900 font-bold uppercase italic teko-font tracking-wide"
+                  class="text-4xl text-slate-900 font-bold uppercase italic teko-font tracking-wide mb-1"
                 >
                   Handtools
                 </h3>
+                <p
+                  class="text-gray-600 font-medium text-sm md:text-base opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100"
+                >
+                  Ratels, doppen, steek- en ringsleutels. Levenslange garantie
+                  op materiaalfouten.
+                </p>
               </div>
             </a>
 
             <a
               href="/powertools.html"
-              class="group relative bg-white border border-gray-200 h-80 overflow-hidden hover:border-tool-red hover:shadow-2xl transition-all duration-500 rounded-sm shadow-md flex items-center justify-center"
+              class="group relative bg-white border border-gray-200 h-96 overflow-hidden hover:border-tool-red hover:shadow-2xl transition-all duration-500 rounded-sm shadow-md flex items-center justify-center"
             >
               <div
-                class="absolute inset-0 p-10 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
+                class="absolute inset-0 p-12 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
               >
                 <img
                   src="/images/Snap-on-Power-Tools.png"
                   alt="Power Tools"
-                  class="max-h-full max-w-full object-contain"
+                  class="max-h-full max-w-full object-contain drop-shadow-lg"
                 />
               </div>
               <div
-                class="absolute bottom-0 left-0 w-full p-6 z-20 bg-gradient-to-t from-white via-white/90 to-transparent"
+                class="absolute bottom-0 left-0 w-full p-8 z-20 bg-gradient-to-t from-white via-white/95 to-transparent"
               >
                 <div
-                  class="h-1 w-12 bg-tool-red mb-2 group-hover:w-full transition-all duration-500"
+                  class="h-1 w-12 bg-tool-red mb-3 group-hover:w-full transition-all duration-500"
                 ></div>
                 <h3
-                  class="text-3xl text-slate-900 font-bold uppercase italic teko-font tracking-wide"
+                  class="text-4xl text-slate-900 font-bold uppercase italic teko-font tracking-wide mb-1"
                 >
                   Power Tools
                 </h3>
+                <p
+                  class="text-gray-600 font-medium text-sm md:text-base opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100"
+                >
+                  Accu slagmoersleutels, boren en slijpers voor brute kracht en
+                  uithoudingsvermogen.
+                </p>
               </div>
             </a>
 
             <a
               href="/diagnose.html"
-              class="group relative bg-white border border-gray-200 h-80 overflow-hidden hover:border-tool-red hover:shadow-2xl transition-all duration-500 rounded-sm shadow-md flex items-center justify-center"
+              class="group relative bg-white border border-gray-200 h-96 overflow-hidden hover:border-tool-red hover:shadow-2xl transition-all duration-500 rounded-sm shadow-md flex items-center justify-center"
             >
               <div
-                class="absolute inset-0 p-10 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
+                class="absolute inset-0 p-12 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
               >
                 <img
                   src="/images/Snap-on-Diagnose.png"
                   alt="Diagnose"
-                  class="max-h-full max-w-full object-contain"
+                  class="max-h-full max-w-full object-contain drop-shadow-lg"
                 />
               </div>
               <div
-                class="absolute bottom-0 left-0 w-full p-6 z-20 bg-gradient-to-t from-white via-white/90 to-transparent"
+                class="absolute bottom-0 left-0 w-full p-8 z-20 bg-gradient-to-t from-white via-white/95 to-transparent"
               >
                 <div
-                  class="h-1 w-12 bg-tool-red mb-2 group-hover:w-full transition-all duration-500"
+                  class="h-1 w-12 bg-tool-red mb-3 group-hover:w-full transition-all duration-500"
                 ></div>
                 <h3
-                  class="text-3xl text-slate-900 font-bold uppercase italic teko-font tracking-wide"
+                  class="text-4xl text-slate-900 font-bold uppercase italic teko-font tracking-wide mb-1"
                 >
                   Diagnose
                 </h3>
+                <p
+                  class="text-gray-600 font-medium text-sm md:text-base opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100"
+                >
+                  Geavanceerde uitleesapparatuur en oscilloscopen voor
+                  razendsnelle foutopsporing.
+                </p>
               </div>
             </a>
 
             <a
               href="/specials.html"
-              class="group relative bg-white border border-gray-200 h-80 overflow-hidden hover:border-tool-red hover:shadow-2xl transition-all duration-500 rounded-sm shadow-md flex items-center justify-center"
+              class="group relative bg-white border border-gray-200 h-96 overflow-hidden hover:border-tool-red hover:shadow-2xl transition-all duration-500 rounded-sm shadow-md flex items-center justify-center"
             >
               <div
-                class="absolute inset-0 p-10 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
+                class="absolute inset-0 p-12 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
               >
                 <img
                   src="/images/Snap-on-Equipment.png"
                   alt="Specials"
-                  class="max-h-full max-w-full object-contain"
+                  class="max-h-full max-w-full object-contain drop-shadow-lg"
                 />
               </div>
               <div
-                class="absolute bottom-0 left-0 w-full p-6 z-20 bg-gradient-to-t from-white via-white/90 to-transparent"
+                class="absolute bottom-0 left-0 w-full p-8 z-20 bg-gradient-to-t from-white via-white/95 to-transparent"
               >
                 <div
-                  class="h-1 w-12 bg-tool-red mb-2 group-hover:w-full transition-all duration-500"
+                  class="h-1 w-12 bg-tool-red mb-3 group-hover:w-full transition-all duration-500"
                 ></div>
                 <h3
-                  class="text-3xl text-slate-900 font-bold uppercase italic teko-font tracking-wide"
+                  class="text-4xl text-slate-900 font-bold uppercase italic teko-font tracking-wide mb-1"
                 >
                   Specials & Eq.
                 </h3>
+                <p
+                  class="text-gray-600 font-medium text-sm md:text-base opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100"
+                >
+                  Gereedschapswagens, bandenapparatuur, hefbruggen en speciaal
+                  gereedschap.
+                </p>
               </div>
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="py-24 relative overflow-hidden bg-white border-t border-gray-200"
+      >
+        <div
+          class="absolute -bottom-12 -right-12 text-[15rem] font-black text-slate-900/[0.03] pointer-events-none select-none leading-none font-sans italic z-0 transform rotate-12"
+        >
+          S
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+          <div
+            class="flex flex-col md:flex-row items-center justify-between gap-10 text-center md:text-left"
+          >
+            <div class="max-w-2xl">
+              <h2
+                class="text-4xl md:text-5xl font-black uppercase text-slate-900 leading-none mb-4 teko-font"
+              >
+                Klaar voor <span class="text-tool-red">Monsterprestaties?</span>
+              </h2>
+              <p class="text-slate-600 text-lg font-medium">
+                Vindt u niet meteen wat u zoekt? Download de catalogus of neem
+                contact op, dan breng ik het mee in de mobiele showroom.
+              </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+              <a
+                href="/catalogus.html"
+                class="group flex items-center justify-center bg-tool-red text-white px-8 py-4 font-bold uppercase rounded shadow-lg hover:bg-slate-900 transition-all duration-300 min-w-[200px]"
+              >
+                <span>Catalogus Bekijken</span>
+                <svg
+                  class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  ></path>
+                </svg>
+              </a>
+
+              <a
+                href="/contact.html"
+                class="flex items-center justify-center bg-slate-100 text-slate-700 border border-slate-200 px-8 py-4 font-bold uppercase rounded hover:bg-white hover:border-slate-300 hover:shadow-md transition-all duration-300 min-w-[160px]"
+              >
+                Contact
+              </a>
+            </div>
           </div>
         </div>
       </section>
