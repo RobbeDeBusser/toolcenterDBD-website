@@ -64,10 +64,12 @@ window.addEventListener("load", () => {
 
   menuLinks.forEach((link) => {
     const linkDoel = link.getAttribute("href");
+    const productPaginas = ["/producten.html", "/handtools.html", "/powertools.html", "/diagnose.html", "/specials.html"];
 
     if (
       linkDoel === huidigePagina ||
-      (huidigePagina === "/" && linkDoel === "/index.html")
+      (huidigePagina === "/" && linkDoel === "/index.html") ||
+      (linkDoel === "/producten.html" && productPaginas.includes(huidigePagina))
     ) {
       const lijntje = link.querySelector("span");
 
@@ -79,4 +81,15 @@ window.addEventListener("load", () => {
       }
     }
   });
+
+  // Mobile menu toggle logic
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      mobileMenu.classList.toggle("flex");
+    });
+  }
 });

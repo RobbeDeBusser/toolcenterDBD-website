@@ -18,12 +18,24 @@
         ></span>
       </a>
 
-      <a href="/producten.html" class="nav-link relative group py-2">
-        Producten
-        <span
-          class="absolute bottom-0 left-0 w-0 h-1 bg-white transition-all duration-300 group-hover:w-full"
-        ></span>
-      </a>
+      <div class="relative group">
+        <a href="/producten.html" class="nav-link relative flex items-center py-2">
+          Producten
+          <svg class="w-4 h-4 ml-1 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          <span
+            class="absolute bottom-0 left-0 w-0 h-1 bg-white transition-all duration-300 group-hover:w-full"
+          ></span>
+        </a>
+        
+        <div class="absolute left-0 top-full pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+          <div class="bg-white text-slate-800 shadow-2xl rounded-sm border-t-4 border-tool-red overflow-hidden transform origin-top translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+            <a href="/handtools.html" class="block px-5 py-3 hover:bg-gray-50 hover:text-tool-red transition-colors border-b border-gray-100 font-bold uppercase tracking-wide text-xs">Handtools</a>
+            <a href="/powertools.html" class="block px-5 py-3 hover:bg-gray-50 hover:text-tool-red transition-colors border-b border-gray-100 font-bold uppercase tracking-wide text-xs">Power Tools</a>
+            <a href="/diagnose.html" class="block px-5 py-3 hover:bg-gray-50 hover:text-tool-red transition-colors border-b border-gray-100 font-bold uppercase tracking-wide text-xs">Diagnose</a>
+            <a href="/specials.html" class="block px-5 py-3 hover:bg-gray-50 hover:text-tool-red transition-colors font-bold uppercase tracking-wide text-xs">Specials & Eq.</a>
+          </div>
+        </div>
+      </div>
 
       <a href="/catalogus.html" class="nav-link relative group py-2">
         Catalogus
@@ -40,6 +52,28 @@
       </a>
     </nav>
 
-    <button class="md:hidden text-2xl" aria-label="Open menu">☰</button>
+    <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none" aria-label="Open menu">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu (hidden by default) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-red-800 text-white shadow-inner">
+    <div class="container mx-auto px-4 py-6 flex flex-col space-y-5 font-bold uppercase tracking-wide text-sm">
+      <a href="/index.html" class="hover:text-gray-300 transition-colors">Home</a>
+      
+      <div class="flex flex-col space-y-3">
+        <a href="/producten.html" class="hover:text-gray-300 transition-colors">Producten</a>
+        <div class="pl-4 flex flex-col space-y-3 pt-1 pb-1 border-l-2 border-red-900/50">
+          <a href="/handtools.html" class="hover:text-gray-300 transition-colors text-xs">Handtools</a>
+          <a href="/powertools.html" class="hover:text-gray-300 transition-colors text-xs">Power Tools</a>
+          <a href="/diagnose.html" class="hover:text-gray-300 transition-colors text-xs">Diagnose</a>
+          <a href="/specials.html" class="hover:text-gray-300 transition-colors text-xs">Specials & Eq.</a>
+        </div>
+      </div>
+      
+      <a href="/catalogus.html" class="hover:text-gray-300 transition-colors">Catalogus</a>
+      <a href="/contact.html" class="hover:text-gray-300 transition-colors">Contact</a>
+    </div>
   </div>
 </header>
