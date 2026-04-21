@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <load src="src/components/meta.html" />
+    <title>Pagina niet gevonden - ToolCenter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <style>
+      h1, h2, h3, .teko-font { font-family: "Teko", sans-serif; letter-spacing: 0.05em; }
+    </style>
+  </head>
+  <body class="bg-[#f4f4f4] text-slate-800 flex flex-col min-h-screen">
+    <div id="page-loader" class="fixed inset-0 z-[9999] bg-gray-900 flex items-center justify-center transition-opacity duration-100">
+      <div class="w-12 h-12 border-4 border-gray-200 border-t-tool-red rounded-full animate-spin"></div>
+    </div>
+    <load src="src/components/layout/header.html" />
+
+    <main class="flex-grow flex items-center justify-center p-4 py-20">
+      <div class="text-center max-w-2xl mx-auto bg-white p-12 shadow-2xl rounded-sm border-t-4 border-tool-red relative overflow-hidden">
+        <div class="absolute -top-10 -right-10 w-32 h-32 bg-tool-red opacity-5 rounded-full blur-2xl"></div>
+        <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-slate-900 opacity-5 rounded-full blur-2xl"></div>
+
+        <h1 class="text-[10rem] font-black text-gray-100 teko-font leading-none mb-0 select-none">404</h1>
+        <h2 class="text-4xl md:text-5xl font-bold uppercase text-slate-900 teko-font mb-4 relative z-10 -mt-12">Oeps! Pagina niet gevonden</h2>
+        <div class="w-16 h-1 bg-tool-red mx-auto mb-6 relative z-10"></div>
+        <p class="text-gray-600 mb-10 text-lg relative z-10">
+          De pagina die je zoekt bestaat niet (meer) of is verplaatst. Misschien heb je een verkeerde link gevolgd of is er een kleine typfout gemaakt.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+          <a href="/index.html" class="inline-flex items-center justify-center bg-tool-red text-white px-8 py-4 font-bold uppercase tracking-widest hover:bg-slate-900 transition-colors shadow-md rounded-sm">
+            Terug naar Home
+          </a>
+          <a href="/producten.html" class="inline-flex items-center justify-center bg-transparent text-slate-900 border-2 border-slate-900 px-8 py-4 font-bold uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-colors rounded-sm">
+            Bekijk Producten
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <load src="src/components/layout/footer.html" />
+    <load src="src/components/scripts.html" />
+  </body>
+</html>

@@ -92,4 +92,22 @@ window.addEventListener("load", () => {
       mobileMenu.classList.toggle("flex");
     });
   }
+
+  // Cookie banner logic
+  const cookieBanner = document.getElementById("cookie-banner");
+  const cookieAccept = document.getElementById("cookie-accept");
+
+  if (cookieBanner && cookieAccept) {
+    if (!localStorage.getItem("cookiesAccepted")) {
+      // Delay showing the banner slightly for a smooth entrance
+      setTimeout(() => {
+        cookieBanner.classList.remove("translate-y-full");
+      }, 800);
+    }
+
+    cookieAccept.addEventListener("click", () => {
+      localStorage.setItem("cookiesAccepted", "true");
+      cookieBanner.classList.add("translate-y-full");
+    });
+  }
 });
