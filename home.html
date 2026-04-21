@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <load src="src/components/meta.html" />
+    <title>ToolCenter Dirk De Busser - Home</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      h1,
+      h2,
+      .teko-font {
+        font-family: "Teko", sans-serif;
+        letter-spacing: 0.05em;
+      }
+
+      .hero-clip {
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-50 text-slate-800 overflow-x-hidden antialiased">
+    <div
+      id="intro-overlay"
+      style="display: none"
+      class="fixed inset-0 z-[100] flex items-center justify-center bg-white/90 backdrop-blur-xl pointer-events-none"
+    >
+      <img width="1572" height="1004"         src="/images/snapon-klein-logo.webp"
+        alt="Intro"
+        class="w-48 md:w-64 animate-logo-zoom origin-center"
+      loading="lazy" decoding="async" />
+    </div>
+    <load src="src/components/layout/header.html" />
+
+    <main class="flex-grow">
+      <section
+        class="relative h-[85vh] flex items-center justify-center overflow-hidden hero-clip bg-black"
+      >
+        <div class="absolute inset-0 z-0">
+          <!-- Tijdelijk verwijderd: werkplaats.jpg (totdat hij wordt geüpload) -->
+
+          <div
+            class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)]"
+          ></div>
+
+          <div
+            class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-red-900/40 to-transparent"
+          ></div>
+        </div>
+
+        <div
+          class="container mx-auto px-4 relative z-10 flex flex-col items-center text-center mt-8"
+        >
+          <div
+            class="inline-block bg-tool-red text-white px-5 py-2 font-bold text-sm tracking-[0.2em] mb-6 uppercase transform -skew-x-12 shadow-[0_0_15px_rgba(204,0,0,0.4)] border border-red-500/50"
+          >
+            Official Snap-on Dealer
+          </div>
+          <h1
+            class="text-6xl md:text-8xl font-bold text-white leading-[0.9] mb-6 uppercase drop-shadow-2xl teko-font max-w-4xl mx-auto"
+          >
+            PREMIUM <br />
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-b from-red-400 to-tool-red drop-shadow-md"
+              >SNAP-ON</span
+            >
+            TOOLS
+          </h1>
+
+          <p
+            class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl font-light drop-shadow-md mx-auto"
+          >
+            Kwaliteit waar u op kunt bouwen. Wij brengen de werkplaats naar u
+            toe met de beste service in de regio.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-6 justify-center">
+            <a
+              href="/contact.html"
+              class="bg-tool-red text-white px-10 py-4 font-bold uppercase tracking-wider hover:bg-white hover:text-tool-red transition-all transform hover:-translate-y-1 text-center"
+            >
+              Maak Afspraak
+            </a>
+            <a
+              href="#services"
+              class="border border-gray-400 text-white px-10 py-4 font-bold uppercase tracking-wider hover:border-white hover:bg-white hover:text-black transition-all transform hover:-translate-y-1 text-center backdrop-blur-sm bg-black/20"
+            >
+              Bekijk Aanbod
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="services"
+        class="relative py-20 bg-[#f4f4f4] overflow-hidden -mt-10 pt-32"
+      >
+        <div
+          class="absolute top-0 right-0 w-1/3 h-full bg-gray-200 skew-x-12 opacity-50 z-0 translate-x-20"
+        ></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="grid grid-cols-2 gap-6">
+              <a
+                href="handtools.html"
+                class="group relative bg-white border border-gray-200 h-64 overflow-hidden hover:border-tool-red hover:shadow-2xl transition-all duration-500 rounded-sm shadow-md"
+              >
+                <div
+                  class="absolute inset-0 p-6 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
+                >
+                  <img width="900" height="591"                     src="/images/Snap-on-Handgereedschap.webp"
+                    alt="Handtools"
+                    class="max-h-full max-w-full object-contain"
+                  loading="lazy" decoding="async" />
+                </div>
+                <div
+                  class="absolute bottom-0 left-0 w-full p-3 z-20 bg-gradient-to-t from-white via-white/90 to-transparent"
+                >
+                  <div
+                    class="h-1 w-8 bg-tool-red mb-1 group-hover:w-full transition-all duration-500"
+                  ></div>
+                  <h3 class="text-xl text-slate-900 font-bold uppercase italic">
+                    Handtools
+                  </h3>
+                </div>
+              </a>
+
+              <a
+                href="powertools.html"
+                class="group relative bg-white border border-gray-200 h-64 overflow-hidden hover:border-tool-red hover:shadow-2xl transition-all duration-500 rounded-sm shadow-md"
+              >
+                <div
+                  class="absolute inset-0 p-6 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
+                >
+                  <img width="1232" height="1800"                     src="/images/Snap-on-Power-Tools.webp"
+                    alt="Powertools"
+                    class="max-h-full max-w-full object-contain"
+                  loading="lazy" decoding="async" />
+                </div>
+                <div
+                  class="absolute bottom-0 left-0 w-full p-3 z-20 bg-gradient-to-t from-white via-white/90 to-transparent"
+                >
+                  <div
+                    class="h-1 w-8 bg-tool-red mb-1 group-hover:w-full transition-all duration-500"
+                  ></div>
+                  <h3 class="text-xl text-slate-900 font-bold uppercase italic">
+                    Power
+                  </h3>
+                </div>
+              </a>
+
+              <a
+                href="diagnose.html"
+                class="group relative bg-white border border-gray-200 h-64 overflow-hidden hover:border-tool-red hover:shadow-2xl transition-all duration-500 rounded-sm shadow-md"
+              >
+                <div
+                  class="absolute inset-0 p-6 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
+                >
+                  <img width="2040" height="1424"                     src="/images/Snap-on-Diagnose.webp"
+                    alt="Diagnose"
+                    class="max-h-full max-w-full object-contain"
+                  loading="lazy" decoding="async" />
+                </div>
+                <div
+                  class="absolute bottom-0 left-0 w-full p-3 z-20 bg-gradient-to-t from-white via-white/90 to-transparent"
+                >
+                  <div
+                    class="h-1 w-8 bg-tool-red mb-1 group-hover:w-full transition-all duration-500"
+                  ></div>
+                  <h3 class="text-xl text-slate-900 font-bold uppercase italic">
+                    Diagnose
+                  </h3>
+                </div>
+              </a>
+
+              <a
+                href="specials.html"
+                class="group relative bg-white border border-gray-200 h-64 overflow-hidden hover:border-tool-red hover:shadow-2xl transition-all duration-500 rounded-sm shadow-md"
+              >
+                <div
+                  class="absolute inset-0 p-6 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
+                >
+                  <img width="2048" height="1496"                     src="/images/Snap-on-Equipment.webp"
+                    alt="Specials"
+                    class="max-h-full max-w-full object-contain"
+                  loading="lazy" decoding="async" />
+                </div>
+                <div
+                  class="absolute bottom-0 left-0 w-full p-3 z-20 bg-gradient-to-t from-white via-white/90 to-transparent"
+                >
+                  <div
+                    class="h-1 w-8 bg-tool-red mb-1 group-hover:w-full transition-all duration-500"
+                  ></div>
+                  <h3 class="text-xl text-slate-900 font-bold uppercase italic">
+                    Specials
+                  </h3>
+                </div>
+              </a>
+            </div>
+
+            <div class="pl-0 lg:pl-10">
+              <span
+                class="inline-block py-1 px-3 bg-black text-white text-xs font-bold uppercase tracking-widest mb-4 rounded"
+              >
+                Official Snap-On Dealer
+              </span>
+
+              <h2
+                class="text-3xl md:text-5xl font-black uppercase mb-6 text-gray-900 leading-none"
+              >
+                MEER DAN ALLEEN GEREEDSCHAP<span class="text-tool-red">.</span>
+              </h2>
+
+              <p class="mb-6 text-gray-700 leading-relaxed text-lg">
+                Voor onze producten werken wij samen met een vaste leverancier,
+                <span class="font-bold">Snap-on</span>. Met deze duurzame en
+                ijzersterke producten garanderen wij u monsterprestaties!
+              </p>
+
+              <p class="mb-6 text-gray-700 leading-relaxed text-lg">
+                Wij staan u ook graag bij met raad en advies. Dankzij onze
+                opleiding en constante bijscholing zijn wij steeds op de hoogte
+                van de nieuwste technieken en innovaties. Zo garanderen we u
+                niet alleen
+                <span class="text-tool-red font-bold"
+                  >kwaliteitsvolle producten</span
+                >, maar ook een kwaliteitsvolle service. U kan ons altijd
+                bereiken voor een
+                <a
+                  href="/contact.html"
+                  class="text-tool-red font-bold hover:underline"
+                  >afspraak</a
+                >
+                te maken.
+              </p>
+
+              <p
+                class="mb-8 text-gray-600 text-lg border-l-4 border-tool-red pl-4 italic"
+              >
+                "Wij leveren niet alleen gereedschap, maar ook oplossingen."
+              </p>
+
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-center">
+                  <span
+                    class="w-6 h-6 bg-tool-red text-white rounded-full flex items-center justify-center mr-3 text-xs font-bold"
+                    >✓</span
+                  >
+                  <span class="font-bold text-gray-800">De Beste garantie</span>
+                </li>
+                <li class="flex items-center">
+                  <span
+                    class="w-6 h-6 bg-tool-red text-white rounded-full flex items-center justify-center mr-3 text-xs font-bold"
+                    >✓</span
+                  >
+                  <span class="font-bold text-gray-800"
+                    >Innovatieve Technologie</span
+                  >
+                </li>
+                <li class="flex items-center">
+                  <span
+                    class="w-6 h-6 bg-tool-red text-white rounded-full flex items-center justify-center mr-3 text-xs font-bold"
+                    >✓</span
+                  >
+                  <span class="font-bold text-gray-800"
+                    >Directe Service aan de deur</span
+                  >
+                </li>
+              </ul>
+
+              <a
+                href="/contact.html"
+                class="inline-flex items-center bg-tool-red text-white px-8 py-4 font-bold uppercase tracking-wide hover:bg-black transition duration-300 shadow-lg transform hover:-translate-y-1"
+              >
+                Maak een afspraak
+                <svg
+                  class="w-5 h-5 ml-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="relative py-20 bg-[#f4f4f4] overflow-hidden border-t border-gray-200"
+      >
+        <div
+          class="absolute top-0 left-0 w-1/3 h-full bg-gray-200 -skew-x-12 opacity-50 z-0 -translate-x-20"
+        ></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold uppercase text-gray-900">
+              Van Advies tot Werkplaats
+            </h2>
+            <div class="h-1 w-24 bg-tool-red mx-auto mt-4"></div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div
+              class="relative bg-white p-8 shadow-lg border-b-4 border-transparent hover:border-tool-red transition group rounded-sm"
+            >
+              <div
+                class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-white group-hover:bg-tool-red transition"
+              >
+                1
+              </div>
+              <h3 class="mt-4 text-xl font-bold text-center mb-4">
+                Contact & Analyse
+              </h3>
+              <p class="text-gray-600 text-center">
+                U neemt contact op. Wij luisteren naar uw specifieke noden en
+                kijken welk gereedschap uw efficiëntie kan verhogen.
+              </p>
+            </div>
+
+            <div
+              class="relative bg-white p-8 shadow-lg border-b-4 border-transparent hover:border-tool-red transition group rounded-sm"
+            >
+              <div
+                class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-white group-hover:bg-tool-red transition"
+              >
+                2
+              </div>
+              <h3 class="mt-4 text-xl font-bold text-center mb-4">
+                Mobiele Showroom
+              </h3>
+              <p class="text-gray-600 text-center">
+                Ik kom bij u langs met de vrachtwagen. U kunt het gereedschap
+                direct vastnemen, voelen en testen in uw eigen omgeving.
+              </p>
+            </div>
+
+            <div
+              class="relative bg-white p-8 shadow-lg border-b-4 border-transparent hover:border-tool-red transition group rounded-sm"
+            >
+              <div
+                class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-white group-hover:bg-tool-red transition"
+              >
+                3
+              </div>
+              <h3 class="mt-4 text-xl font-bold text-center mb-4">
+                Service & Garantie
+              </h3>
+              <p class="text-gray-600 text-center">
+                Aankoop gedaan? Wij blijven langskomen voor service, updates en
+                de beste garantie waar Snap-on om bekend staat.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="py-20 bg-white border-t border-gray-200 relative">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16">
+            <span
+              class="text-tool-red font-bold tracking-widest uppercase text-sm"
+              >Onderweg naar u</span
+            >
+            <h2 class="text-3xl font-bold uppercase text-gray-900 mt-2">
+              De Mobiele Showroom
+            </h2>
+            <div class="w-24 h-1 bg-tool-red mx-auto mt-4"></div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div
+              class="group relative h-80 rounded-lg overflow-hidden shadow-lg cursor-pointer"
+            >
+              <img
+                src="/images/truck-exterior.webp"
+                alt="Snap-on Truck"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              loading="lazy" decoding="async" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 w-full p-6 translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-300"
+              >
+                <span
+                  class="bg-tool-red text-white text-xs font-bold px-2 py-1 uppercase rounded mb-2 inline-block"
+                  >On The Road</span
+                >
+                <h3 class="text-white text-xl font-bold uppercase">
+                  Altijd in de buurt
+                </h3>
+                <p
+                  class="text-gray-300 text-sm mt-1 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity delay-100"
+                >
+                  Dagelijks onderweg door heel Limburg.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="group relative h-80 rounded-lg overflow-hidden shadow-lg cursor-pointer"
+            >
+              <img
+                src="/images/truck-interior.webp"
+                alt="Interieur Showroom"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              loading="lazy" decoding="async" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 w-full p-6 translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-300"
+              >
+                <span
+                  class="bg-tool-red text-white text-xs font-bold px-2 py-1 uppercase rounded mb-2 inline-block"
+                  >Voorraad</span
+                >
+                <h3 class="text-white text-xl font-bold uppercase">
+                  Direct Leverbaar
+                </h3>
+                <p
+                  class="text-gray-300 text-sm mt-1 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity delay-100"
+                >
+                  Meer dan 2000 tools direct uit voorraad leverbaar.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="group relative h-80 rounded-lg overflow-hidden shadow-lg cursor-pointer"
+            >
+              <img
+                src="/images/truck-demo.webp"
+                alt="Demo op locatie"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              loading="lazy" decoding="async" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 w-full p-6 translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-300"
+              >
+                <span
+                  class="bg-tool-red text-white text-xs font-bold px-2 py-1 uppercase rounded mb-2 inline-block"
+                  >Demo</span
+                >
+                <h3 class="text-white text-xl font-bold uppercase">
+                  Test het zelf
+                </h3>
+                <p
+                  class="text-gray-300 text-sm mt-1 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity delay-100"
+                >
+                  Probeer de nieuwste tools direct uit.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+      <section
+        class="relative py-20 bg-[#f4f4f4] overflow-hidden border-t border-gray-200"
+      >
+        <div
+          class="absolute top-0 right-0 w-1/3 h-full bg-gray-200 skew-x-12 opacity-50 z-0 translate-x-20"
+        ></div>
+
+        <div class="container mx-auto px-4 max-w-5xl relative z-10">
+          <h2
+            class="text-3xl font-bold uppercase text-center mb-12 text-gray-900"
+          >
+            Veelgestelde Vragen
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div
+              class="group bg-white p-6 shadow-md border border-transparent border-l-4 border-l-tool-red hover:border-tool-red hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-10 h-10 bg-gray-100 text-gray-500 rounded-full flex items-center justify-center font-bold text-lg group-hover:bg-tool-red group-hover:text-white transition-colors duration-300"
+                >
+                  Q
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-gray-900 mb-2 group-hover:text-tool-red transition-colors"
+                  >
+                    Komt u ook bij particulieren?
+                  </h3>
+                  <p class="text-gray-600">
+                    Onze focus ligt voornamelijk op professionele garages en
+                    industrie, maar neem gerust contact op om de mogelijkheden
+                    te bespreken.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="group bg-white p-6 shadow-md border border-transparent border-l-4 border-l-tool-red hover:border-tool-red hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-10 h-10 bg-gray-100 text-gray-500 rounded-full flex items-center justify-center font-bold text-lg group-hover:bg-tool-red group-hover:text-white transition-colors duration-300"
+                >
+                  Q
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-gray-900 mb-2 group-hover:text-tool-red transition-colors"
+                  >
+                    Hoe werkt de garantie?
+                  </h3>
+                  <p class="text-gray-600">
+                    Snap-on biedt levenslange garantie op materiaalfouten. Is er
+                    iets stuk? Geef het mee bij mijn volgende bezoek en wij
+                    regelen de vervanging.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="group bg-white p-6 shadow-md border border-transparent border-l-4 border-l-tool-red hover:border-tool-red hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-10 h-10 bg-gray-100 text-gray-500 rounded-full flex items-center justify-center font-bold text-lg group-hover:bg-tool-red group-hover:text-white transition-colors duration-300"
+                >
+                  Q
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-gray-900 mb-2 group-hover:text-tool-red transition-colors"
+                  >
+                    Wat is uw regio?
+                  </h3>
+                  <p class="text-gray-600">
+                    Ik ben actief in de regio Limburg. Twijfelt u of u in mijn
+                    regio valt? Bel of mail even.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="group bg-white p-6 shadow-md border border-transparent border-l-4 border-l-tool-red hover:border-tool-red hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-10 h-10 bg-gray-100 text-gray-500 rounded-full flex items-center justify-center font-bold text-lg group-hover:bg-tool-red group-hover:text-white transition-colors duration-300"
+                >
+                  Q
+                </div>
+                <div>
+                  <h3
+                    class="font-bold text-lg text-gray-900 mb-2 group-hover:text-tool-red transition-colors"
+                  >
+                    Zijn er financieringsopties?
+                  </h3>
+                  <p class="text-gray-600">
+                    Jazeker. Voor grotere investeringen (zoals
+                    diagnose-apparatuur of gereedschapswagens) kunnen we spreken
+                    over leasing of Snap-on Credit.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="py-24 relative overflow-hidden bg-white border-t border-gray-200"
+      >
+        <div
+          class="absolute -bottom-12 -right-12 text-[15rem] font-black text-slate-900/[0.03] pointer-events-none select-none leading-none font-sans italic z-0 transform rotate-12"
+        >
+          S
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+          <div
+            class="flex flex-col md:flex-row items-center justify-between gap-10 text-center md:text-left"
+          >
+            <div class="max-w-2xl">
+              <h2
+                class="text-4xl md:text-5xl font-black uppercase text-slate-900 leading-none mb-4 teko-font"
+              >
+                Klaar voor <span class="text-tool-red">Monsterprestaties?</span>
+              </h2>
+              <p class="text-slate-600 text-lg font-medium">
+                Mis geen enkele promotie. Download de catalogus of vraag direct
+                een bezoek aan met de mobiele showroom.
+              </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+              <a
+                href="#"
+                class="group flex items-center justify-center bg-tool-red text-white px-8 py-4 font-bold uppercase rounded shadow-lg hover:bg-slate-900 transition-all duration-300 min-w-[200px]"
+              >
+                <span>Catalogus (PDF)</span>
+                <svg
+                  class="w-5 h-5 ml-2 group-hover:translate-y-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  ></path>
+                </svg>
+              </a>
+
+              <a
+                href="/contact.html"
+                class="flex items-center justify-center bg-slate-100 text-slate-700 border border-slate-200 px-8 py-4 font-bold uppercase rounded hover:bg-white hover:border-tool-redq hover:shadow-md transition-all duration-300 min-w-[160px]"
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <load src="src/components/layout/footer.html" />
+    <load src="src/components/scripts.html" />
+  </body>
+</html>

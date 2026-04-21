@@ -68,7 +68,7 @@ window.addEventListener("load", () => {
 
     if (
       linkDoel === huidigePagina ||
-      (huidigePagina === "/" && linkDoel === "/index.html") ||
+      (huidigePagina === "/" && linkDoel === "/home.html") ||
       (linkDoel === "/producten.html" && productPaginas.includes(huidigePagina))
     ) {
       const lijntje = link.querySelector("span");
