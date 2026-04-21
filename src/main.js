@@ -64,12 +64,12 @@ window.addEventListener("load", () => {
 
   menuLinks.forEach((link) => {
     const linkDoel = link.getAttribute("href");
-    const productPaginas = ["/producten.html", "/handtools.html", "/powertools.html", "/diagnose.html", "/specials.html"];
+    const productPaginas = ["/producten", "/handtools", "/powertools", "/diagnose", "/specials"];
 
     if (
       linkDoel === huidigePagina ||
-      (huidigePagina === "/" && linkDoel === "/home.html") ||
-      (linkDoel === "/producten.html" && productPaginas.includes(huidigePagina))
+      (huidigePagina === "/" && linkDoel === "/home") ||
+      (linkDoel === "/producten" && productPaginas.includes(huidigePagina))
     ) {
       const lijntje = link.querySelector("span");
 

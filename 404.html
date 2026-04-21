@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="nl">
   <head>
-    <load src="src/components/meta.html" />
+    <load src="src/components/meta" />
     <title>Pagina niet gevonden - ToolCenter</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,7 +14,7 @@
     <div id="page-loader" class="fixed inset-0 z-[9999] bg-gray-900 flex items-center justify-center transition-opacity duration-100">
       <div class="w-12 h-12 border-4 border-gray-200 border-t-tool-red rounded-full animate-spin"></div>
     </div>
-    <load src="src/components/layout/header.html" />
+    <load src="src/components/layout/header" />
 
     <main class="flex-grow flex items-center justify-center p-4 py-20">
       <div class="text-center max-w-2xl mx-auto bg-white p-12 shadow-2xl rounded-sm border-t-4 border-tool-red relative overflow-hidden">
@@ -28,17 +28,17 @@
           De pagina die je zoekt bestaat niet (meer) of is verplaatst. Misschien heb je een verkeerde link gevolgd of is er een kleine typfout gemaakt.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
-          <a href="/home.html" class="inline-flex items-center justify-center bg-tool-red text-white px-8 py-4 font-bold uppercase tracking-widest hover:bg-slate-900 transition-colors shadow-md rounded-sm">
+          <a href="/home" class="inline-flex items-center justify-center bg-tool-red text-white px-8 py-4 font-bold uppercase tracking-widest hover:bg-slate-900 transition-colors shadow-md rounded-sm">
             Terug naar Home
           </a>
-          <a href="/producten.html" class="inline-flex items-center justify-center bg-transparent text-slate-900 border-2 border-slate-900 px-8 py-4 font-bold uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-colors rounded-sm">
+          <a href="/producten" class="inline-flex items-center justify-center bg-transparent text-slate-900 border-2 border-slate-900 px-8 py-4 font-bold uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-colors rounded-sm">
             Bekijk Producten
           </a>
         </div>
       </div>
     </main>
 
-    <load src="src/components/layout/footer.html" />
-    <load src="src/components/scripts.html" />
+    <load src="src/components/layout/footer" />
+    <load src="src/components/scripts" />
   </body>
 </html>
