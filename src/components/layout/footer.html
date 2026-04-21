@@ -64,7 +64,7 @@
           id="nav-footer"
           class="flex flex-col md:flex-row gap-4 md:gap-8 text-gray-300 font-medium mb-8"
         >
-          <a href="/index.html" class="hover:text-tool-red transition">Home</a>
+          <a href="/home.html" class="hover:text-tool-red transition">Home</a>
           <a href="/producten.html" class="hover:text-tool-red transition"
             >Producten</a
           >
@@ -105,15 +105,15 @@
     >
       <div class="flex gap-6">
         <span>© 2026 ToolCenter Dirk De Busser</span>
-        <a href="/privacy.html" class="hover:underline opacity-80 hover:opacity-100"
+        <a href="/privacy.html" class="hover:underline text-gray-200"
           >Privacy & Cookie Policy</a
         >
       </div>
 
       <div
-        class="flex items-center gap-2 opacity-90 hover:opacity-100 transition"
+        class="flex items-center gap-2 hover:text-white transition"
       >
-        <span class="bg-black/20 px-2 py-1 rounded font-bold">
+        <span class="bg-black/20 px-2 py-1 rounded font-bold text-gray-200">
           Made by Robbe De Busser
         </span>
       </div>
@@ -128,9 +128,9 @@
       navLinks.forEach((link) => {
         if (
           currentPath === link.getAttribute("href") ||
-          (currentPath === "/" && link.getAttribute("href") === "/index.html")
+          (currentPath === "/" && link.getAttribute("href") === "/home.html")
         ) {
-          link.classList.remove("text-gray-400");
+          link.classList.remove("text-gray-300");
           link.classList.add("text-tool-red");
         }
       });
