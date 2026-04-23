@@ -50,8 +50,7 @@
         clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
       }
     </style>
-    <script type="module" crossorigin src="/assets/main-BHHWOAf8.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-BfI4lrr-.css">
+    <script type="module" src="/src/main.js"></script>
   </head>
 
   <body class="bg-gray-50 text-slate-800 overflow-x-hidden antialiased">
@@ -65,7 +64,9 @@
         class="w-48 md:w-64 animate-logo-zoom origin-center"
       loading="lazy" decoding="async" />
     </div>
+
     <header id="main-header" class="bg-tool-red text-white shadow-md fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out">
+
   <div id="header-inner" class="container mx-auto px-4 py-4 flex justify-between items-center transition-all duration-300 ease-in-out">
     <a href="/home" class="block">
       <img width="3829" height="789" 
@@ -146,7 +147,7 @@
 </header>
 
 
-    <main class="flex-grow pt-[80px]">
+    <main class="flex-grow pt-20">
       <section
         class="relative h-[85vh] py-16 flex items-center justify-center overflow-hidden hero-clip bg-black"
       >
@@ -908,7 +909,19 @@
     </div>
   </div>
 </footer>
+    
 
 
-  </body>
+  <!-- Back to Top Button -->
+  <button
+    id="back-to-top-manual"
+    onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+    class="fixed bottom-8 right-8 bg-[#cc0000] text-white p-3 rounded-full shadow-2xl z-[9999] hover:bg-[#111] hover:-translate-y-2 transform transition-all duration-300 cursor-pointer flex items-center justify-center border-2 border-white/20"
+    aria-label="Terug naar boven"
+  >
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 15l7-7 7 7"></path>
+    </svg>
+  </button>
+</body>
 </html>

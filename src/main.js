@@ -116,14 +116,16 @@ window.addEventListener("load", () => {
     const onScroll = () => {
       if (window.scrollY > 50) {
         // Verklein de navbar bij scrollen
-        mainHeader.classList.add("shadow-xl h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24"); mainHeader.classList.add("h-16"); mainHeader.classList.remove("h-20"); mainHeader.classList.remove("md:h-24");
+        mainHeader.classList.add("shadow-xl", "h-16");
+        mainHeader.classList.remove("h-20", "md:h-24");
         headerInner.classList.remove("py-4");
         headerInner.classList.add("py-2");
         headerLogo.classList.remove("h-12");
         headerLogo.classList.add("h-8");
       } else {
         // Herstel de originele grootte bovenaan
-        mainHeader.classList.remove("shadow-xl h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24"); mainHeader.classList.remove("h-16"); mainHeader.classList.add("h-20"); mainHeader.classList.add("md:h-24");
+        mainHeader.classList.remove("shadow-xl", "h-16");
+        mainHeader.classList.add("h-20", "md:h-24");
         headerInner.classList.add("py-4");
         headerInner.classList.remove("py-2");
         headerLogo.classList.add("h-12");
@@ -132,6 +134,42 @@ window.addEventListener("load", () => {
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll(); // Check ook bij het laden van de pagina
+    onScroll();
   }
+
+  // === Back to Top Button ===
+  const createBackToTopButton = () => {
+    const button = document.createElement("button");
+    button.id = "back-to-top";
+    button.className = "fixed bottom-8 right-8 bg-tool-red text-white p-3 rounded-full shadow-2xl opacity-0 invisible transition-all duration-500 z-50 hover:bg-tool-black hover:-translate-y-2 transform cursor-pointer flex items-center justify-center border-2 border-white/10";
+    button.setAttribute("aria-label", "Terug naar boven");
+    button.innerHTML = `
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 15l7-7 7 7"></path>
+      </svg>
+    `;
+    document.body.appendChild(button);
+
+    const onScrollBTT = () => {
+      if (window.scrollY > 400) {
+        button.classList.remove("opacity-0", "invisible", "translate-y-10");
+        button.classList.add("opacity-100", "visible", "translate-y-0");
+      } else {
+        button.classList.add("opacity-0", "invisible", "translate-y-10");
+        button.classList.remove("opacity-100", "visible", "translate-y-0");
+      }
+    };
+
+    button.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+
+    window.addEventListener("scroll", onScrollBTT, { passive: true });
+    onScrollBTT();
+  };
+
+  createBackToTopButton();
 });
