@@ -21,8 +21,13 @@ html {
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease;
 }
+
+.back-to-top-container.visible:hover {
+  transform: scale(1.1) translateY(-10px);
+}
+
 
 .back-to-top-container.visible {
   opacity: 1;
@@ -49,10 +54,10 @@ html {
 }
 
 .back-to-top-btn:hover {
-  transform: scale(1.1) translateY(-5px);
   background-color: #000;
   box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
 }
+
 
 .back-to-top-progress {
   position: absolute;
