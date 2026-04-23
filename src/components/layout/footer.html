@@ -13,8 +13,7 @@
               class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full mr-3 group-hover:bg-tool-red transition"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4"
+                xmlns="http://www.w3.org/2000/svg"class="h-4 w-4"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -38,8 +37,7 @@
               class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full mr-3 group-hover:bg-tool-red transition"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4"
+                xmlns="http://www.w3.org/2000/svg"class="h-4 w-4"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -139,18 +137,51 @@
       if (yearSpan) {
         yearSpan.textContent = `© ${new Date().getFullYear()} ToolCenter Dirk De Busser`;
       }
+
+
+
+      // Cookie Banner Logic
+      const cookieBanner = document.getElementById("cookie-banner");
+      const cookieAccept = document.getElementById("cookie-accept");
+      if (cookieBanner && cookieAccept) {
+        if (!localStorage.getItem("cookieConsent")) {
+          setTimeout(() => {
+            cookieBanner.classList.remove("translate-y-full");
+          }, 1000);
+        }
+        cookieAccept.addEventListener("click", () => {
+          cookieBanner.classList.add("translate-y-full");
+          localStorage.setItem("cookieConsent", "true");
+        });
+      }
     });
   </script>
 
-  <!-- Cookie Banner -->
-  <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-[#111] text-white p-4 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] z-[100] border-t border-tool-red transform translate-y-full transition-transform duration-500 ease-in-out">
-    <div class="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4">
+  <div
+    id="cookie-banner"
+    class="fixed bottom-0 left-0 right-0 bg-[#111] text-white p-4 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] z-[100] border-t border-tool-red transform translate-y-full transition-transform duration-500 ease-in-out"
+  >
+    <div
+      class="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4"
+    >
       <div class="text-sm text-gray-300 md:pr-8 font-medium">
-        Wij gebruiken cookies om uw gebruikerservaring te verbeteren. Door onze website te blijven bezoeken, gaat u akkoord met ons <a href="/privacy" class="text-tool-red hover:underline font-bold">Privacy & Cookiebeleid</a>.
+        Wij gebruiken cookies om uw gebruikerservaring te verbeteren. Door onze
+        website te blijven bezoeken, gaat u akkoord met ons
+        <a href="/privacy" class="text-tool-red hover:underline font-bold"
+          >Privacy & Cookiebeleid</a
+        >.
       </div>
       <div class="flex gap-3 shrink-0">
-        <button id="cookie-accept" class="bg-tool-red hover:bg-red-700 text-white font-bold py-2 px-6 rounded-sm text-sm uppercase tracking-widest transition-colors shadow-lg">Ik ga akkoord</button>
+        <button
+          id="cookie-accept"
+          class="bg-tool-red hover:bg-red-700 text-white font-bold py-2 px-6 rounded-sm text-sm uppercase tracking-widest transition-colors shadow-lg"
+        >
+          Ik ga akkoord
+        </button>
       </div>
     </div>
   </div>
 </footer>
+
+
+

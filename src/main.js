@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// 1. Functie om de loader te verbergen (Gordijn open)
+
 function verbergLoader() {
   const loader = document.getElementById("page-loader");
   if (loader) {
@@ -79,7 +79,7 @@ window.addEventListener("load", () => {
     }
   });
 
-  // Mobile menu toggle logic
+  
   const mobileMenuBtn = document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
   
@@ -90,13 +90,13 @@ window.addEventListener("load", () => {
     });
   }
 
-  // Cookie banner logic
+  
   const cookieBanner = document.getElementById("cookie-banner");
   const cookieAccept = document.getElementById("cookie-accept");
 
   if (cookieBanner && cookieAccept) {
     if (!localStorage.getItem("cookiesAccepted")) {
-      // Delay showing the banner slightly for a smooth entrance
+      
       setTimeout(() => {
         cookieBanner.classList.remove("translate-y-full");
       }, 800);
@@ -107,7 +107,7 @@ window.addEventListener("load", () => {
       cookieBanner.classList.add("translate-y-full");
     });
   }
-  // === Sticky Navbar Scroll Effect ===
+  
   const mainHeader = document.getElementById("main-header");
   const headerInner = document.getElementById("header-inner");
   const headerLogo = document.getElementById("header-logo");
@@ -115,7 +115,7 @@ window.addEventListener("load", () => {
   if (mainHeader && headerInner && headerLogo) {
     const onScroll = () => {
       if (window.scrollY > 50) {
-        // Verklein de navbar bij scrollen
+        
         mainHeader.classList.add("shadow-xl", "h-16");
         mainHeader.classList.remove("h-20", "md:h-24");
         headerInner.classList.remove("py-4");
@@ -123,7 +123,7 @@ window.addEventListener("load", () => {
         headerLogo.classList.remove("h-12");
         headerLogo.classList.add("h-8");
       } else {
-        // Herstel de originele grootte bovenaan
+        
         mainHeader.classList.remove("shadow-xl", "h-16");
         mainHeader.classList.add("h-20", "md:h-24");
         headerInner.classList.add("py-4");
@@ -136,40 +136,75 @@ window.addEventListener("load", () => {
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
   }
+  // Initialize Back to Top
+  initBackToTop();
+});
 
-  // === Back to Top Button ===
-  const createBackToTopButton = () => {
-    const button = document.createElement("button");
-    button.id = "back-to-top";
-    button.className = "fixed bottom-8 right-8 bg-tool-red text-white p-3 rounded-full shadow-2xl opacity-0 invisible transition-all duration-500 z-50 hover:bg-tool-black hover:-translate-y-2 transform cursor-pointer flex items-center justify-center border-2 border-white/10";
-    button.setAttribute("aria-label", "Terug naar boven");
-    button.innerHTML = `
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 15l7-7 7 7"></path>
+/**
+ * Premium Back to Top Button
+ */
+function initBackToTop() {
+  // Check if it already exists (to avoid duplicates)
+  if (document.getElementById("premium-btt")) return;
+
+  // Create the button markup
+  const bttHTML = `
+    <div id="premium-btt" class="back-to-top-container">
+      <svg class="back-to-top-progress" viewBox="0 0 100 100">
+        <circle class="progress-bg" cx="50" cy="50" r="45"></circle>
+        <circle id="btt-progress-bar" cx="50" cy="50" r="45"></circle>
       </svg>
-    `;
-    document.body.appendChild(button);
+      <button class="back-to-top-btn" aria-label="Terug naar boven">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 15l7-7 7 7"></path>
+        </svg>
+      </button>
+    </div>
+  `;
 
-    const onScrollBTT = () => {
-      if (window.scrollY > 400) {
-        button.classList.remove("opacity-0", "invisible", "translate-y-10");
-        button.classList.add("opacity-100", "visible", "translate-y-0");
-      } else {
-        button.classList.add("opacity-0", "invisible", "translate-y-10");
-        button.classList.remove("opacity-100", "visible", "translate-y-0");
-      }
-    };
+  // Inject into body
+  document.body.insertAdjacentHTML("beforeend", bttHTML);
 
-    button.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    });
+  const container = document.getElementById("premium-btt");
+  const progressBar = document.getElementById("btt-progress-bar");
+  const btn = container.querySelector(".back-to-top-btn");
 
-    window.addEventListener("scroll", onScrollBTT, { passive: true });
-    onScrollBTT();
+  if (!container || !progressBar || !btn) return;
+
+  // SVG Circle properties
+  const radius = 45;
+  const circumference = 2 * Math.PI * radius;
+  progressBar.style.strokeDasharray = `${circumference} ${circumference}`;
+  progressBar.style.strokeDashoffset = circumference;
+
+  const updateProgress = () => {
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPosition = window.scrollY;
+    const progress = scrollPosition / scrollHeight;
+    const offset = circumference - progress * circumference;
+
+    progressBar.style.strokeDashoffset = offset;
+
+    // Visibility toggle
+    if (scrollPosition > 300) {
+      container.classList.add("visible");
+    } else {
+      container.classList.remove("visible");
+    }
   };
 
-  createBackToTopButton();
-});
+  // Scroll event
+  window.addEventListener("scroll", updateProgress, { passive: true });
+
+  // Click event
+  btn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+
+  // Initial call
+  updateProgress();
+}
+

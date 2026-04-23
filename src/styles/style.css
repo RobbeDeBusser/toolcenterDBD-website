@@ -9,3 +9,69 @@ html {
   background-color: #f9fafb;
   scroll-behavior: smooth;
 }
+/* Back to Top Premium Styles */
+.back-to-top-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.back-to-top-container.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top-btn {
+  width: 56px;
+  height: 56px;
+  background-color: rgba(204, 0, 0, 0.9); /* Tool Red */
+  color: white;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(204, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.back-to-top-btn:hover {
+  transform: scale(1.1) translateY(-5px);
+  background-color: #000;
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.back-to-top-progress {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 64px;
+  height: 64px;
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.back-to-top-progress circle {
+  fill: none;
+  stroke: #cc0000;
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.back-to-top-progress .progress-bg {
+  stroke: rgba(0, 0, 0, 0.1);
+}
