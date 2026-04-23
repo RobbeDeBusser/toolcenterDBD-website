@@ -6,10 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (overlay) {
     if (!sessionStorage.getItem("introGezien")) {
       overlay.style.display = "flex";
-      setTimeout(() => {
-        overlay.remove();
-        sessionStorage.setItem("introGezien", "true");
-      }, 1400);
+      overlay.remove();
     } else {
       overlay.remove();
     }
@@ -36,7 +33,7 @@ function toonLoader() {
 }
 
 window.addEventListener("load", () => {
-  setTimeout(verbergLoader, 200);
+  verbergLoader();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -119,14 +116,14 @@ window.addEventListener("load", () => {
     const onScroll = () => {
       if (window.scrollY > 50) {
         // Verklein de navbar bij scrollen
-        mainHeader.classList.add("shadow-xl");
+        mainHeader.classList.add("shadow-xl h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24"); mainHeader.classList.add("h-16"); mainHeader.classList.remove("h-20"); mainHeader.classList.remove("md:h-24");
         headerInner.classList.remove("py-4");
         headerInner.classList.add("py-2");
         headerLogo.classList.remove("h-12");
         headerLogo.classList.add("h-8");
       } else {
         // Herstel de originele grootte bovenaan
-        mainHeader.classList.remove("shadow-xl");
+        mainHeader.classList.remove("shadow-xl h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24 h-20 md:h-24"); mainHeader.classList.remove("h-16"); mainHeader.classList.add("h-20"); mainHeader.classList.add("md:h-24");
         headerInner.classList.add("py-4");
         headerInner.classList.remove("py-2");
         headerLogo.classList.add("h-12");

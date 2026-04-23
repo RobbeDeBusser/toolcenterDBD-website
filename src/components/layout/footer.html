@@ -104,7 +104,7 @@
       class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-2"
     >
       <div class="flex gap-6">
-        <span>© 2026 ToolCenter Dirk De Busser</span>
+        <span id="copyright-year">© 2026 ToolCenter Dirk De Busser</span>
         <a href="/privacy" class="hover:underline text-gray-200"
           >Privacy & Cookie Policy</a
         >
@@ -134,6 +134,11 @@
           link.classList.add("text-tool-red");
         }
       });
+
+      const yearSpan = document.getElementById("copyright-year");
+      if (yearSpan) {
+        yearSpan.textContent = `© ${new Date().getFullYear()} ToolCenter Dirk De Busser`;
+      }
     });
   </script>
 
