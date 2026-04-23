@@ -9,7 +9,17 @@ html {
   background-color: #f9fafb;
   scroll-behavior: smooth;
 }
-/* Back to Top Premium Styles */
+
+#main-header {
+  will-change: height, padding;
+  transform: translateZ(0);
+  background-color: #cc0000 !important;
+}
+
+main {
+  transition: padding 0.3s ease-in-out;
+}
+
 .back-to-top-container {
   position: fixed;
   bottom: 2rem;

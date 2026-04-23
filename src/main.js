@@ -111,43 +111,44 @@ window.addEventListener("load", () => {
   const mainHeader = document.getElementById("main-header");
   const headerInner = document.getElementById("header-inner");
   const headerLogo = document.getElementById("header-logo");
+  const mainContent = document.querySelector("main");
 
-  if (mainHeader && headerInner && headerLogo) {
+  if (mainHeader && headerInner && headerLogo && mainContent) {
+    mainContent.classList.add("transition-all", "duration-300", "ease-in-out");
+
     const onScroll = () => {
       if (window.scrollY > 50) {
-        
         mainHeader.classList.add("shadow-xl", "h-16");
         mainHeader.classList.remove("h-20", "md:h-24");
         headerInner.classList.remove("py-4");
         headerInner.classList.add("py-2");
         headerLogo.classList.remove("h-12");
         headerLogo.classList.add("h-8");
-      } else {
         
+        mainContent.style.paddingTop = window.innerWidth >= 768 ? "4rem" : "4rem"; 
+      } else {
         mainHeader.classList.remove("shadow-xl", "h-16");
         mainHeader.classList.add("h-20", "md:h-24");
         headerInner.classList.add("py-4");
         headerInner.classList.remove("py-2");
         headerLogo.classList.add("h-12");
         headerLogo.classList.remove("h-8");
+
+        mainContent.style.paddingTop = window.innerWidth >= 768 ? "6rem" : "5rem"; 
       }
+
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
   }
-  // Initialize Back to Top
+
   initBackToTop();
 });
 
-/**
- * Premium Back to Top Button
- */
 function initBackToTop() {
-  // Check if it already exists (to avoid duplicates)
   if (document.getElementById("premium-btt")) return;
 
-  // Create the button markup
   const bttHTML = `
     <div id="premium-btt" class="back-to-top-container">
       <svg class="back-to-top-progress" viewBox="0 0 100 100">
@@ -162,7 +163,6 @@ function initBackToTop() {
     </div>
   `;
 
-  // Inject into body
   document.body.insertAdjacentHTML("beforeend", bttHTML);
 
   const container = document.getElementById("premium-btt");
@@ -171,7 +171,6 @@ function initBackToTop() {
 
   if (!container || !progressBar || !btn) return;
 
-  // SVG Circle properties
   const radius = 45;
   const circumference = 2 * Math.PI * radius;
   progressBar.style.strokeDasharray = `${circumference} ${circumference}`;
@@ -185,7 +184,6 @@ function initBackToTop() {
 
     progressBar.style.strokeDashoffset = offset;
 
-    // Visibility toggle
     if (scrollPosition > 300) {
       container.classList.add("visible");
     } else {
@@ -193,10 +191,8 @@ function initBackToTop() {
     }
   };
 
-  // Scroll event
   window.addEventListener("scroll", updateProgress, { passive: true });
 
-  // Click event
   btn.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
@@ -204,7 +200,6 @@ function initBackToTop() {
     });
   });
 
-  // Initial call
   updateProgress();
 }
 
