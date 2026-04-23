@@ -110,4 +110,31 @@ window.addEventListener("load", () => {
       cookieBanner.classList.add("translate-y-full");
     });
   }
+  // === Sticky Navbar Scroll Effect ===
+  const mainHeader = document.getElementById("main-header");
+  const headerInner = document.getElementById("header-inner");
+  const headerLogo = document.getElementById("header-logo");
+
+  if (mainHeader && headerInner && headerLogo) {
+    const onScroll = () => {
+      if (window.scrollY > 50) {
+        // Verklein de navbar bij scrollen
+        mainHeader.classList.add("shadow-xl");
+        headerInner.classList.remove("py-4");
+        headerInner.classList.add("py-2");
+        headerLogo.classList.remove("h-12");
+        headerLogo.classList.add("h-8");
+      } else {
+        // Herstel de originele grootte bovenaan
+        mainHeader.classList.remove("shadow-xl");
+        headerInner.classList.add("py-4");
+        headerInner.classList.remove("py-2");
+        headerLogo.classList.add("h-12");
+        headerLogo.classList.remove("h-8");
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll(); // Check ook bij het laden van de pagina
+  }
 });
