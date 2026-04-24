@@ -1,19 +1,5 @@
 import "./styles/style.css";
 
-document.addEventListener("DOMContentLoaded", () => {
-  const overlay = document.getElementById("intro-overlay");
-
-  if (overlay) {
-    if (!sessionStorage.getItem("introGezien")) {
-      overlay.style.display = "flex";
-      overlay.remove();
-    } else {
-      overlay.remove();
-    }
-  }
-});
-
-
 function verbergLoader() {
   const loader = document.getElementById("page-loader");
   if (loader) {
@@ -117,26 +103,21 @@ window.addEventListener("load", () => {
     mainContent.classList.add("transition-all", "duration-300", "ease-in-out");
 
     const onScroll = () => {
-      if (window.scrollY > 50) {
-        mainHeader.classList.add("shadow-xl", "h-16");
-        mainHeader.classList.remove("h-20", "md:h-24");
-        headerInner.classList.remove("py-4");
-        headerInner.classList.add("py-2");
-        headerLogo.classList.remove("h-12");
-        headerLogo.classList.add("h-8");
-        
-        mainContent.style.paddingTop = window.innerWidth >= 768 ? "4rem" : "4rem"; 
+      if (window.scrollY > 20) {
+        mainHeader.classList.add("shadow-xl");
+        mainHeader.style.height = "70px";
+        headerInner.style.paddingTop = "0.5rem";
+        headerInner.style.paddingBottom = "0.5rem";
+        headerLogo.style.height = "32px";
+        mainContent.style.paddingTop = "70px";
       } else {
-        mainHeader.classList.remove("shadow-xl", "h-16");
-        mainHeader.classList.add("h-20", "md:h-24");
-        headerInner.classList.add("py-4");
-        headerInner.classList.remove("py-2");
-        headerLogo.classList.add("h-12");
-        headerLogo.classList.remove("h-8");
-
-        mainContent.style.paddingTop = window.innerWidth >= 768 ? "6rem" : "5rem"; 
+        mainHeader.classList.remove("shadow-xl");
+        mainHeader.style.height = "80px";
+        headerInner.style.paddingTop = "1rem";
+        headerInner.style.paddingBottom = "1rem";
+        headerLogo.style.height = "40px";
+        mainContent.style.paddingTop = "80px";
       }
-
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
