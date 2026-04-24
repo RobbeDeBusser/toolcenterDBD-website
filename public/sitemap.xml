@@ -6,42 +6,42 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://toolcenterdirkdebusser.be/pages/producten.html</loc>
+    <loc>https://toolcenterdirkdebusser.be/producten</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://toolcenterdirkdebusser.be/pages/handtools.html</loc>
+    <loc>https://toolcenterdirkdebusser.be/handtools</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://toolcenterdirkdebusser.be/pages/powertools.html</loc>
+    <loc>https://toolcenterdirkdebusser.be/powertools</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://toolcenterdirkdebusser.be/pages/diagnose.html</loc>
+    <loc>https://toolcenterdirkdebusser.be/diagnose</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://toolcenterdirkdebusser.be/pages/specials.html</loc>
+    <loc>https://toolcenterdirkdebusser.be/specials</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://toolcenterdirkdebusser.be/pages/catalogus.html</loc>
+    <loc>https://toolcenterdirkdebusser.be/catalogus</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://toolcenterdirkdebusser.be/pages/contact.html</loc>
+    <loc>https://toolcenterdirkdebusser.be/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://toolcenterdirkdebusser.be/pages/privacy.html</loc>
+    <loc>https://toolcenterdirkdebusser.be/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
