@@ -2,7 +2,7 @@
 <html lang="nl">
   <head>
     <load src="src/components/layout/meta.html" />
-    <title>ToolCenter Dirk De Busser - Handtools</title>
+    <title>ToolCenter Dirk De Busser - Diagnose</title>
     <style>
       .hero-clip-small {
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -11,96 +11,11 @@
   </head>
 
   <body class="bg-[#f4f4f4] text-slate-800 overflow-x-hidden antialiased">
-    <div
-      id="intro-overlay"
-      style="display: none"
-      class="fixed inset-0 z-[100] flex items-center justify-center bg-white/90 backdrop-blur-xl pointer-events-none"
-    >
-      <img width="1572" height="1004"         src="/images/snapon-klein-logo.webp"
-        alt="Intro"
-        class="w-48 md:w-64 animate-logo-zoom origin-center"
-      loading="lazy" decoding="async" />
+         <div id="page-loader" class="fixed inset-0 z-[9999] bg-gray-900 flex items-center justify-center transition-opacity duration-100">
+      <img src="/images/snapon-klein-logo.webp" alt="Loading..." class="w-12 h-12 animate-spin" />
     </div>
 
-    <header id="main-header" class="bg-tool-red text-white shadow-md fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out">
-  <div id="header-inner" class="container mx-auto px-4 py-4 flex justify-between items-center transition-all duration-300 ease-in-out">
-    <a href="/home" class="block">
-      <img width="3829" height="789" 
-        src="/images/Snap-on-Logo.webp"
-        alt="ToolCenter Dirk De Busser Logo"
-        id="header-logo" class="h-12 w-auto object-contain transition-all duration-300 ease-in-out"
-      decoding="async" />
-    </a>
-
-    <nav
-      class="hidden md:flex space-x-8 font-bold uppercase tracking-wide text-sm relative"
-    >
-      <a href="/home" class="nav-link relative group py-2">
-        Home
-        <span
-          class="absolute bottom-0 left-0 w-0 h-1 bg-white transition-all duration-300 group-hover:w-full"
-        ></span>
-      </a>
-
-      <div class="relative group">
-        <a href="/producten" class="nav-link relative flex items-center py-2">
-          Producten
-          <svg class="w-4 h-4 ml-1 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-          <span
-            class="absolute bottom-0 left-0 w-0 h-1 bg-white transition-all duration-300 group-hover:w-full"
-          ></span>
-        </a>
-        
-        <div class="absolute left-0 top-full pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-          <div class="bg-white text-slate-800 shadow-2xl rounded-sm border-t-4 border-tool-red overflow-hidden transform origin-top translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-            <a href="/handtools" class="block px-5 py-3 hover:bg-gray-50 hover:text-tool-red transition-colors border-b border-gray-100 font-bold uppercase tracking-wide text-xs">Handtools</a>
-            <a href="/powertools" class="block px-5 py-3 hover:bg-gray-50 hover:text-tool-red transition-colors border-b border-gray-100 font-bold uppercase tracking-wide text-xs">Power Tools</a>
-            <a href="/diagnose" class="block px-5 py-3 hover:bg-gray-50 hover:text-tool-red transition-colors border-b border-gray-100 font-bold uppercase tracking-wide text-xs">Diagnose</a>
-            <a href="/specials" class="block px-5 py-3 hover:bg-gray-50 hover:text-tool-red transition-colors font-bold uppercase tracking-wide text-xs">Specials & Eq.</a>
-          </div>
-        </div>
-      </div>
-
-      <a href="/catalogus" class="nav-link relative group py-2">
-        Catalogus
-        <span
-          class="absolute bottom-0 left-0 w-0 h-1 bg-white transition-all duration-300 group-hover:w-full"
-        ></span>
-      </a>
-
-      <a href="/contact" class="nav-link relative group py-2">
-        Contact
-        <span
-          class="absolute bottom-0 left-0 w-0 h-1 bg-white transition-all duration-300 group-hover:w-full"
-        ></span>
-      </a>
-    </nav>
-
-    <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none" aria-label="Open menu">
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-    </button>
-  </div>
-
-  
-  <div id="mobile-menu" class="hidden md:hidden bg-red-800 text-white shadow-inner">
-    <div class="container mx-auto px-4 py-6 flex flex-col space-y-5 font-bold uppercase tracking-wide text-sm">
-      <a href="/home" class="hover:text-gray-300 transition-colors">Home</a>
-      
-      <div class="flex flex-col space-y-3">
-        <a href="/producten" class="hover:text-gray-300 transition-colors">Producten</a>
-        <div class="pl-4 flex flex-col space-y-3 pt-1 pb-1 border-l-2 border-red-900/50">
-          <a href="/handtools" class="hover:text-gray-300 transition-colors text-xs">Handtools</a>
-          <a href="/powertools" class="hover:text-gray-300 transition-colors text-xs">Power Tools</a>
-          <a href="/diagnose" class="hover:text-gray-300 transition-colors text-xs">Diagnose</a>
-          <a href="/specials" class="hover:text-gray-300 transition-colors text-xs">Specials & Eq.</a>
-        </div>
-      </div>
-      
-      <a href="/catalogus" class="hover:text-gray-300 transition-colors">Catalogus</a>
-      <a href="/contact" class="hover:text-gray-300 transition-colors">Contact</a>
-    </div>
-  </div>
-</header>
+    <load src="src/components/layout/header.html" />
 
 
     <main class="flex-grow pt-[80px]">
@@ -123,9 +38,9 @@
           <h1
             class="text-6xl md:text-8xl font-bold text-white uppercase drop-shadow-xl teko-font leading-none"
           >
-            HAND<span
+            DIA<span
               class="text-transparent bg-clip-text bg-gradient-to-b from-red-400 to-tool-red"
-              >TOOLS</span
+              >GNOSE</span
             >
           </h1>
           <div class="w-16 h-1 bg-tool-red mx-auto mt-4 mb-4"></div>
@@ -158,27 +73,27 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div class="flex flex-col justify-center">
             <span class="inline-block py-1 px-3 bg-black text-white text-xs font-bold uppercase tracking-widest mb-4 rounded w-max">
-              Top Kwaliteit
+              Intelligente Oplossingen
             </span>
             <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase text-slate-900 teko-font mb-6 leading-none">
-              Gemaakt voor <br /><span class="text-tool-red">Generaties</span>
+              Razendsnelle <br /><span class="text-tool-red">Foutopsporing</span>
             </h2>
             <p class="text-gray-600 leading-relaxed font-medium mb-8 text-lg">
-              Er is een reden waarom topmonteurs wereldwijd de voorkeur geven aan Snap-on handgereedschap. De perfecte pasvorm, de superieure balans en het ijzersterke staal maken elke klus sneller, veiliger en efficiënter.
+              Geavanceerde uitleesapparatuur en oscilloscopen. Met Snap-on Diagnose apparatuur leest u storingen nauwkeurig uit en spoort u elektrische en elektronische problemen razendsnel op.
             </p>
 
             <ul class="space-y-4 mb-8">
               <li class="flex items-center text-gray-700 font-medium">
                 <span class="w-6 h-6 bg-tool-red text-white rounded-full flex items-center justify-center mr-3 text-xs font-bold shadow-sm">✓</span>
-                Levenslange garantie op materiaalfouten
+                Beste voertuigdekking in de markt
               </li>
               <li class="flex items-center text-gray-700 font-medium">
                 <span class="w-6 h-6 bg-tool-red text-white rounded-full flex items-center justify-center mr-3 text-xs font-bold shadow-sm">✓</span>
-                Gepatenteerde Flank Drive® technologie
+                Regelmatige software updates
               </li>
               <li class="flex items-center text-gray-700 font-medium">
                 <span class="w-6 h-6 bg-tool-red text-white rounded-full flex items-center justify-center mr-3 text-xs font-bold shadow-sm">✓</span>
-                Superieure grip en ergonomie
+                Geïntegreerde Fast-Track® probleemoplossing
               </li>
             </ul>
 
@@ -195,7 +110,7 @@
                 <div class="absolute -top-20 -right-20 w-64 h-64 bg-tool-red opacity-5 rounded-full blur-3xl transition-all duration-700 group-hover:opacity-10 group-hover:scale-110"></div>
                 <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-slate-900 opacity-5 rounded-full blur-3xl transition-all duration-700 group-hover:opacity-10 group-hover:scale-110"></div>
              </div>
-             <img width="900" height="591" src="/images/Snap-on-Handgereedschap.webp" alt="Snap-on Handtools" class="max-h-full max-w-full object-contain relative z-20 mix-blend-multiply p-8 transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
+             <img width="2040" height="1424" src="/images/Snap-on-Diagnose.webp" alt="Snap-on Diagnose" class="max-h-full max-w-full object-contain relative z-20 mix-blend-multiply p-8 transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
           </div>
         </div>
       </section>
@@ -320,7 +235,7 @@
             </div>
             <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
               <a
-                href="/contact"
+                href="/pages/contact.html"
                 class="group flex items-center justify-center bg-tool-red text-white px-8 py-4 font-bold uppercase rounded shadow-lg hover:bg-slate-900 transition-all duration-300 min-w-[200px]"
               >
                 <span>Neem contact op</span>
@@ -331,7 +246,8 @@
       </section>
     </main>
 
-     <load src="src/components/layout/footer.html" />
+    <load src="src/components/layout/footer.html" />
 
+    
 </body>
 </html>
