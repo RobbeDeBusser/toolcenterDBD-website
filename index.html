@@ -37,7 +37,7 @@
         color: #cc0000;
         z-index: 10;
       }
-      /* Synchronized Card Pulses */
+
       @keyframes cardPulse1 {
         0%, 12%, 22%, 100% { transform: translateY(0); }
         17% { transform: translateY(-12px); }
@@ -84,7 +84,6 @@
       .animate-bar-3 { animation: barPulse3 24s linear infinite; }
       .animate-icon-3 { animation: iconPulse3 24s linear infinite; }
       
-      /* Accordion Styles */
       .faq-details[open] summary svg {
         transform: rotate(180deg);
       }
@@ -115,24 +114,24 @@
 
     <main class="flex-grow pt-20">
       <section
-        class="relative h-[70vh] py-12 flex items-center justify-center overflow-hidden hero-clip carbon-bg "
+        class="relative min-h-[90vh] md:min-h-[70vh] py-16 md:py-12 flex items-center justify-center overflow-hidden hero-clip carbon-bg "
       >
         <div class="absolute inset-0 z-0 pointer-events-none">
-          <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-red-600/10 rounded-full blur-[120px]"></div>
-          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-tool-red/10 rounded-full blur-[100px]"></div>
+          <div class="absolute top-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-red-600/10 rounded-full blur-[80px] md:blur-[120px]"></div>
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] md:w-[800px] h-[200px] md:h-[400px] bg-tool-red/10 rounded-full blur-[60px] md:blur-[100px]"></div>
           <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]"></div>
         </div>
 
         <div
-          class="container mx-auto px-4 relative z-10 flex flex-col items-center text-center -mt-12"
+          class="container mx-auto px-4 relative z-10 flex flex-col items-center text-center mt-8 md:-mt-12 pb-16 md:pb-0"
         >
           <div
-            class="inline-block bg-tool-red text-white px-5 py-2 font-bold text-sm tracking-[0.2em] mb-6 uppercase transform -skew-x-12 shadow-[0_0_15px_rgba(204,0,0,0.4)] border border-red-500/50"
+            class="inline-block bg-tool-red text-white px-4 md:px-5 py-2 font-bold text-xs md:text-sm tracking-[0.2em] mb-4 md:mb-6 uppercase transform -skew-x-12 shadow-[0_0_15px_rgba(204,0,0,0.4)] border border-red-500/50"
           >
             Official Snap-on Dealer
           </div>
           <h1
-            class="text-6xl md:text-8xl font-bold text-white leading-[0.9] mb-6 uppercase drop-shadow-2xl teko-font max-w-4xl mx-auto"
+            class="text-5xl sm:text-6xl md:text-8xl font-bold text-white leading-[0.9] mb-4 md:mb-6 uppercase drop-shadow-2xl teko-font max-w-4xl mx-auto"
           >
             PREMIUM <br />
             <span
@@ -143,22 +142,22 @@
           </h1>
 
           <p
-            class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl font-light drop-shadow-md mx-auto"
+            class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 md:mb-10 max-w-2xl font-light drop-shadow-md mx-auto"
           >
             Kwaliteit waar u op kunt bouwen. Wij brengen de werkplaats naar u
             toe met de beste service in regio Limburg.
           </p>
 
-          <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center w-full max-w-sm sm:max-w-none mx-auto">
             <a
               href="/contact"
-              class="bg-tool-red text-white px-10 py-4 font-bold uppercase tracking-wider hover:bg-white hover:text-tool-red transition-all transform hover:-translate-y-1 text-center"
+              class="bg-tool-red text-white px-8 md:px-10 py-4 font-bold uppercase tracking-wider hover:bg-white hover:text-tool-red transition-all transform hover:-translate-y-1 text-center w-full sm:w-auto"
             >
               Maak Afspraak
             </a>
             <a
               href="#services"
-              class="border border-gray-400 text-white px-10 py-4 font-bold uppercase tracking-wider hover:border-white hover:bg-white hover:text-black transition-all transform hover:-translate-y-1 text-center backdrop-blur-sm bg-black/20"
+              class="border border-gray-400 text-white px-8 md:px-10 py-4 font-bold uppercase tracking-wider hover:border-white hover:bg-white hover:text-black transition-all transform hover:-translate-y-1 text-center backdrop-blur-sm bg-black/20 w-full sm:w-auto"
             >
               Bekijk Aanbod
             </a>
@@ -177,7 +176,7 @@
 
         <div class="container mx-auto px-4 relative z-10">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative -mt-16">
-            <div class="grid grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
               <a
                 href="/handtools"
                 class="group relative bg-white border border-slate-200 h-64 overflow-hidden hover:border-tool-red hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] transition-all duration-500 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08),0_16px_32px_rgba(0,0,0,0.05)] z-10 transform hover:-translate-y-3"
@@ -383,7 +382,6 @@
           </div>
 
           <div class="relative">
-            <!-- Connecting Line (Desktop) with Animated Truck -->
             <div class="hidden md:block absolute top-12 left-0 w-full h-1 border-t-4 border-dashed border-slate-200 z-0">
               <div class="animate-truck">
                 <svg class="w-10 h-10 drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
@@ -394,7 +392,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10 w-full">
-              <!-- Step 1 -->
               <div class="group relative flex flex-col items-center animate-step-1">
                 <div class="relative mb-12 z-20">
                   <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-black text-white rounded-3xl flex items-center justify-center transform transition-all duration-500 shadow-[0_15px_30px_rgba(0,0,0,0.3)] relative overflow-hidden">
@@ -414,7 +411,6 @@
                 </div>
               </div>
 
-              <!-- Step 2 -->
               <div class="group relative flex flex-col items-center animate-step-2">
                 <div class="relative mb-12 z-20">
                   <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-black text-white rounded-3xl flex items-center justify-center transform transition-all duration-500 shadow-[0_15px_30px_rgba(0,0,0,0.3)] relative overflow-hidden">
@@ -435,7 +431,6 @@
                 </div>
               </div>
 
-              <!-- Step 3 -->
               <div class="group relative flex flex-col items-center animate-step-3">
                 <div class="relative mb-12 z-20">
                   <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-black text-white rounded-3xl flex items-center justify-center transform transition-all duration-500 shadow-[0_15px_30px_rgba(0,0,0,0.3)] relative overflow-hidden">
@@ -464,9 +459,7 @@
       <section
         class="relative py-32 bg-slate-100 overflow-hidden border-t border-slate-200"
       >
-        <!-- Technical Dot Grid -->
         <div class="absolute inset-0 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:24px_24px] opacity-35 z-0"></div>
-        <!-- Spotlight -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-[radial-gradient(circle,rgba(255,255,255,0.9)_0%,rgba(241,245,249,0)_70%)] z-0 pointer-events-none"></div>
         
 
@@ -480,7 +473,6 @@
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-            <!-- FAQ 1 -->
             <details class="faq-details group bg-white border border-slate-200 rounded-[1.5rem] shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 overflow-hidden min-h-[80px]">
               <summary class="flex items-center justify-between p-4 md:p-6 cursor-pointer list-none min-h-[60px]">
                 <div class="flex items-center gap-3 md:gap-4">
@@ -505,7 +497,6 @@
               </div>
             </details>
 
-            <!-- FAQ 2 -->
             <details class="faq-details group bg-white border border-slate-200 rounded-[1.5rem] shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 overflow-hidden min-h-[80px]">
               <summary class="flex items-center justify-between p-4 md:p-6 cursor-pointer list-none min-h-[60px]">
                 <div class="flex items-center gap-3 md:gap-4">
@@ -530,7 +521,6 @@
               </div>
             </details>
 
-            <!-- FAQ 3 -->
             <details class="faq-details group bg-white border border-slate-200 rounded-[1.5rem] shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 overflow-hidden min-h-[80px]">
               <summary class="flex items-center justify-between p-4 md:p-6 cursor-pointer list-none min-h-[60px]">
                 <div class="flex items-center gap-3 md:gap-4">
@@ -555,7 +545,6 @@
               </div>
             </details>
 
-            <!-- FAQ 4 -->
             <details class="faq-details group bg-white border border-slate-200 rounded-[1.5rem] shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 overflow-hidden min-h-[80px]">
               <summary class="flex items-center justify-between p-4 md:p-6 cursor-pointer list-none min-h-[60px]">
                 <div class="flex items-center gap-3 md:gap-4">
@@ -583,8 +572,7 @@
         </div>
       </section>
 
-      <section class="relative py-12 md:py-16 overflow-hidden bg-slate-200 cta-clip -mt-16 pt-24 md:pt-32">
-        <!-- Technical Overlays (Mid Version) -->
+      <section class="relative py-12 md:py-16 overflow-hidden bg-slate-200 cta-clip -mt-16 pt-16 md:pt-20">
         <div class="absolute inset-0 z-0 pointer-events-none">
           <div class="absolute inset-0 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:24px_24px] opacity-30"></div>
           <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-red-600/5 rounded-full blur-[100px]"></div>
@@ -613,7 +601,7 @@
               </a>
 
               <a href="/contact" class="flex items-center justify-center bg-white text-slate-900 border border-slate-300 px-8 py-4 font-black uppercase text-md rounded-xl shadow-sm hover:shadow-[0_10px_25px_-5px_rgba(0,0,0,0.1)] hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all duration-300 min-w-[180px]">
-                Direct Contact
+                Contacteer Mij
               </a>
             </div>
           </div>
@@ -623,7 +611,7 @@
 
     <load src="src/components/layout/footer.html" />
     <script>
-      // Ultra-Smooth FAQ Controller using Web Animations API
+
       document.querySelectorAll('.faq-details').forEach(details => {
         const summary = details.querySelector('summary');
         const content = details.querySelector('.faq-content');
@@ -631,13 +619,13 @@
         summary.addEventListener('click', (e) => {
           e.preventDefault();
           
-          // Prevent spamming during animation
+
           if (details.classList.contains('is-animating')) return;
 
           if (details.open) {
             shrink(details, content);
           } else {
-            // Exclusive: Close others first
+
             document.querySelectorAll('.faq-details[open]').forEach(other => {
               if (other !== details) {
                 shrink(other, other.querySelector('.faq-content'));
@@ -652,7 +640,7 @@
         el.classList.add('is-animating');
         el.open = true;
         
-        // Calculate height
+
         const endHeight = content.scrollHeight + 'px';
         
         const animation = content.animate({
@@ -671,7 +659,7 @@
       function shrink(el, content) {
         el.classList.add('is-animating');
         
-        // Calculate current height
+
         const startHeight = content.scrollHeight + 'px';
 
         const animation = content.animate({

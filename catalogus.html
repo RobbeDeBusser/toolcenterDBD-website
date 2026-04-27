@@ -7,6 +7,9 @@
       .hero-clip-small {
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
       }
+            .cta-clip {
+        clip-path: polygon(0 8%, 10% 0, 90% 0, 100% 8%, 100% 100%, 0 100%);
+      }
     </style>
   </head>
 
@@ -47,7 +50,7 @@
         </div>
       </section>
 
-      <section class="py-20 bg-[#f4f4f4] relative ">
+      <section class="py-20 bg-[#f4f4f4] relative mb-5">
         <div class="container mx-auto px-4 max-w-6xl">
           <div class="text-center mb-16">
             <span class="inline-block py-1 px-3 bg-black text-white text-xs font-bold uppercase tracking-widest mb-4 rounded w-max mx-auto">
@@ -75,7 +78,7 @@
                 </div>
               </div>
               <div class="w-full h-[450px] bg-[#323639] relative rounded-sm shadow-inner overflow-hidden flex items-center justify-center group mt-auto">
-                 <iframe class="w-full h-full border-0 absolute top-0 left-0 z-20" src="https://e.issuu.com/embed?u=snap-on_tools_benelux&d=snap-on_sets_q1_2022_v1" title="Hoofdcatalogus Flipbook" allow="clipboard-write" allowfullscreen></iframe>
+                 <iframe class="w-full h-full border-0 absolute top-0 left-0 z-20" src="https://issuu.com/snap-on_tools_benelux/docs/snap-on_handtools_etc_q2_2022_v1?fr=xGAEoAT3_NTU1" title="Hoofdcatalogus Flipbook" allow="clipboard-write" allowfullscreen></iframe>
                  
                  <div class="absolute z-10 flex flex-col items-center justify-center text-gray-500 text-center p-8">
                     <svg class="w-12 h-12 mb-3 text-tool-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -140,36 +143,36 @@
         </div>
       </section>
 
-      <section
-        class="py-24 bg-white border-t border-gray-200 relative overflow-hidden mt-1"
-      >
-        <div
-          class="absolute -bottom-12 -right-12 text-[15rem] font-black text-slate-900/[0.03] pointer-events-none select-none leading-none font-sans italic z-0 transform rotate-12"
-        >
-          S
+           <section class="relative py-12 md:py-16 overflow-hidden bg-slate-200 cta-clip -mt-16 pt-16 md:pt-20">
+        <div class="absolute inset-0 z-0 pointer-events-none">
+          <div class="absolute inset-0 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:24px_24px] opacity-30"></div>
+          <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-red-600/5 rounded-full blur-[100px]"></div>
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-tool-red/5 rounded-full blur-[80px]"></div>
         </div>
-        <div class="container mx-auto px-4 max-w-6xl relative z-10">
-          <div
-            class="flex flex-col md:flex-row items-center justify-between gap-10 text-center md:text-left"
-          >
-            <div class="max-w-2xl">
-              <h2
-                class="text-4xl md:text-5xl font-black uppercase text-slate-900 leading-none mb-4 teko-font"
-              >
-                Iets specifieks <span class="text-tool-red">nodig?</span>
+
+        <div class="container mx-auto px-4 relative z-10">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+            <div class="max-w-xl">
+              <h2 class="text-3xl md:text-5xl font-black uppercase text-slate-900 leading-none mb-3 teko-font tracking-tight">
+                KLAAR VOOR <span class="text-tool-red italic block md:inline mt-1 md:mt-0">MONSTERPRESTATIES?</span>
               </h2>
-              <p class="text-slate-600 text-lg font-medium">
-                Vindt u niet meteen wat u zoekt? Neem contact op, en ik breng
-                het de volgende keer mee in de vrachtwagen om direct in uw eigen
-                werkplaats te testen.
+              <div class="h-1 w-16 bg-tool-red mb-3 mx-auto md:mx-0"></div>
+              <p class="text-slate-600 text-md font-medium max-w-lg leading-relaxed">
+                Mis geen enkele promotie. Download de nieuwste catalogus of vraag direct een bezoek aan met de mobiele showroom.
               </p>
             </div>
+
             <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-              <a
-                href="/contact"
-                class="group flex items-center justify-center bg-tool-red text-white px-8 py-4 font-bold uppercase rounded shadow-lg hover:bg-slate-900 transition-all duration-300 min-w-[200px]"
-              >
-                <span>Neem contact op</span>
+              <a href="#" class="group relative flex items-center justify-center bg-tool-red text-white px-8 py-4 font-black uppercase text-md rounded-xl hover:-translate-y-1 transition-all duration-300 min-w-[220px] overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                <span class="relative z-10">Catalogus (PDF)</span>
+                <svg class="w-5 h-5 ml-2 group-hover:translate-y-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                </svg>
+              </a>
+
+              <a href="/contact" class="flex items-center justify-center bg-white text-slate-900 border border-slate-300 px-8 py-4 font-black uppercase text-md rounded-xl shadow-sm hover:shadow-[0_10px_25px_-5px_rgba(0,0,0,0.1)] hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all duration-300 min-w-[180px]">
+                Contacteer Mij
               </a>
             </div>
           </div>
