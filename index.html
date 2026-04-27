@@ -9,12 +9,103 @@
 
     <style>
       .hero-clip {
-        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+      }
+      .cta-clip {
+        clip-path: polygon(0 8%, 10% 0, 90% 0, 100% 8%, 100% 100%, 0 100%);
+      }
+      .carbon-bg {
+        background:
+          radial-gradient(black 15%, transparent 16%) 0 0,
+          radial-gradient(black 15%, transparent 16%) 8px 8px,
+          radial-gradient(rgba(255,255,255,.04) 15%, transparent 20%) 0 1px,
+          radial-gradient(rgba(255,255,255,.04) 15%, transparent 20%) 8px 9px;
+        background-color: #0f172a;
+        background-size: 16px 16px;
+        background-attachment: fixed;
+      }
+      @keyframes truckDrive {
+        0% { left: -50px; opacity: 0; }
+        5% { opacity: 1; }
+        95% { opacity: 1; }
+        100% { left: 100%; opacity: 0; }
+      }
+      .animate-truck {
+        position: absolute;
+        animation: truckDrive 24s linear infinite;
+        top: -32px;
+        color: #cc0000;
+        z-index: 10;
+      }
+      /* Synchronized Card Pulses */
+      @keyframes cardPulse1 {
+        0%, 12%, 22%, 100% { transform: translateY(0); }
+        17% { transform: translateY(-12px); }
+      }
+      @keyframes barPulse1 {
+        0%, 12%, 22%, 100% { background-color: #e2e8f0; }
+        17% { background-color: #cc0000; }
+      }
+      @keyframes iconPulse1 {
+        0%, 12%, 22%, 100% { background-color: transparent; transform: scale(1) rotate(3deg); }
+        17% { background-color: #cc0000; transform: scale(1.1) rotate(0deg); }
+      }
+      @keyframes cardPulse2 {
+        0%, 45%, 55%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-12px); }
+      }
+      @keyframes barPulse2 {
+        0%, 45%, 55%, 100% { background-color: #e2e8f0; }
+        50% { background-color: #cc0000; }
+      }
+      @keyframes iconPulse2 {
+        0%, 45%, 55%, 100% { background-color: transparent; transform: scale(1) rotate(-3deg); }
+        50% { background-color: #cc0000; transform: scale(1.1) rotate(0deg); }
+      }
+      @keyframes cardPulse3 {
+        0%, 78%, 88%, 100% { transform: translateY(0); }
+        83% { transform: translateY(-12px); }
+      }
+      @keyframes barPulse3 {
+        0%, 78%, 88%, 100% { background-color: #e2e8f0; }
+        83% { background-color: #cc0000; }
+      }
+      @keyframes iconPulse3 {
+        0%, 78%, 88%, 100% { background-color: transparent; transform: scale(1) rotate(3deg); }
+        83% { background-color: #cc0000; transform: scale(1.1) rotate(0deg); }
+      }
+      .animate-step-1 { animation: cardPulse1 24s linear infinite; }
+      .animate-bar-1 { animation: barPulse1 24s linear infinite; }
+      .animate-icon-1 { animation: iconPulse1 24s linear infinite; }
+      .animate-step-2 { animation: cardPulse2 24s linear infinite; }
+      .animate-bar-2 { animation: barPulse2 24s linear infinite; }
+      .animate-icon-2 { animation: iconPulse2 24s linear infinite; }
+      .animate-step-3 { animation: cardPulse3 24s linear infinite; }
+      .animate-bar-3 { animation: barPulse3 24s linear infinite; }
+      .animate-icon-3 { animation: iconPulse3 24s linear infinite; }
+      
+      /* Accordion Styles */
+      .faq-details[open] summary svg {
+        transform: rotate(180deg);
+      }
+      .faq-details[open] summary span.teko-font {
+        color: #cc0000 !important;
+      }
+      .faq-details[open] summary div.rounded-full {
+        background-color: #cc0000 !important;
+        border-color: #cc0000 !important;
+        color: white !important;
+      }
+      .faq-details summary::-webkit-details-marker {
+        display: none;
+      }
+      .faq-content {
+        overflow: hidden;
       }
     </style>
   </head>
 
-  <body class="bg-gray-50 text-slate-800 overflow-x-hidden antialiased">
+  <body class="bg-slate-100 text-slate-800 overflow-x-hidden antialiased">
 <div id="page-loader" class="fixed inset-0 z-[9999] bg-gray-900 flex items-center justify-center transition-opacity duration-100">
       <img src="/images/snapon-klein-logo.webp" alt="Loading..." class="w-12 h-12 animate-spin" />
     </div>
@@ -24,22 +115,16 @@
 
     <main class="flex-grow pt-20">
       <section
-        class="relative h-[85vh] py-16 flex items-center justify-center overflow-hidden hero-clip bg-black"
+        class="relative h-[70vh] py-12 flex items-center justify-center overflow-hidden hero-clip carbon-bg "
       >
-        <div class="absolute inset-0 z-0">
-          
-
-          <div
-            class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)]"
-          ></div>
-
-          <div
-            class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-red-900/40 to-transparent"
-          ></div>
+        <div class="absolute inset-0 z-0 pointer-events-none">
+          <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-red-600/10 rounded-full blur-[120px]"></div>
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-tool-red/10 rounded-full blur-[100px]"></div>
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]"></div>
         </div>
 
         <div
-          class="container mx-auto px-4 relative z-10 flex flex-col items-center text-center mt-8"
+          class="container mx-auto px-4 relative z-10 flex flex-col items-center text-center -mt-12"
         >
           <div
             class="inline-block bg-tool-red text-white px-5 py-2 font-bold text-sm tracking-[0.2em] mb-6 uppercase transform -skew-x-12 shadow-[0_0_15px_rgba(204,0,0,0.4)] border border-red-500/50"
@@ -83,18 +168,19 @@
 
       <section
         id="services"
-        class="relative py-20 bg-[#f4f4f4] overflow-hidden -mt-10 pt-32"
+        class="relative py-20 bg-slate-100 overflow-hidden -mt-20 pt-32"
       >
-        <div
-          class="absolute top-0 right-0 w-1/3 h-full bg-gray-200 skew-x-12 opacity-50 z-0 translate-x-20"
-        ></div>
+        <div class="absolute top-[40%] left-1/4 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(255,255,255,0.9)_0%,rgba(241,245,249,0)_70%)] z-0 pointer-events-none"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:24px_24px] opacity-35 z-0"></div>
+        
+
 
         <div class="container mx-auto px-4 relative z-10">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative -mt-16">
             <div class="grid grid-cols-2 gap-6">
               <a
                 href="/handtools"
-                class="group relative bg-white border border-gray-200 h-64 overflow-hidden hover:border-tool-red hover:shadow-2xl transition-all duration-500 rounded-sm shadow-md"
+                class="group relative bg-white border border-slate-200 h-64 overflow-hidden hover:border-tool-red hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] transition-all duration-500 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08),0_16px_32px_rgba(0,0,0,0.05)] z-10 transform hover:-translate-y-3"
               >
                 <div
                   class="absolute inset-0 p-6 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
@@ -118,7 +204,7 @@
 
               <a
                 href="/powertools"
-                class="group relative bg-white border border-gray-200 h-64 overflow-hidden hover:border-tool-red hover:shadow-2xl transition-all duration-500 rounded-sm shadow-md"
+                class="group relative bg-white border border-slate-200 h-64 overflow-hidden hover:border-tool-red hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] transition-all duration-500 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08),0_16px_32px_rgba(0,0,0,0.05)] z-10 transform hover:-translate-y-3"
               >
                 <div
                   class="absolute inset-0 p-6 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
@@ -142,7 +228,7 @@
 
               <a
                 href="/diagnose"
-                class="group relative bg-white border border-gray-200 h-64 overflow-hidden hover:border-tool-red hover:shadow-2xl transition-all duration-500 rounded-sm shadow-md"
+                class="group relative bg-white border border-slate-200 h-64 overflow-hidden hover:border-tool-red hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] transition-all duration-500 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08),0_16px_32px_rgba(0,0,0,0.05)] z-10 transform hover:-translate-y-3"
               >
                 <div
                   class="absolute inset-0 p-6 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
@@ -166,7 +252,7 @@
 
               <a
                 href="/specials"
-                class="group relative bg-white border border-gray-200 h-64 overflow-hidden hover:border-tool-red hover:shadow-2xl transition-all duration-500 rounded-sm shadow-md"
+                class="group relative bg-white border border-slate-200 h-64 overflow-hidden hover:border-tool-red hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] transition-all duration-500 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08),0_16px_32px_rgba(0,0,0,0.05)] z-10 transform hover:-translate-y-3"
               >
                 <div
                   class="absolute inset-0 p-6 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
@@ -284,70 +370,90 @@
       </section>
 
       <section
-        class="relative py-20 bg-[#f4f4f4] overflow-hidden border-t border-gray-200"
+        class="relative py-24 bg-white overflow-hidden border-t-[1px] border-slate-200 z-10 shadow-[0_-10px_30px_rgba(0,0,0,0.03)]"
       >
-        <div
-          class="absolute top-0 left-0 w-1/3 h-full bg-gray-200 -skew-x-12 opacity-50 z-0 -translate-x-20"
-        ></div>
+        <div class="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:32px_32px] opacity-20 z-0"></div>
 
         <div class="container mx-auto px-4 relative z-10">
-          <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold uppercase text-gray-900">
-              Van Advies tot Werkplaats
+          <div class="text-center mb-20">
+            <h2 class="text-4xl md:text-6xl font-black uppercase text-gray-900 teko-font tracking-tight">
+              Van Advies tot <span class="text-tool-red">Werkplaats</span>
             </h2>
-            <div class="h-1 w-24 bg-tool-red mx-auto mt-4"></div>
+            <div class="h-2 w-32 bg-tool-red mx-auto mt-2"></div>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div
-              class="relative bg-white p-8 shadow-lg border-b-4 border-transparent hover:border-tool-red transition group rounded-sm"
-            >
-              <div
-                class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-white group-hover:bg-tool-red transition"
-              >
-                1
+          <div class="relative">
+            <!-- Connecting Line (Desktop) with Animated Truck -->
+            <div class="hidden md:block absolute top-12 left-0 w-full h-1 border-t-4 border-dashed border-slate-200 z-0">
+              <div class="animate-truck">
+                <svg class="w-10 h-10 drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 17a2 2 0 11-4 0 2 2 0 014 0zM9 17a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                  <path d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path>
+                </svg>
               </div>
-              <h3 class="mt-4 text-xl font-bold text-center mb-4">
-                Contact & Analyse
-              </h3>
-              <p class="text-gray-600 text-center">
-                U neemt contact op. Wij luisteren naar uw specifieke noden en
-                kijken welk gereedschap uw efficiëntie kan verhogen.
-              </p>
             </div>
 
-            <div
-              class="relative bg-white p-8 shadow-lg border-b-4 border-transparent hover:border-tool-red transition group rounded-sm"
-            >
-              <div
-                class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-white group-hover:bg-tool-red transition"
-              >
-                2
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10 w-full">
+              <!-- Step 1 -->
+              <div class="group relative flex flex-col items-center animate-step-1">
+                <div class="relative mb-12 z-20">
+                  <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-black text-white rounded-3xl flex items-center justify-center transform transition-all duration-500 shadow-[0_15px_30px_rgba(0,0,0,0.3)] relative overflow-hidden">
+                    <div class="absolute inset-0 animate-icon-1 z-0"></div>
+                    <svg class="w-12 h-12 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                    </svg>
+                  </div>
+                </div>
+                
+                <div class="bg-white p-10 rounded-[2rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-center group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden">
+                  <div class="absolute top-0 left-0 w-full h-2 bg-slate-200 group-hover:bg-tool-red transition-colors animate-bar-1"></div>
+                  <h3 class="text-3xl font-bold text-gray-900 mb-6 uppercase italic teko-font tracking-wide">Contact & Analyse</h3>
+                  <p class="text-gray-600 leading-relaxed font-medium">
+                    U neemt contact op. Wij luisteren naar uw specifieke noden en kijken welk gereedschap uw efficiëntie kan verhogen.
+                  </p>
+                </div>
               </div>
-              <h3 class="mt-4 text-xl font-bold text-center mb-4">
-                Mobiele Showroom
-              </h3>
-              <p class="text-gray-600 text-center">
-                Ik kom bij u langs met de vrachtwagen. U kunt het gereedschap
-                direct vastnemen, voelen en testen in uw eigen omgeving.
-              </p>
-            </div>
 
-            <div
-              class="relative bg-white p-8 shadow-lg border-b-4 border-transparent hover:border-tool-red transition group rounded-sm"
-            >
-              <div
-                class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-xl border-4 border-white group-hover:bg-tool-red transition"
-              >
-                3
+              <!-- Step 2 -->
+              <div class="group relative flex flex-col items-center animate-step-2">
+                <div class="relative mb-12 z-20">
+                  <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-black text-white rounded-3xl flex items-center justify-center transform transition-all duration-500 shadow-[0_15px_30px_rgba(0,0,0,0.3)] relative overflow-hidden">
+                    <div class="absolute inset-0 animate-icon-2 z-0"></div>
+                    <svg class="w-12 h-12 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="bg-white p-10 rounded-[2rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-center group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden">
+                  <div class="absolute top-0 left-0 w-full h-2 bg-slate-200 group-hover:bg-tool-red transition-colors animate-bar-2"></div>
+                  <h3 class="text-3xl font-bold text-gray-900 mb-6 uppercase italic teko-font tracking-wide">Mobiele Showroom</h3>
+                  <p class="text-gray-600 leading-relaxed font-medium">
+                    Ik kom bij u langs met de vrachtwagen. U kunt het gereedschap direct vastnemen, voelen en testen in uw eigen omgeving.
+                  </p>
+                </div>
               </div>
-              <h3 class="mt-4 text-xl font-bold text-center mb-4">
-                Service & Garantie
-              </h3>
-              <p class="text-gray-600 text-center">
-                Aankoop gedaan? Wij blijven langskomen voor service, updates en
-                de beste garantie waar Snap-on om bekend staat.
-              </p>
+
+              <!-- Step 3 -->
+              <div class="group relative flex flex-col items-center animate-step-3">
+                <div class="relative mb-12 z-20">
+                  <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-black text-white rounded-3xl flex items-center justify-center transform transition-all duration-500 shadow-[0_15px_30px_rgba(0,0,0,0.3)] relative overflow-hidden">
+                    <div class="absolute inset-0 animate-icon-3 z-0"></div>
+                    <svg class="w-12 h-12 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="bg-white p-10 rounded-[2rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-center group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden">
+                  <div class="absolute top-0 left-0 w-full h-2 bg-slate-200 group-hover:bg-tool-red transition-colors animate-bar-3"></div>
+                  <h3 class="text-3xl font-bold text-gray-900 mb-6 uppercase italic teko-font tracking-wide">Service & Garantie</h3>
+                  <p class="text-gray-600 leading-relaxed font-medium">
+                    Aankoop gedaan? Wij blijven langskomen voor service, updates en de beste garantie waar Snap-on om bekend staat.
+                  </p>
+                </div>
+              </div>  </div>
             </div>
           </div>
         </div>
@@ -356,169 +462,158 @@
       
 
       <section
-        class="relative py-20 bg-[#f4f4f4] overflow-hidden border-t border-gray-200"
+        class="relative py-32 bg-slate-100 overflow-hidden border-t border-slate-200"
       >
-        <div
-          class="absolute top-0 right-0 w-1/3 h-full bg-gray-200 skew-x-12 opacity-50 z-0 translate-x-20"
-        ></div>
+        <!-- Technical Dot Grid -->
+        <div class="absolute inset-0 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:24px_24px] opacity-35 z-0"></div>
+        <!-- Spotlight -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-[radial-gradient(circle,rgba(255,255,255,0.9)_0%,rgba(241,245,249,0)_70%)] z-0 pointer-events-none"></div>
+        
 
-        <div class="container mx-auto px-4 max-w-5xl relative z-10">
-          <h2
-            class="text-3xl font-bold uppercase text-center mb-12 text-gray-900"
-          >
-            Veelgestelde Vragen
-          </h2>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div
-              class="group bg-white p-6 shadow-md border border-transparent border-l-4 border-l-tool-red hover:border-tool-red hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-            >
-              <div class="flex items-start gap-4">
-                <div
-                  class="flex-shrink-0 w-10 h-10 bg-gray-100 text-gray-500 rounded-full flex items-center justify-center font-bold text-lg group-hover:bg-tool-red group-hover:text-white transition-colors duration-300"
-                >
-                  Q
-                </div>
-                <div>
-                  <h3
-                    class="font-bold text-lg text-gray-900 mb-2 group-hover:text-tool-red transition-colors"
-                  >
+        <div class="container mx-auto px-4 max-w-7xl relative z-10">
+          <div class="text-center mb-16">
+            <h2 class="text-5xl md:text-7xl font-black uppercase text-slate-900 teko-font leading-none mb-4 tracking-tight">
+              Veelgestelde <span class="text-tool-red">Vragen</span>
+            </h2>
+            
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <!-- FAQ 1 -->
+            <details class="faq-details group bg-white border border-slate-200 rounded-[1.5rem] shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 overflow-hidden min-h-[80px]">
+              <summary class="flex items-center justify-between p-4 md:p-6 cursor-pointer list-none min-h-[60px]">
+                <div class="flex items-center gap-3 md:gap-4">
+                  <span class="text-3xl md:text-4xl font-black text-slate-400 teko-font group-hover:text-tool-red transition-colors duration-500">01</span>
+                  <h3 class="text-xl font-bold text-black uppercase italic teko-font tracking-wide">
                     Komt u ook bij particulieren?
                   </h3>
-                  <p class="text-gray-600">
-                    Onze focus ligt voornamelijk op professionele garages en
-                    industrie, maar neem gerust contact op om de mogelijkheden
-                    te bespreken.
+                </div>
+                <div class="w-10 h-10 rounded-full border-2 border-slate-100 flex items-center justify-center group-hover:border-tool-red group-hover:bg-tool-red group-hover:text-white transition-all duration-300 flex-shrink-0">
+                  <svg class="w-5 h-5 transform transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </summary>
+              <div class="faq-content">
+                <div class="faq-content-inner px-4 pb-4 md:px-6 md:pb-6 ml-10 md:ml-16">
+                  <div class="h-1 w-12 bg-tool-red mb-4"></div>
+                  <p class="text-slate-600 text-md leading-relaxed font-medium">
+                    Onze focus ligt voornamelijk op professionele garages en industrie. Voor gepassioneerde hobbyisten bekijken we graag de mogelijkheden.
                   </p>
                 </div>
               </div>
-            </div>
+            </details>
 
-            <div
-              class="group bg-white p-6 shadow-md border border-transparent border-l-4 border-l-tool-red hover:border-tool-red hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-            >
-              <div class="flex items-start gap-4">
-                <div
-                  class="flex-shrink-0 w-10 h-10 bg-gray-100 text-gray-500 rounded-full flex items-center justify-center font-bold text-lg group-hover:bg-tool-red group-hover:text-white transition-colors duration-300"
-                >
-                  Q
-                </div>
-                <div>
-                  <h3
-                    class="font-bold text-lg text-gray-900 mb-2 group-hover:text-tool-red transition-colors"
-                  >
+            <!-- FAQ 2 -->
+            <details class="faq-details group bg-white border border-slate-200 rounded-[1.5rem] shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 overflow-hidden min-h-[80px]">
+              <summary class="flex items-center justify-between p-4 md:p-6 cursor-pointer list-none min-h-[60px]">
+                <div class="flex items-center gap-3 md:gap-4">
+                  <span class="text-3xl md:text-4xl font-black text-slate-400 teko-font group-hover:text-tool-red transition-colors duration-500">02</span>
+                  <h3 class="text-xl font-bold text-black uppercase italic teko-font tracking-wide">
                     Hoe werkt de garantie?
                   </h3>
-                  <p class="text-gray-600">
-                    Snap-on biedt levenslange garantie op materiaalfouten. Is er
-                    iets stuk? Geef het mee bij mijn volgende bezoek en wij
-                    regelen de vervanging.
+                </div>
+                <div class="w-10 h-10 rounded-full border-2 border-slate-100 flex items-center justify-center group-hover:border-tool-red group-hover:bg-tool-red group-hover:text-white transition-all duration-300 flex-shrink-0">
+                  <svg class="w-5 h-5 transform transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </summary>
+              <div class="faq-content">
+                <div class="faq-content-inner px-4 pb-4 md:px-6 md:pb-6 ml-10 md:ml-16">
+                  <div class="h-1 w-12 bg-tool-red mb-4"></div>
+                  <p class="text-slate-600 text-md leading-relaxed font-medium">
+                    Snap-on biedt levenslange garantie op materiaalfouten bij handgereedschap. Bij een defect ruilen we het meestal direct om.
                   </p>
                 </div>
               </div>
-            </div>
+            </details>
 
-            <div
-              class="group bg-white p-6 shadow-md border border-transparent border-l-4 border-l-tool-red hover:border-tool-red hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-            >
-              <div class="flex items-start gap-4">
-                <div
-                  class="flex-shrink-0 w-10 h-10 bg-gray-100 text-gray-500 rounded-full flex items-center justify-center font-bold text-lg group-hover:bg-tool-red group-hover:text-white transition-colors duration-300"
-                >
-                  Q
-                </div>
-                <div>
-                  <h3
-                    class="font-bold text-lg text-gray-900 mb-2 group-hover:text-tool-red transition-colors"
-                  >
-                    Wat is uw regio?
+            <!-- FAQ 3 -->
+            <details class="faq-details group bg-white border border-slate-200 rounded-[1.5rem] shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 overflow-hidden min-h-[80px]">
+              <summary class="flex items-center justify-between p-4 md:p-6 cursor-pointer list-none min-h-[60px]">
+                <div class="flex items-center gap-3 md:gap-4">
+                  <span class="text-3xl md:text-4xl font-black text-slate-400 teko-font group-hover:text-tool-red transition-colors duration-500">03</span>
+                  <h3 class="text-xl font-bold text-black uppercase italic teko-font tracking-wide">
+                    Wat is uw werkregio?
                   </h3>
-                  <p class="text-gray-600">
-                    Ik ben actief in de regio Limburg. Twijfelt u of u in mijn
-                    regio valt? Bel of mail even.
+                </div>
+                <div class="w-10 h-10 rounded-full border-2 border-slate-100 flex items-center justify-center group-hover:border-tool-red group-hover:bg-tool-red group-hover:text-white transition-all duration-300 flex-shrink-0">
+                  <svg class="w-5 h-5 transform transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </summary>
+              <div class="faq-content">
+                <div class="faq-content-inner px-4 pb-4 md:px-6 md:pb-6 ml-10 md:ml-16">
+                  <div class="h-1 w-12 bg-tool-red mb-4"></div>
+                  <p class="text-slate-600 text-md leading-relaxed font-medium">
+                    Ik ben actief in de regio Limburg en omstreken. Neem contact op om te zien of ik ook bij jou kan langskomen.
                   </p>
                 </div>
               </div>
-            </div>
+            </details>
 
-            <div
-              class="group bg-white p-6 shadow-md border border-transparent border-l-4 border-l-tool-red hover:border-tool-red hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-            >
-              <div class="flex items-start gap-4">
-                <div
-                  class="flex-shrink-0 w-10 h-10 bg-gray-100 text-gray-500 rounded-full flex items-center justify-center font-bold text-lg group-hover:bg-tool-red group-hover:text-white transition-colors duration-300"
-                >
-                  Q
-                </div>
-                <div>
-                  <h3
-                    class="font-bold text-lg text-gray-900 mb-2 group-hover:text-tool-red transition-colors"
-                  >
-                    Zijn er financieringsopties?
+            <!-- FAQ 4 -->
+            <details class="faq-details group bg-white border border-slate-200 rounded-[1.5rem] shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 overflow-hidden min-h-[80px]">
+              <summary class="flex items-center justify-between p-4 md:p-6 cursor-pointer list-none min-h-[60px]">
+                <div class="flex items-center gap-3 md:gap-4">
+                  <span class="text-3xl md:text-4xl font-black text-slate-400 teko-font group-hover:text-tool-red transition-colors duration-500">04</span>
+                  <h3 class="text-xl font-bold text-black uppercase italic teko-font tracking-wide">
+                    Financieringsopties?
                   </h3>
-                  <p class="text-gray-600">
-                    Jazeker. Voor grotere investeringen (zoals
-                    diagnose-apparatuur of gereedschapswagens) kunnen we spreken
-                    over leasing of Snap-on Credit.
+                </div>
+                <div class="w-10 h-10 rounded-full border-2 border-slate-100 flex items-center justify-center group-hover:border-tool-red group-hover:bg-tool-red group-hover:text-white transition-all duration-300 flex-shrink-0">
+                  <svg class="w-5 h-5 transform transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </div>
+              </summary>
+              <div class="faq-content">
+                <div class="faq-content-inner px-6 pb-6 ml-14 md:ml-16">
+                  <div class="h-1 w-12 bg-tool-red mb-4"></div>
+                  <p class="text-slate-600 text-md leading-relaxed font-medium">
+                    Via Snap-on Credit bieden we diverse leasing- en afbetalingsplannen aan op maat van uw zaak.
                   </p>
                 </div>
               </div>
-            </div>
+            </details>
           </div>
         </div>
       </section>
 
-      <section
-        class="py-24 relative overflow-hidden bg-white border-t border-gray-200"
-      >
-        <div
-          class="absolute -bottom-12 -right-12 text-[15rem] font-black text-slate-900/[0.03] pointer-events-none select-none leading-none font-sans italic z-0 transform rotate-12"
-        >
-          S
+      <section class="relative py-12 md:py-16 overflow-hidden bg-slate-200 cta-clip -mt-16 pt-24 md:pt-32">
+        <!-- Technical Overlays (Mid Version) -->
+        <div class="absolute inset-0 z-0 pointer-events-none">
+          <div class="absolute inset-0 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:24px_24px] opacity-30"></div>
+          <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-red-600/5 rounded-full blur-[100px]"></div>
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-tool-red/5 rounded-full blur-[80px]"></div>
         </div>
 
         <div class="container mx-auto px-4 relative z-10">
-          <div
-            class="flex flex-col md:flex-row items-center justify-between gap-10 text-center md:text-left"
-          >
-            <div class="max-w-2xl">
-              <h2
-                class="text-4xl md:text-5xl font-black uppercase text-slate-900 leading-none mb-4 teko-font"
-              >
-                Klaar voor <span class="text-tool-red">Monsterprestaties?</span>
+          <div class="flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+            <div class="max-w-xl">
+              <h2 class="text-3xl md:text-5xl font-black uppercase text-slate-900 leading-none mb-3 teko-font tracking-tight">
+                KLAAR VOOR <span class="text-tool-red italic block md:inline mt-1 md:mt-0">MONSTERPRESTATIES?</span>
               </h2>
-              <p class="text-slate-600 text-lg font-medium">
-                Mis geen enkele promotie. Download de catalogus of vraag direct
-                een bezoek aan met de mobiele showroom.
+              <div class="h-1 w-16 bg-tool-red mb-3 mx-auto md:mx-0"></div>
+              <p class="text-slate-600 text-md font-medium max-w-lg leading-relaxed">
+                Mis geen enkele promotie. Download de nieuwste catalogus of vraag direct een bezoek aan met de mobiele showroom.
               </p>
             </div>
 
             <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-              <a
-                href="#"
-                class="group flex items-center justify-center bg-tool-red text-white px-8 py-4 font-bold uppercase rounded shadow-lg hover:bg-slate-900 transition-all duration-300 min-w-[200px]"
-              >
-                <span>Catalogus (PDF)</span>
-                <svg
-                  class="w-5 h-5 ml-2 group-hover:translate-y-1 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                  ></path>
+              <a href="#" class="group relative flex items-center justify-center bg-tool-red text-white px-8 py-4 font-black uppercase text-md rounded-xl hover:-translate-y-1 transition-all duration-300 min-w-[220px] overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                <span class="relative z-10">Catalogus (PDF)</span>
+                <svg class="w-5 h-5 ml-2 group-hover:translate-y-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                 </svg>
               </a>
 
-              <a
-                href="/contact"
-                class="flex items-center justify-center bg-slate-100 text-slate-700 border border-slate-200 px-8 py-4 font-bold uppercase rounded hover:bg-white hover:border-tool-red hover:shadow-md transition-all duration-300 min-w-[160px]"
-              >
-                Contact
+              <a href="/contact" class="flex items-center justify-center bg-white text-slate-900 border border-slate-300 px-8 py-4 font-black uppercase text-md rounded-xl shadow-sm hover:shadow-[0_10px_25px_-5px_rgba(0,0,0,0.1)] hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all duration-300 min-w-[180px]">
+                Direct Contact
               </a>
             </div>
           </div>
@@ -527,5 +622,71 @@
     </main>
 
     <load src="src/components/layout/footer.html" />
+    <script>
+      // Ultra-Smooth FAQ Controller using Web Animations API
+      document.querySelectorAll('.faq-details').forEach(details => {
+        const summary = details.querySelector('summary');
+        const content = details.querySelector('.faq-content');
+
+        summary.addEventListener('click', (e) => {
+          e.preventDefault();
+          
+          // Prevent spamming during animation
+          if (details.classList.contains('is-animating')) return;
+
+          if (details.open) {
+            shrink(details, content);
+          } else {
+            // Exclusive: Close others first
+            document.querySelectorAll('.faq-details[open]').forEach(other => {
+              if (other !== details) {
+                shrink(other, other.querySelector('.faq-content'));
+              }
+            });
+            expand(details, content);
+          }
+        });
+      });
+
+      function expand(el, content) {
+        el.classList.add('is-animating');
+        el.open = true;
+        
+        // Calculate height
+        const endHeight = content.scrollHeight + 'px';
+        
+        const animation = content.animate({
+          height: ['0px', endHeight],
+          opacity: [0, 1]
+        }, {
+          duration: 400,
+          easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+        });
+
+        animation.onfinish = () => {
+          el.classList.remove('is-animating');
+        };
+      }
+
+      function shrink(el, content) {
+        el.classList.add('is-animating');
+        
+        // Calculate current height
+        const startHeight = content.scrollHeight + 'px';
+
+        const animation = content.animate({
+          height: [startHeight, '0px'],
+          opacity: [1, 0]
+        }, {
+          duration: 400,
+          easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+        });
+
+        animation.onfinish = () => {
+          el.open = false;
+          el.classList.remove('is-animating');
+        };
+      }
+    </script>
   </body>
 </html>
