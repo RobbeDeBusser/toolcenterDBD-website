@@ -105,20 +105,20 @@ window.addEventListener("load", () => {
     const onScroll = () => {
       if (window.scrollY > 20) {
         mainHeader.classList.add("shadow-xl");
-        mainHeader.style.height = "60px";
+        mainHeader.style.height = "48px";
         headerInner.style.paddingTop = "0";
         headerInner.style.paddingBottom = "0";
-        headerInner.style.height = "60px";
-        headerLogo.style.height = "28px";
-        mainContent.style.paddingTop = "60px";
+        headerInner.style.height = "48px";
+        headerLogo.style.height = "24px";
+        mainContent.style.paddingTop = "48px";
       } else {
         mainHeader.classList.remove("shadow-xl");
-        mainHeader.style.height = "80px";
-        headerInner.style.paddingTop = "1rem";
-        headerInner.style.paddingBottom = "1rem";
-        headerInner.style.height = "80px";
-        headerLogo.style.height = "40px";
-        mainContent.style.paddingTop = "80px";
+        mainHeader.style.height = "56px";
+        headerInner.style.paddingTop = "0.5rem";
+        headerInner.style.paddingBottom = "0.5rem";
+        headerInner.style.height = "56px";
+        headerLogo.style.height = "28px";
+        mainContent.style.paddingTop = "56px";
       }
     };
 

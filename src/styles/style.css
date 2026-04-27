@@ -46,8 +46,8 @@ main {
 }
 
 .back-to-top-btn {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   background-color: rgba(204, 0, 0, 0.9); /* Tool Red */
   color: white;
   border-radius: 9999px;
@@ -73,8 +73,8 @@ main {
   position: absolute;
   top: -4px;
   left: -4px;
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   transform: rotate(-90deg);
   pointer-events: none;
 }
@@ -88,9 +88,20 @@ main {
 }
 
 .back-to-top-container:hover #btt-progress-bar {
-  stroke: rgba(204, 0, 0, 0.9);
+  stroke: rgba(0, 0, 0, 0.1);
 }
 
 .back-to-top-progress .progress-bg {
-  stroke: rgba(0, 0, 0, 0.1);
+  stroke: rgba(204, 0, 0, 0.9);
 }
+
+ .carbon-bg {
+        background:
+          radial-gradient(black 15%, transparent 16%) 0 0,
+          radial-gradient(black 15%, transparent 16%) 8px 8px,
+          radial-gradient(rgba(255,255,255,.04) 15%, transparent 20%) 0 1px,
+          radial-gradient(rgba(255,255,255,.04) 15%, transparent 20%) 8px 9px;
+        background-color: #0f172a;
+        background-size: 16px 16px;
+        background-attachment: fixed;
+      }

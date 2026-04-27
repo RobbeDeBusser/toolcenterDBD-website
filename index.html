@@ -14,16 +14,7 @@
       .cta-clip {
         clip-path: polygon(0 8%, 10% 0, 90% 0, 100% 8%, 100% 100%, 0 100%);
       }
-      .carbon-bg {
-        background:
-          radial-gradient(black 15%, transparent 16%) 0 0,
-          radial-gradient(black 15%, transparent 16%) 8px 8px,
-          radial-gradient(rgba(255,255,255,.04) 15%, transparent 20%) 0 1px,
-          radial-gradient(rgba(255,255,255,.04) 15%, transparent 20%) 8px 9px;
-        background-color: #0f172a;
-        background-size: 16px 16px;
-        background-attachment: fixed;
-      }
+
       @keyframes truckDrive {
         0% { left: -50px; opacity: 0; }
         5% { opacity: 1; }
@@ -112,26 +103,26 @@
     <load src="src/components/layout/header.html" />
 
 
-    <main class="flex-grow pt-20">
+    <main class="flex-grow pt-14">
       <section
-        class="relative min-h-[90vh] md:min-h-[70vh] py-16 md:py-12 flex items-center justify-center overflow-hidden hero-clip carbon-bg "
+        class="relative min-h-[80vh] md:min-h-[60vh] py-12 md:py-8 flex items-center justify-center overflow-hidden hero-clip carbon-bg "
       >
         <div class="absolute inset-0 z-0 pointer-events-none">
-          <div class="absolute top-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-red-600/10 rounded-full blur-[80px] md:blur-[120px]"></div>
-          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] md:w-[800px] h-[200px] md:h-[400px] bg-tool-red/10 rounded-full blur-[60px] md:blur-[100px]"></div>
+          <div class="absolute top-0 right-0 w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-red-600/10 rounded-full blur-[70px] md:blur-[100px]"></div>
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[350px] md:w-[700px] h-[150px] md:h-[300px] bg-tool-red/10 rounded-full blur-[50px] md:blur-[80px]"></div>
           <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]"></div>
         </div>
 
         <div
-          class="container mx-auto px-4 relative z-10 flex flex-col items-center text-center mt-8 md:-mt-12 pb-16 md:pb-0"
+          class="container mx-auto px-4 relative z-10 flex flex-col items-center text-center mt-4 md:-mt-8 pb-12 md:pb-0"
         >
           <div
-            class="inline-block bg-tool-red text-white px-4 md:px-5 py-2 font-bold text-xs md:text-sm tracking-[0.2em] mb-4 md:mb-6 uppercase transform -skew-x-12 shadow-[0_0_15px_rgba(204,0,0,0.4)] border border-red-500/50"
+            class="inline-block bg-tool-red text-white px-3 md:px-4 py-1.5 font-bold text-[10px] md:text-xs tracking-[0.2em] mb-3 md:mb-5 uppercase transform -skew-x-12 shadow-[0_0_15px_rgba(204,0,0,0.4)] border border-red-500/50"
           >
             Official Snap-on Dealer
           </div>
           <h1
-            class="text-5xl sm:text-6xl md:text-8xl font-bold text-white leading-[0.9] mb-4 md:mb-6 uppercase drop-shadow-2xl teko-font max-w-4xl mx-auto"
+            class="text-3xl sm:text-4xl md:text-6xl font-bold text-white leading-[0.9] mb-3 md:mb-5 uppercase drop-shadow-2xl teko-font max-w-4xl mx-auto"
           >
             PREMIUM <br />
             <span
@@ -142,22 +133,22 @@
           </h1>
 
           <p
-            class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 md:mb-10 max-w-2xl font-light drop-shadow-md mx-auto"
+            class="text-sm sm:text-base md:text-lg text-gray-300 mb-6 md:mb-8 max-w-2xl font-light drop-shadow-md mx-auto"
           >
             Kwaliteit waar u op kunt bouwen. Wij brengen de werkplaats naar u
             toe met de beste service in regio Limburg.
           </p>
 
-          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center w-full max-w-sm sm:max-w-none mx-auto">
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-5 justify-center w-full max-w-sm sm:max-w-none mx-auto">
             <a
               href="/contact"
-              class="bg-tool-red text-white px-8 md:px-10 py-4 font-bold uppercase tracking-wider hover:bg-white hover:text-tool-red transition-all transform hover:-translate-y-1 text-center w-full sm:w-auto"
+              class="bg-tool-red text-white px-6 md:px-8 py-3 font-bold uppercase tracking-wider hover:bg-white hover:text-tool-red transition-all transform hover:-translate-y-1 text-center w-full sm:w-auto"
             >
               Maak Afspraak
             </a>
             <a
               href="#services"
-              class="border border-gray-400 text-white px-8 md:px-10 py-4 font-bold uppercase tracking-wider hover:border-white hover:bg-white hover:text-black transition-all transform hover:-translate-y-1 text-center backdrop-blur-sm bg-black/20 w-full sm:w-auto"
+              class="border border-gray-400 text-white px-6 md:px-8 py-3 font-bold uppercase tracking-wider hover:border-white hover:bg-white hover:text-black transition-all transform hover:-translate-y-1 text-center backdrop-blur-sm bg-black/20 w-full sm:w-auto"
             >
               Bekijk Aanbod
             </a>
@@ -167,7 +158,7 @@
 
       <section
         id="services"
-        class="relative py-20 bg-slate-100 overflow-hidden -mt-20 pt-32"
+        class="relative py-16 bg-slate-100 overflow-hidden -mt-12 pt-24"
       >
         <div class="absolute top-[40%] left-1/4 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(255,255,255,0.9)_0%,rgba(241,245,249,0)_70%)] z-0 pointer-events-none"></div>
         <div class="absolute inset-0 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:24px_24px] opacity-35 z-0"></div>
@@ -282,12 +273,12 @@
               </span>
 
               <h2
-                class="text-3xl md:text-5xl font-black uppercase mb-6 text-gray-900 leading-none"
+                class="text-2xl md:text-4xl font-black uppercase mb-4 text-gray-900 leading-none"
               >
                 MEER DAN ALLEEN GEREEDSCHAP<span class="text-tool-red">.</span>
               </h2>
 
-              <p class="mb-6 text-gray-700 leading-relaxed text-lg">
+              <p class="mb-4 text-gray-700 leading-relaxed text-base">
                 Voor onze producten werken wij samen met een vaste leverancier,
                 <span class="font-bold">Snap-on</span>. Met deze duurzame en
                 ijzersterke producten garanderen wij u monsterprestaties!
@@ -369,13 +360,13 @@
       </section>
 
       <section
-        class="relative py-24 bg-white overflow-hidden border-t-[1px] border-slate-200 z-10 shadow-[0_-10px_30px_rgba(0,0,0,0.03)]"
+        class="relative py-16 bg-white overflow-hidden border-t-[1px] border-slate-200 z-10 shadow-[0_-10px_30px_rgba(0,0,0,0.03)]"
       >
         <div class="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:32px_32px] opacity-20 z-0"></div>
 
         <div class="container mx-auto px-4 relative z-10">
           <div class="text-center mb-20">
-            <h2 class="text-4xl md:text-6xl font-black uppercase text-gray-900 teko-font tracking-tight">
+            <h2 class="text-2xl md:text-4xl font-black uppercase text-gray-900 teko-font tracking-tight">
               Van Advies tot <span class="text-tool-red">Werkplaats</span>
             </h2>
             <div class="h-2 w-32 bg-tool-red mx-auto mt-2"></div>
@@ -402,7 +393,7 @@
                   </div>
                 </div>
                 
-                <div class="bg-white p-10 rounded-[2rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-center group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden">
+                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-center group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden">
                   <div class="absolute top-0 left-0 w-full h-2 bg-slate-200 group-hover:bg-tool-red transition-colors animate-bar-1"></div>
                   <h3 class="text-3xl font-bold text-gray-900 mb-6 uppercase italic teko-font tracking-wide">Contact & Analyse</h3>
                   <p class="text-gray-600 leading-relaxed font-medium">
@@ -422,7 +413,7 @@
                   </div>
                 </div>
 
-                <div class="bg-white p-10 rounded-[2rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-center group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden">
+                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-center group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden">
                   <div class="absolute top-0 left-0 w-full h-2 bg-slate-200 group-hover:bg-tool-red transition-colors animate-bar-2"></div>
                   <h3 class="text-3xl font-bold text-gray-900 mb-6 uppercase italic teko-font tracking-wide">Mobiele Showroom</h3>
                   <p class="text-gray-600 leading-relaxed font-medium">
@@ -441,7 +432,7 @@
                   </div>
                 </div>
 
-                <div class="bg-white p-10 rounded-[2rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-center group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden">
+                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-center group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden">
                   <div class="absolute top-0 left-0 w-full h-2 bg-slate-200 group-hover:bg-tool-red transition-colors animate-bar-3"></div>
                   <h3 class="text-3xl font-bold text-gray-900 mb-6 uppercase italic teko-font tracking-wide">Service & Garantie</h3>
                   <p class="text-gray-600 leading-relaxed font-medium">
@@ -466,7 +457,7 @@
 
         <div class="container mx-auto px-4 max-w-7xl relative z-10">
           <div class="text-center mb-16">
-            <h2 class="text-5xl md:text-7xl font-black uppercase text-slate-900 teko-font leading-none mb-4 tracking-tight">
+            <h2 class="text-4xl md:text-6xl font-black uppercase text-slate-900 teko-font leading-none mb-4 tracking-tight">
               Veelgestelde <span class="text-tool-red">Vragen</span>
             </h2>
             
@@ -514,7 +505,7 @@
               <div class="faq-content">
                 <div class="faq-content-inner px-4 pb-4 md:px-6 md:pb-6 ml-10 md:ml-16">
                   <div class="h-1 w-12 bg-tool-red mb-4"></div>
-                  <p class="text-slate-600 text-md leading-relaxed font-medium">
+                  <p class="text-slate-600 text-sm leading-relaxed font-medium">
                     Snap-on biedt levenslange garantie op materiaalfouten bij handgereedschap. Bij een defect ruilen we het meestal direct om.
                   </p>
                 </div>
@@ -538,7 +529,7 @@
               <div class="faq-content">
                 <div class="faq-content-inner px-4 pb-4 md:px-6 md:pb-6 ml-10 md:ml-16">
                   <div class="h-1 w-12 bg-tool-red mb-4"></div>
-                  <p class="text-slate-600 text-md leading-relaxed font-medium">
+                  <p class="text-slate-600 text-sm leading-relaxed font-medium">
                     Ik ben actief in de regio Limburg en omstreken. Neem contact op om te zien of ik ook bij jou kan langskomen.
                   </p>
                 </div>
@@ -562,7 +553,7 @@
               <div class="faq-content">
                 <div class="faq-content-inner px-6 pb-6 ml-14 md:ml-16">
                   <div class="h-1 w-12 bg-tool-red mb-4"></div>
-                  <p class="text-slate-600 text-md leading-relaxed font-medium">
+                  <p class="text-slate-600 text-sm leading-relaxed font-medium">
                     Via Snap-on Credit bieden we diverse leasing- en afbetalingsplannen aan op maat van uw zaak.
                   </p>
                 </div>
@@ -582,25 +573,25 @@
         <div class="container mx-auto px-4 relative z-10">
           <div class="flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
             <div class="max-w-xl">
-              <h2 class="text-3xl md:text-5xl font-black uppercase text-slate-900 leading-none mb-3 teko-font tracking-tight">
+              <h2 class="text-2xl md:text-4xl font-black uppercase text-slate-900 leading-none mb-3 teko-font tracking-tight">
                 KLAAR VOOR <span class="text-tool-red italic block md:inline mt-1 md:mt-0">MONSTERPRESTATIES?</span>
               </h2>
               <div class="h-1 w-16 bg-tool-red mb-3 mx-auto md:mx-0"></div>
-              <p class="text-slate-600 text-md font-medium max-w-lg leading-relaxed">
+              <p class="text-slate-600 text-sm font-medium max-w-lg leading-relaxed">
                 Mis geen enkele promotie. Download de nieuwste catalogus of vraag direct een bezoek aan met de mobiele showroom.
               </p>
             </div>
 
             <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-              <a href="#" class="group relative flex items-center justify-center bg-tool-red text-white px-8 py-4 font-black uppercase text-md rounded-xl hover:-translate-y-1 transition-all duration-300 min-w-[220px] overflow-hidden">
+              <a href="/catalogus" class="group relative flex items-center justify-center bg-tool-red text-white px-8 py-3 font-black uppercase text-sm rounded-xl hover:-translate-y-1 transition-all duration-300 min-w-[220px] overflow-hidden">
                 <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                <span class="relative z-10">Catalogus (PDF)</span>
-                <svg class="w-5 h-5 ml-2 group-hover:translate-y-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                <span class="relative z-10">Catalogus</span>
+                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                 </svg>
               </a>
 
-              <a href="/contact" class="flex items-center justify-center bg-white text-slate-900 border border-slate-300 px-8 py-4 font-black uppercase text-md rounded-xl shadow-sm hover:shadow-[0_10px_25px_-5px_rgba(0,0,0,0.1)] hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all duration-300 min-w-[180px]">
+              <a href="/contact" class="flex items-center justify-center bg-white text-slate-900 border border-slate-300 px-8 py-3 font-black uppercase text-sm rounded-xl shadow-sm hover:shadow-[0_10px_25px_-5px_rgba(0,0,0,0.1)] hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all duration-300 min-w-[180px]">
                 Contacteer Mij
               </a>
             </div>
