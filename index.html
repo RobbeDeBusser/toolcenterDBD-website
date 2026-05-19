@@ -15,6 +15,7 @@
         clip-path: polygon(0 8%, 10% 0, 90% 0, 100% 8%, 100% 100%, 0 100%);
       }
 
+      /* Truck Animation */
       @keyframes truckDrive {
         0% { left: -50px; opacity: 0; }
         5% { opacity: 1; }
@@ -29,52 +30,118 @@
         z-index: 10;
       }
 
+      /* Subtle Step Cards Animation - Scale-free to prevent blurriness */
+      @keyframes floatPulse1 {
+        0%, 10%, 24%, 100% { 
+          transform: translate3d(0, 0, 0);
+        }
+        17% { 
+          transform: translate3d(0, -8px, 0);
+        }
+      }
       @keyframes cardPulse1 {
-        0%, 12%, 22%, 100% { transform: translateY(0); }
-        17% { transform: translateY(-12px); }
+        0%, 10%, 24%, 100% { 
+          border-color: rgba(241, 245, 249, 1);
+        }
+        17% { 
+          border-color: rgba(204, 0, 0, 0.3);
+        }
       }
       @keyframes barPulse1 {
-        0%, 12%, 22%, 100% { background-color: #e2e8f0; }
-        17% { background-color: #cc0000; }
+        0%, 10%, 24%, 100% { height: 4px; background-color: #cbd5e1; }
+        17% { height: 4px; background-color: #cc0000; }
       }
       @keyframes iconPulse1 {
-        0%, 12%, 22%, 100% { background-color: transparent; transform: scale(1) rotate(3deg); }
-        17% { background-color: #cc0000; transform: scale(1.1) rotate(0deg); }
+        0%, 10%, 24%, 100% { 
+          transform: scale(1) rotate(3deg);
+        }
+        17% { 
+          transform: scale(1.05) rotate(0deg);
+        }
+      }
+
+      @keyframes floatPulse2 {
+        0%, 43%, 57%, 100% { 
+          transform: translate3d(0, 0, 0);
+        }
+        50% { 
+          transform: translate3d(0, -8px, 0);
+        }
       }
       @keyframes cardPulse2 {
-        0%, 45%, 55%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-12px); }
+        0%, 43%, 57%, 100% { 
+          border-color: rgba(241, 245, 249, 1);
+        }
+        50% { 
+          border-color: rgba(204, 0, 0, 0.3);
+        }
       }
       @keyframes barPulse2 {
-        0%, 45%, 55%, 100% { background-color: #e2e8f0; }
-        50% { background-color: #cc0000; }
+        0%, 43%, 57%, 100% { height: 4px; background-color: #cbd5e1; }
+        50% { height: 4px; background-color: #cc0000; }
       }
       @keyframes iconPulse2 {
-        0%, 45%, 55%, 100% { background-color: transparent; transform: scale(1) rotate(-3deg); }
-        50% { background-color: #cc0000; transform: scale(1.1) rotate(0deg); }
+        0%, 43%, 57%, 100% { 
+          transform: scale(1) rotate(-3deg);
+        }
+        50% { 
+          transform: scale(1.05) rotate(0deg);
+        }
+      }
+
+      @keyframes floatPulse3 {
+        0%, 76%, 90%, 100% { 
+          transform: translate3d(0, 0, 0);
+        }
+        83% { 
+          transform: translate3d(0, -8px, 0);
+        }
       }
       @keyframes cardPulse3 {
-        0%, 78%, 88%, 100% { transform: translateY(0); }
-        83% { transform: translateY(-12px); }
+        0%, 76%, 90%, 100% { 
+          border-color: rgba(241, 245, 249, 1);
+        }
+        83% { 
+          border-color: rgba(204, 0, 0, 0.3);
+        }
       }
       @keyframes barPulse3 {
-        0%, 78%, 88%, 100% { background-color: #e2e8f0; }
-        83% { background-color: #cc0000; }
+        0%, 76%, 90%, 100% { height: 4px; background-color: #cbd5e1; }
+        83% { height: 4px; background-color: #cc0000; }
       }
       @keyframes iconPulse3 {
-        0%, 78%, 88%, 100% { background-color: transparent; transform: scale(1) rotate(3deg); }
-        83% { background-color: #cc0000; transform: scale(1.1) rotate(0deg); }
+        0%, 76%, 90%, 100% { 
+          transform: scale(1) rotate(3deg);
+        }
+        83% { 
+          transform: scale(1.05) rotate(0deg);
+        }
       }
+
+      /* Hardware acceleration and rendering stability for text */
+      .animate-float-1,
+      .animate-float-2,
+      .animate-float-3 {
+        will-change: transform;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+      }
+
+      .animate-float-1 { animation: floatPulse1 24s linear infinite; }
       .animate-step-1 { animation: cardPulse1 24s linear infinite; }
       .animate-bar-1 { animation: barPulse1 24s linear infinite; }
       .animate-icon-1 { animation: iconPulse1 24s linear infinite; }
+      .animate-float-2 { animation: floatPulse2 24s linear infinite; }
       .animate-step-2 { animation: cardPulse2 24s linear infinite; }
       .animate-bar-2 { animation: barPulse2 24s linear infinite; }
       .animate-icon-2 { animation: iconPulse2 24s linear infinite; }
+      .animate-float-3 { animation: floatPulse3 24s linear infinite; }
       .animate-step-3 { animation: cardPulse3 24s linear infinite; }
       .animate-bar-3 { animation: barPulse3 24s linear infinite; }
       .animate-icon-3 { animation: iconPulse3 24s linear infinite; }
-      
+
       .faq-details[open] summary svg {
         transform: rotate(180deg);
       }
@@ -139,142 +206,184 @@
             toe met de beste service in regio Limburg.
           </p>
 
-          <div class="flex flex-col sm:flex-row gap-3 sm:gap-5 justify-center w-full max-w-sm sm:max-w-none mx-auto">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center w-full max-w-sm sm:max-w-none mx-auto">
             <a
               href="/contact"
-              class="bg-tool-red text-white px-6 md:px-8 py-3 font-bold uppercase tracking-wider hover:bg-white hover:text-tool-red transition-all transform hover:-translate-y-1 text-center w-full sm:w-auto"
+              class="group relative top-0 hover:-top-1 transition-all duration-300 inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wider text-sm text-center w-full sm:w-auto"
             >
-              Maak Afspraak
+              <!-- Skewed background shape -->
+              <div class="absolute inset-0 bg-tool-red transform -skew-x-12 group-hover:bg-white transition-colors duration-300 shadow-[0_0_15px_rgba(204,0,0,0.3)] group-hover:shadow-[0_0_25px_rgba(204,0,0,0.6)] rounded-sm"></div>
+              
+              <!-- Sliding white shine glint contained within skewed shape -->
+              <div class="absolute inset-0 overflow-hidden transform -skew-x-12 rounded-sm pointer-events-none z-0">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+              </div>
+              
+              <!-- Upright, native and perfectly crisp text -->
+              <span class="relative z-10 text-white group-hover:text-tool-red transition-colors duration-300">Maak Afspraak</span>
             </a>
             <a
               href="#services"
-              class="border border-gray-400 text-white px-6 md:px-8 py-3 font-bold uppercase tracking-wider hover:border-white hover:bg-white hover:text-black transition-all transform hover:-translate-y-1 text-center backdrop-blur-sm bg-black/20 w-full sm:w-auto"
+              class="group relative top-0 hover:-top-1 transition-all duration-300 inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wider text-sm text-center w-full sm:w-auto"
             >
-              Bekijk Aanbod
+              <!-- Skewed border/background shape -->
+              <div class="absolute inset-0 border border-gray-400 bg-black/20 backdrop-blur-sm transform -skew-x-12 group-hover:border-white group-hover:bg-white transition-all duration-300 rounded-sm"></div>
+              
+              <!-- Sliding white shine glint contained within skewed shape -->
+              <div class="absolute inset-0 overflow-hidden transform -skew-x-12 rounded-sm pointer-events-none z-0">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+              </div>
+              
+              <span class="relative z-10 text-white group-hover:text-black transition-colors duration-300">Bekijk Aanbod</span>
             </a>
           </div>
         </div>
       </section>
-
-      <section
+      <section
         id="services"
-        class="relative py-16 bg-slate-100 overflow-hidden -mt-12 pt-24"
+        class="relative py-24 bg-slate-100 overflow-hidden -mt-12 pt-28 md:pt-32"
       >
         <div class="absolute top-[40%] left-1/4 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(255,255,255,0.9)_0%,rgba(241,245,249,0)_70%)] z-0 pointer-events-none"></div>
         <div class="absolute inset-0 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:24px_24px] opacity-35 z-0"></div>
         
-        <!-- Decorative Side Images for empty space -->
-        <div class="hidden xl:flex absolute left-[-2%] top-[40%] -translate-y-1/2 w-[25%] max-w-[350px] items-center justify-center pointer-events-none z-0">
-          <img src="/images/gereedschapskist.png" alt="Gereedschapswagens" class="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.15)] transform -scale-x-100 opacity-90" />
-        </div>
+        <!-- Decorative Grid Layout matching Subpages -->
+        <div class="container mx-auto px-4 max-w-6xl relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-16 relative -mt-8">
+            <div class="flex flex-col justify-center">
+              <span class="inline-block py-1 px-3 bg-black text-white text-xs font-bold uppercase tracking-widest mb-4 rounded w-max">
+                Official Snap-On Dealer
+              </span>
+              <h2 class="text-3xl md:text-4xl lg:text-5xl font-black uppercase text-slate-900 teko-font mb-4 leading-none">
+                MEER DAN ALLEEN GEREEDSCHAP<span class="text-tool-red">.</span>
+              </h2>
+              
+              <p class="text-gray-800 leading-relaxed font-medium mb-4 text-lg">
+                Voor onze producten werken wij primair samen met
+                <span class="font-black text-black">Snap-on</span>. Met deze duurzame en
+                ijzersterke producten garanderen wij u monsterprestaties!
+                Dankzij het gespecialiseerde assortiment van
+                <span class="font-black text-black">Wallmek</span> bieden wij ook de meest geavanceerde speciaalgereedschappen aan.
+              </p>
+              
+              <p class="text-gray-600 leading-relaxed font-medium mb-8 text-base">
+                Wij staan u ook graag bij met raad en advies. Dankzij onze
+                opleiding en constante bijscholing zijn wij steeds op de hoogte
+                van de nieuwste technieken en innovaties. Zo garanderen we u
+                niet alleen
+                <span class="text-tool-red font-bold">kwaliteitsvolle producten</span>, maar ook een kwaliteitsvolle service. U kan ons altijd
+                bereiken om een
+                <a href="/contact" class="text-tool-red font-bold hover:underline">afspraak</a>
+                te maken.
+              </p>
 
-        <div class="hidden xl:flex absolute right-[-2%] top-[60%] -translate-y-1/2 w-[25%] max-w-[350px] items-center justify-center pointer-events-none z-0">
-          <img src="/images/Snap-on-Power-Tools.webp" alt="Power Tools" class="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.15)] opacity-90" />
-        </div>
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-center text-gray-700 font-medium">
+                  <span class="w-6 h-6 bg-tool-red text-white rounded-full flex items-center justify-center mr-3 text-xs font-bold shadow-sm">✓</span>
+                  De Beste Garantie
+                </li>
+                <li class="flex items-center text-gray-700 font-medium">
+                  <span class="w-6 h-6 bg-tool-red text-white rounded-full flex items-center justify-center mr-3 text-xs font-bold shadow-sm">✓</span>
+                  Innovatieve Technologie
+                </li>
+                <li class="flex items-center text-gray-700 font-medium">
+                  <span class="w-6 h-6 bg-tool-red text-white rounded-full flex items-center justify-center mr-3 text-xs font-bold shadow-sm">✓</span>
+                  Directe Service aan de deur
+                </li>
+              </ul>
 
-        <div class="container mx-auto px-4 relative z-10">
-          <div class="max-w-4xl mx-auto text-center relative -mt-8 mb-16">
-            <span class="inline-block py-1 px-3 bg-black text-white text-xs font-bold uppercase tracking-widest mb-4 rounded">
-              Official Snap-On Dealer
-            </span>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <a href="/contact" class="group relative top-0 hover:-top-1 transition-all duration-300 inline-flex items-center justify-center px-10 py-4 font-bold uppercase tracking-wider text-sm w-full sm:w-max">
+                  <!-- Skewed background shape -->
+                  <div class="absolute inset-0 bg-tool-red transform -skew-x-12 group-hover:bg-slate-900 transition-all duration-300 shadow-[0_5px_15px_rgba(204,0,0,0.3)] group-hover:shadow-[0_8px_25px_rgba(204,0,0,0.5)]"></div>
+                  
+                  <!-- Sliding white shine glint contained within skewed shape -->
+                  <div class="absolute inset-0 overflow-hidden transform -skew-x-12 pointer-events-none z-0">
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+                  </div>
+                  
+                  <!-- Upright, perfectly crisp text -->
+                  <span class="relative z-10 text-white inline-flex items-center justify-center w-full">
+                    Maak een afspraak
+                    <svg class="w-5 h-5 ml-2 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
 
-            <h2 class="text-3xl md:text-5xl font-black uppercase mb-6 text-gray-900 leading-none teko-font tracking-tight">
-              MEER DAN ALLEEN GEREEDSCHAP<span class="text-tool-red">.</span>
-            </h2>
+            <!-- Modern Transparent Product Collage -->
+            <div class="hidden lg:flex relative group h-[500px] w-full items-center justify-center">
+              <!-- Extremely subtle, near-invisible red radial background glow -->
+              <div class="absolute w-[75%] h-[75%] bg-red-500 opacity-5 rounded-full blur-3xl pointer-events-none select-none z-0"></div>
 
-            <p class="mb-6 text-gray-700 leading-relaxed text-base md:text-lg">
-              Voor onze producten werken wij primair samen met
-              <span class="font-bold">Snap-on</span>. Met deze duurzame en
-              ijzersterke producten garanderen wij u monsterprestaties!
-              Daarnaast bieden wij ook het gespecialiseerde assortiment van
-              <span class="font-bold">Wallmek</span> aan.
-            </p>
-
-            <p class="mb-8 text-gray-700 leading-relaxed text-base md:text-lg">
-              Wij staan u ook graag bij met raad en advies. Dankzij onze
-              opleiding en constante bijscholing zijn wij steeds op de hoogte
-              van de nieuwste technieken en innovaties. Zo garanderen we u
-              niet alleen
-              <span class="text-tool-red font-bold">kwaliteitsvolle producten</span>, maar ook een kwaliteitsvolle service. U kan ons altijd
-              bereiken voor een
-              <a href="/contact" class="text-tool-red font-bold hover:underline">afspraak</a>
-              te maken.
-            </p>
-
-            <p class="mb-10 text-gray-600 text-lg md:text-xl font-medium italic">
-              "Wij leveren niet alleen gereedschap, maar ook oplossingen."
-            </p>
-
-            <ul class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-10">
-              <li class="flex items-center">
-                <span class="w-6 h-6 bg-tool-red text-white rounded-full flex items-center justify-center mr-2 text-xs font-bold">✓</span>
-                <span class="font-bold text-gray-800">De Beste garantie</span>
-              </li>
-              <li class="flex items-center">
-                <span class="w-6 h-6 bg-tool-red text-white rounded-full flex items-center justify-center mr-2 text-xs font-bold">✓</span>
-                <span class="font-bold text-gray-800">Innovatieve Technologie</span>
-              </li>
-              <li class="flex items-center">
-                <span class="w-6 h-6 bg-tool-red text-white rounded-full flex items-center justify-center mr-2 text-xs font-bold">✓</span>
-                <span class="font-bold text-gray-800">Directe Service aan de deur</span>
-              </li>
-            </ul>
-
-            <a href="/contact" class="inline-flex items-center bg-tool-red text-white px-8 py-4 font-bold uppercase tracking-wide hover:bg-black transition duration-300 shadow-lg transform hover:-translate-y-1 rounded-xl">
-              Maak een afspraak
-              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </a>
+              <!-- Red Snap-on tool wagon in the background, slightly rotated -->
+              <img 
+                src="/images/gereedschapskist.png" 
+                alt="Snap-on Gereedschapswagen" 
+                class="absolute w-[75%] max-w-[320px] lg:max-w-[380px] object-contain z-10 transform -rotate-[10deg] -translate-x-12 translate-y-4 pointer-events-none select-none drop-shadow-[0_15px_30px_rgba(0,0,0,0.15)] transition-all duration-700 group-hover:-rotate-[6deg] group-hover:scale-105" 
+                loading="lazy" 
+                decoding="async" 
+              />
+              
+              <!-- Snap-on powertool overlapping in the foreground -->
+              <img 
+                src="/images/Snap-on-Power-Tools.webp" 
+                alt="Snap-on Power Tools" 
+                class="absolute w-[55%] max-w-[200px] lg:max-w-[240px] object-contain z-20 transform rotate-[8deg] translate-x-16 -translate-y-8 pointer-events-none select-none drop-shadow-[0_25px_45px_rgba(0,0,0,0.22)] transition-all duration-700 group-hover:rotate-[4deg] group-hover:scale-110" 
+                loading="lazy" 
+                decoding="async" 
+              />
+            </div>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 max-w-5xl mx-auto">
-            <a href="/handtools" class="group flex items-center p-3 md:p-4 bg-white border border-slate-200 rounded-xl hover:border-tool-red hover:shadow-md transition-all duration-300">
-              <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mr-3 md:mr-4 group-hover:bg-red-50 transition-colors">
-                <svg class="w-6 h-6 text-slate-400 group-hover:text-tool-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-5 max-w-5xl mx-auto mt-16 md:mt-20">
+            <a href="/handtools" class="group flex items-center p-3 bg-white/70 backdrop-blur-md border border-slate-200/80 rounded-2xl shadow-sm hover:bg-white hover:border-tool-red/80 hover:shadow-[0_20px_45px_-15px_rgba(204,0,0,0.15)] transition-all duration-500 hover:-translate-y-1">
+              <div class="w-9 h-9 bg-slate-100/90 rounded-xl flex items-center justify-center mr-3 group-hover:bg-tool-red transition-all duration-500 group-hover:scale-110 shadow-inner group-hover:shadow-[0_0_15px_rgba(204,0,0,0.3)] flex-shrink-0">
+                <svg class="w-5 h-5 text-slate-500 group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
               </div>
-              <span class="font-bold text-slate-800 uppercase italic teko-font text-xl tracking-wide group-hover:text-tool-red transition-colors mt-1">Handtools</span>
-              <svg class="ml-auto w-5 h-5 text-slate-300 group-hover:text-tool-red group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              <span class="font-extrabold text-slate-900 uppercase italic teko-font text-xl tracking-wider group-hover:text-tool-red transition-colors duration-300 mt-0.5">Handtools</span>
+              <svg class="ml-auto w-5 h-5 text-slate-300 group-hover:text-tool-red group-hover:translate-x-2 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
             </a>
 
-            <a href="/powertools" class="group flex items-center p-3 md:p-4 bg-white border border-slate-200 rounded-xl hover:border-tool-red hover:shadow-md transition-all duration-300">
-              <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mr-3 md:mr-4 group-hover:bg-red-50 transition-colors">
-                <svg class="w-6 h-6 text-slate-400 group-hover:text-tool-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            <a href="/powertools" class="group flex items-center p-3 bg-white/70 backdrop-blur-md border border-slate-200/80 rounded-2xl shadow-sm hover:bg-white hover:border-tool-red/80 hover:shadow-[0_20px_45px_-15px_rgba(204,0,0,0.15)] transition-all duration-500 hover:-translate-y-1">
+              <div class="w-9 h-9 bg-slate-100/90 rounded-xl flex items-center justify-center mr-3 group-hover:bg-tool-red transition-all duration-500 group-hover:scale-110 shadow-inner group-hover:shadow-[0_0_15px_rgba(204,0,0,0.3)] flex-shrink-0">
+                <svg class="w-5 h-5 text-slate-500 group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
               </div>
-              <span class="font-bold text-slate-800 uppercase italic teko-font text-xl tracking-wide group-hover:text-tool-red transition-colors mt-1">Power Tools</span>
-              <svg class="ml-auto w-5 h-5 text-slate-300 group-hover:text-tool-red group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              <span class="font-extrabold text-slate-900 uppercase italic teko-font text-xl tracking-wider group-hover:text-tool-red transition-colors duration-300 mt-0.5">Power Tools</span>
+              <svg class="ml-auto w-5 h-5 text-slate-300 group-hover:text-tool-red group-hover:translate-x-2 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
             </a>
 
-            <a href="/diagnose" class="group flex items-center p-3 md:p-4 bg-white border border-slate-200 rounded-xl hover:border-tool-red hover:shadow-md transition-all duration-300">
-              <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mr-3 md:mr-4 group-hover:bg-red-50 transition-colors">
-                <svg class="w-6 h-6 text-slate-400 group-hover:text-tool-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+            <a href="/diagnose" class="group flex items-center p-3 bg-white/70 backdrop-blur-md border border-slate-200/80 rounded-2xl shadow-sm hover:bg-white hover:border-tool-red/80 hover:shadow-[0_20px_45px_-15px_rgba(204,0,0,0.15)] transition-all duration-500 hover:-translate-y-1">
+              <div class="w-9 h-9 bg-slate-100/90 rounded-xl flex items-center justify-center mr-3 group-hover:bg-tool-red transition-all duration-500 group-hover:scale-110 shadow-inner group-hover:shadow-[0_0_15px_rgba(204,0,0,0.3)] flex-shrink-0">
+                <svg class="w-5 h-5 text-slate-500 group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
               </div>
-              <span class="font-bold text-slate-800 uppercase italic teko-font text-xl tracking-wide group-hover:text-tool-red transition-colors mt-1">Diagnose</span>
-              <svg class="ml-auto w-5 h-5 text-slate-300 group-hover:text-tool-red group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              <span class="font-extrabold text-slate-900 uppercase italic teko-font text-xl tracking-wider group-hover:text-tool-red transition-colors duration-300 mt-0.5">Diagnose</span>
+              <svg class="ml-auto w-5 h-5 text-slate-300 group-hover:text-tool-red group-hover:translate-x-2 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
             </a>
 
-            <a href="/specials" class="group flex items-center p-3 md:p-4 bg-white border border-slate-200 rounded-xl hover:border-tool-red hover:shadow-md transition-all duration-300">
-              <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mr-3 md:mr-4 group-hover:bg-red-50 transition-colors">
-                <svg class="w-6 h-6 text-slate-400 group-hover:text-tool-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+            <a href="/specials" class="group flex items-center p-3 bg-white/70 backdrop-blur-md border border-slate-200/80 rounded-2xl shadow-sm hover:bg-white hover:border-tool-red/80 hover:shadow-[0_20px_45px_-15px_rgba(204,0,0,0.15)] transition-all duration-500 hover:-translate-y-1">
+              <div class="w-9 h-9 bg-slate-100/90 rounded-xl flex items-center justify-center mr-3 group-hover:bg-tool-red transition-all duration-500 group-hover:scale-110 shadow-inner group-hover:shadow-[0_0_15px_rgba(204,0,0,0.3)] flex-shrink-0">
+                <svg class="w-5 h-5 text-slate-500 group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
               </div>
-              <span class="font-bold text-slate-800 uppercase italic teko-font text-xl tracking-wide group-hover:text-tool-red transition-colors mt-1">Equipment</span>
-              <svg class="ml-auto w-5 h-5 text-slate-300 group-hover:text-tool-red group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              <span class="font-extrabold text-slate-900 uppercase italic teko-font text-xl tracking-wider group-hover:text-tool-red transition-colors duration-300 mt-0.5">Equipment</span>
+              <svg class="ml-auto w-5 h-5 text-slate-300 group-hover:text-tool-red group-hover:translate-x-2 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
             </a>
 
-            <a href="/gereedschapskisten" class="group flex items-center p-3 md:p-4 bg-white border border-slate-200 rounded-xl hover:border-tool-red hover:shadow-md transition-all duration-300">
-              <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mr-3 md:mr-4 group-hover:bg-red-50 transition-colors">
-                <svg class="w-6 h-6 text-slate-400 group-hover:text-tool-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+            <a href="/gereedschapskisten" class="group flex items-center p-3 bg-white/70 backdrop-blur-md border border-slate-200/80 rounded-2xl shadow-sm hover:bg-white hover:border-tool-red/80 hover:shadow-[0_20px_45px_-15px_rgba(204,0,0,0.15)] transition-all duration-500 hover:-translate-y-1">
+              <div class="w-9 h-9 bg-slate-100/90 rounded-xl flex items-center justify-center mr-3 group-hover:bg-tool-red transition-all duration-500 group-hover:scale-110 shadow-inner group-hover:shadow-[0_0_15px_rgba(204,0,0,0.3)] flex-shrink-0">
+                <svg class="w-5 h-5 text-slate-500 group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
               </div>
-              <span class="font-bold text-slate-800 uppercase italic teko-font text-xl tracking-wide group-hover:text-tool-red transition-colors mt-1">Kisten & Wagens</span>
-              <svg class="ml-auto w-5 h-5 text-slate-300 group-hover:text-tool-red group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              <span class="font-extrabold text-slate-900 uppercase italic teko-font text-xl tracking-wider group-hover:text-tool-red transition-colors duration-300 mt-0.5">Kisten & Wagens</span>
+              <svg class="ml-auto w-5 h-5 text-slate-300 group-hover:text-tool-red group-hover:translate-x-2 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
             </a>
 
-            <a href="/wallmek" class="group flex items-center p-3 md:p-4 bg-white border border-slate-200 rounded-xl hover:border-tool-red hover:shadow-md transition-all duration-300">
-              <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mr-3 md:mr-4 group-hover:bg-red-50 transition-colors">
-                <svg class="w-6 h-6 text-slate-400 group-hover:text-tool-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+            <a href="/wallmek" class="group flex items-center p-3 bg-white/70 backdrop-blur-md border border-slate-200/80 rounded-2xl shadow-sm hover:bg-white hover:border-tool-red/80 hover:shadow-[0_20px_45px_-15px_rgba(204,0,0,0.15)] transition-all duration-500 hover:-translate-y-1">
+              <div class="w-9 h-9 bg-slate-100/90 rounded-xl flex items-center justify-center mr-3 group-hover:bg-tool-red transition-all duration-500 group-hover:scale-110 shadow-inner group-hover:shadow-[0_0_15px_rgba(204,0,0,0.3)] flex-shrink-0">
+                <svg class="w-5 h-5 text-slate-500 group-hover:text-white transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
               </div>
-              <span class="font-bold text-slate-800 uppercase italic teko-font text-xl tracking-wide group-hover:text-tool-red transition-colors mt-1">Wallmek</span>
-              <svg class="ml-auto w-5 h-5 text-slate-300 group-hover:text-tool-red group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              <span class="font-extrabold text-slate-900 uppercase italic teko-font text-xl tracking-wider group-hover:text-tool-red transition-colors duration-300 mt-0.5">Wallmek</span>
+              <svg class="ml-auto w-5 h-5 text-slate-300 group-hover:text-tool-red group-hover:translate-x-2 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
             </a>
           </div>
           
@@ -311,9 +420,9 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10 w-full">
-              <div class="group relative flex flex-col items-center animate-step-1">
+              <div class="group relative flex flex-col items-center animate-float-1">
                 <div class="relative mb-12 z-20">
-                  <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-black text-white rounded-3xl flex items-center justify-center transform transition-all duration-500 shadow-[0_15px_30px_rgba(0,0,0,0.3)] relative overflow-hidden">
+                  <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-black text-white rounded-3xl flex items-center justify-center transform transition-all duration-500 relative overflow-hidden">
                     <div class="absolute inset-0 animate-icon-1 z-0"></div>
                     <svg class="w-12 h-12 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
@@ -321,8 +430,8 @@
                   </div>
                 </div>
                 
-                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-center group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden">
-                  <div class="absolute top-0 left-0 w-full h-2 bg-slate-200 group-hover:bg-tool-red transition-colors animate-bar-1"></div>
+                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-center group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden animate-step-1">
+                  <div class="absolute top-0 left-0 w-full h-[4px] bg-slate-200 group-hover:bg-tool-red transition-colors animate-bar-1"></div>
                   <h3 class="text-3xl font-bold text-gray-900 mb-6 uppercase italic teko-font tracking-wide">Contact & Analyse</h3>
                   <p class="text-gray-600 leading-relaxed font-medium">
                     U neemt contact op. Wij luisteren naar uw specifieke noden en kijken welk gereedschap uw efficiëntie kan verhogen.
@@ -330,9 +439,9 @@
                 </div>
               </div>
 
-              <div class="group relative flex flex-col items-center animate-step-2">
+              <div class="group relative flex flex-col items-center animate-float-2">
                 <div class="relative mb-12 z-20">
-                  <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-black text-white rounded-3xl flex items-center justify-center transform transition-all duration-500 shadow-[0_15px_30px_rgba(0,0,0,0.3)] relative overflow-hidden">
+                  <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-black text-white rounded-3xl flex items-center justify-center transform transition-all duration-500 relative overflow-hidden">
                     <div class="absolute inset-0 animate-icon-2 z-0"></div>
                     <svg class="w-12 h-12 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path>
@@ -341,8 +450,8 @@
                   </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-center group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden">
-                  <div class="absolute top-0 left-0 w-full h-2 bg-slate-200 group-hover:bg-tool-red transition-colors animate-bar-2"></div>
+                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-center group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden animate-step-2">
+                  <div class="absolute top-0 left-0 w-full h-[4px] bg-slate-200 group-hover:bg-tool-red transition-colors animate-bar-2"></div>
                   <h3 class="text-3xl font-bold text-gray-900 mb-6 uppercase italic teko-font tracking-wide">Mobiele Showroom</h3>
                   <p class="text-gray-600 leading-relaxed font-medium">
                     Ik kom bij u langs met de vrachtwagen. U kunt het gereedschap direct vastnemen, voelen en testen in uw eigen omgeving.
@@ -350,9 +459,9 @@
                 </div>
               </div>
 
-              <div class="group relative flex flex-col items-center animate-step-3">
+              <div class="group relative flex flex-col items-center animate-float-3">
                 <div class="relative mb-12 z-20">
-                  <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-black text-white rounded-3xl flex items-center justify-center transform transition-all duration-500 shadow-[0_15px_30px_rgba(0,0,0,0.3)] relative overflow-hidden">
+                  <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-black text-white rounded-3xl flex items-center justify-center transform transition-all duration-500 relative overflow-hidden">
                     <div class="absolute inset-0 animate-icon-3 z-0"></div>
                     <svg class="w-12 h-12 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
@@ -360,8 +469,8 @@
                   </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-center group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden">
-                  <div class="absolute top-0 left-0 w-full h-2 bg-slate-200 group-hover:bg-tool-red transition-colors animate-bar-3"></div>
+                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-center group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden animate-step-3">
+                  <div class="absolute top-0 left-0 w-full h-[4px] bg-slate-200 group-hover:bg-tool-red transition-colors animate-bar-3"></div>
                   <h3 class="text-3xl font-bold text-gray-900 mb-6 uppercase italic teko-font tracking-wide">Service & Garantie</h3>
                   <p class="text-gray-600 leading-relaxed font-medium">
                     Aankoop gedaan? Wij blijven langskomen voor service, updates en de beste garantie waar Snap-on om bekend staat.
@@ -511,16 +620,34 @@
             </div>
 
             <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-              <a href="/catalogus" class="group relative flex items-center justify-center bg-tool-red text-white px-8 py-3 font-black uppercase text-sm rounded-xl hover:-translate-y-1 transition-all duration-300 min-w-[220px] overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                <span class="relative z-10">Catalogus</span>
-                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                </svg>
+              <a href="/catalogus" class="group relative top-0 hover:-top-1 transition-all duration-300 inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wider text-sm min-w-[220px]">
+                <!-- Skewed background shape -->
+                <div class="absolute inset-0 bg-tool-red transform -skew-x-12 group-hover:bg-slate-900 transition-all duration-300 shadow-[0_5px_15px_rgba(204,0,0,0.3)] group-hover:shadow-[0_8px_25px_rgba(204,0,0,0.5)]"></div>
+                
+                <!-- Sliding white shine glint contained within skewed shape -->
+                <div class="absolute inset-0 overflow-hidden transform -skew-x-12 pointer-events-none z-0">
+                  <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+                </div>
+                
+                <!-- Upright, perfectly crisp content -->
+                <span class="relative z-10 text-white inline-flex items-center justify-center w-full">
+                  Catalogus
+                  <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                  </svg>
+                </span>
               </a>
 
-              <a href="/contact" class="flex items-center justify-center bg-white text-slate-900 border border-slate-300 px-8 py-3 font-black uppercase text-sm rounded-xl shadow-sm hover:shadow-[0_10px_25px_-5px_rgba(0,0,0,0.1)] hover:bg-slate-900 hover:text-white hover:border-slate-900 transition-all duration-300 min-w-[180px]">
-                Contacteer Mij
+              <a href="/contact" class="group relative top-0 hover:-top-1 transition-all duration-300 inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wider text-sm min-w-[180px]">
+                <!-- Skewed background border shape -->
+                <div class="absolute inset-0 border border-slate-300 bg-white transform -skew-x-12 group-hover:bg-slate-900 group-hover:border-slate-900 transition-all duration-300 shadow-sm"></div>
+                
+                <!-- Sliding dark shine glint contained within skewed shape -->
+                <div class="absolute inset-0 overflow-hidden transform -skew-x-12 pointer-events-none z-0">
+                  <div class="absolute inset-0 bg-gradient-to-r from-transparent via-slate-900/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+                </div>
+                
+                <span class="relative z-10 text-slate-900 group-hover:text-white transition-colors duration-300">Contacteer Mij</span>
               </a>
             </div>
           </div>
