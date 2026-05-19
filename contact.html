@@ -190,10 +190,88 @@
             </p>
           </div>
           
-          <div class="w-full h-[500px] bg-gray-100 rounded-sm shadow-xl overflow-hidden border border-gray-200 relative group">
-             <iframe class="w-full h-full filter grayscale hover:grayscale-0 transition-all duration-700" src="https://maps.google.com/maps?q=Limburg,%20Belgium&t=&z=9&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-             <div class="absolute inset-0 pointer-events-none border-4 border-transparent group-hover:border-tool-red/20 transition-all duration-700"></div>
+          <div class="relative h-[500px] w-full max-w-5xl mx-auto bg-gray-100 rounded-sm shadow-xl overflow-hidden border border-gray-200 group">
+               <iframe class="w-full filter grayscale hover:grayscale-0 transition-all duration-700" src="https://www.google.com/maps/d/u/0/embed?mid=1o0b6USQWPCRdDpoiGrdSNCYE4RbQluU" width="100%" style="border:0; height: calc(100% + 55px); margin-top: -55px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+               
+               <!-- Postcode Checker Overlay -->
+               <div class="absolute top-4 left-4 md:top-8 md:left-8 bg-slate-900 p-6 rounded-sm shadow-2xl z-10 w-[90%] max-w-[320px] border-l-4 border-tool-red transition-all duration-300">
+                  <h3 class="text-2xl font-bold text-white mb-1 teko-font uppercase tracking-wide">Check je regio</h3>
+                  <p class="text-gray-400 text-sm mb-5 font-medium">Vul je postcode in om te zien of wij bij jou leveren.</p>
+                  
+                  <div class="flex items-center border border-gray-700 bg-slate-800 rounded-sm mb-4 overflow-hidden focus-within:border-tool-red focus-within:ring-1 focus-within:ring-tool-red transition-all">
+                     <div class="px-3 py-3 border-r border-gray-700 flex items-center justify-center bg-slate-800/50">
+                        <img src="https://flagcdn.com/w20/be.png" alt="Belgium" class="w-5 h-auto drop-shadow-sm">
+                     </div>
+                     <input type="text" id="postcodeInput" placeholder="Bijv. 3500" class="w-full px-3 py-3 outline-none text-white bg-transparent font-medium" maxlength="4">
+                  </div>
+                  
+                  <button id="checkPostcodeBtn" class="w-full bg-tool-red text-white font-bold py-3 uppercase tracking-widest rounded-sm hover:bg-white hover:text-slate-900 transition-colors flex items-center justify-center group/btn shadow-md">
+                     <span>Controleer</span>
+                     <svg class="w-4 h-4 ml-2 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                  </button>
+                  
+                  <div id="postcodeResult" class="mt-4 hidden p-3 rounded-sm text-sm font-medium text-center shadow-inner"></div>
+               </div>
           </div>
+          
+          <script>
+            document.getElementById('checkPostcodeBtn').addEventListener('click', function() {
+              const input = document.getElementById('postcodeInput').value.trim();
+              const resultDiv = document.getElementById('postcodeResult');
+              const pc = parseInt(input, 10);
+              
+              if(!input || isNaN(pc) || input.length !== 4) {
+                 resultDiv.className = 'mt-4 p-3 rounded-sm text-sm font-bold text-center bg-red-500/10 text-red-400 block border border-red-500/30';
+                 resultDiv.innerHTML = 'Vul een geldige Belgische postcode in (4 cijfers).';
+                 return;
+              }
+              
+              // Limburg postcodes zijn 3500 t/m 3999
+              const isLimburg = pc >= 3500 && pc <= 3999;
+              
+              // Oost-Vlaams-Brabant (donkerrode gebied op de map)
+              const isVlaamsBrabantOost = [
+                3200, 3201, 3202, // Aarschot
+                3270, 3271, 3272, // Scherpenheuvel-Zichem
+                3290, 3293, 3294, // Diest
+                3300,             // Tienen
+                3320, 3321,       // Hoegaarden
+                3350,             // Linter
+                3360,             // Bierbeek
+                3370,             // Boutersem
+                3380, 3381, 3384, // Glabbeek
+                3390, 3391,       // Tielt-Winge
+                3400, 3401, 3404, // Landen
+                3440,             // Zoutleeuw
+                3450, 3454,       // Geetbets
+                3460, 3461,       // Bekkevoort
+                3470, 3471, 3472, 3473 // Kortenaken
+              ].includes(pc);
+              
+              // Antwerpse Kempen randgebied
+              const isAntwerpenKempen = [
+                2400, // Mol
+                2430, 2431, // Laakdal
+                2440, // Geel
+                2450, // Meerhout
+                2490, 2491 // Balen
+              ].includes(pc);
+              
+              if(isLimburg || isVlaamsBrabantOost || isAntwerpenKempen) {
+                 resultDiv.className = 'mt-4 p-3 rounded-sm text-sm font-medium text-center bg-green-500/10 text-green-400 block border border-green-500/30';
+                 resultDiv.innerHTML = '<span class="font-bold block text-base mb-1 text-green-300">Goed nieuws! 🎉</span> Postcode ' + pc + ' valt binnen onze actieve regio. Wij komen graag bij u langs.';
+              } else {
+                 resultDiv.className = 'mt-4 p-3 rounded-sm text-sm font-medium text-center bg-orange-500/10 text-orange-400 block border border-orange-500/30';
+                 resultDiv.innerHTML = '<span class="font-bold block text-base mb-1 text-orange-300">Buiten regio</span> Postcode ' + pc + ' valt net buiten Limburg. Neem contact op om te overleggen.';
+              }
+            });
+            
+            document.getElementById('postcodeInput').addEventListener('keypress', function(e) {
+              if(e.key === 'Enter') {
+                 document.getElementById('checkPostcodeBtn').click();
+              }
+            });
+          </script>
         </div>
       </section>
     </main>

@@ -163,198 +163,126 @@
         <div class="absolute top-[40%] left-1/4 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(255,255,255,0.9)_0%,rgba(241,245,249,0)_70%)] z-0 pointer-events-none"></div>
         <div class="absolute inset-0 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:24px_24px] opacity-35 z-0"></div>
         
+        <!-- Decorative Side Images for empty space -->
+        <div class="hidden xl:flex absolute left-[-2%] top-[40%] -translate-y-1/2 w-[25%] max-w-[350px] items-center justify-center pointer-events-none z-0">
+          <img src="/images/gereedschapskist.png" alt="Gereedschapswagens" class="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.15)] transform -scale-x-100 opacity-90" />
+        </div>
 
+        <div class="hidden xl:flex absolute right-[-2%] top-[60%] -translate-y-1/2 w-[25%] max-w-[350px] items-center justify-center pointer-events-none z-0">
+          <img src="/images/Snap-on-Power-Tools.webp" alt="Power Tools" class="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.15)] opacity-90" />
+        </div>
 
         <div class="container mx-auto px-4 relative z-10">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative -mt-16">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-              <a
-                href="/handtools"
-                class="group relative bg-white border border-slate-200 h-64 overflow-hidden hover:border-tool-red hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] transition-all duration-500 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08),0_16px_32px_rgba(0,0,0,0.05)] z-10 transform hover:-translate-y-3"
-              >
-                <div
-                  class="absolute inset-0 p-6 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
-                >
-                  <img width="900" height="591"                     src="/images/Snap-on-Handgereedschap.webp"
-                    alt="Handtools"
-                    class="max-h-full max-w-full object-contain"
-                  loading="lazy" decoding="async" />
-                </div>
-                <div
-                  class="absolute bottom-0 left-0 w-full p-3 z-20 bg-gradient-to-t from-white via-white/90 to-transparent"
-                >
-                  <div
-                    class="h-1 w-8 bg-tool-red mb-1 group-hover:w-full transition-all duration-500"
-                  ></div>
-                  <h3 class="text-xl text-slate-900 font-bold uppercase italic">
-                    Handtools
-                  </h3>
-                </div>
-              </a>
+          <div class="max-w-4xl mx-auto text-center relative -mt-8 mb-16">
+            <span class="inline-block py-1 px-3 bg-black text-white text-xs font-bold uppercase tracking-widest mb-4 rounded">
+              Official Snap-On Dealer
+            </span>
 
-              <a
-                href="/powertools"
-                class="group relative bg-white border border-slate-200 h-64 overflow-hidden hover:border-tool-red hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] transition-all duration-500 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08),0_16px_32px_rgba(0,0,0,0.05)] z-10 transform hover:-translate-y-3"
-              >
-                <div
-                  class="absolute inset-0 p-6 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
-                >
-                  <img width="1232" height="1800"                     src="/images/Snap-on-Power-Tools.webp"
-                    alt="Powertools"
-                    class="max-h-full max-w-full object-contain"
-                  loading="lazy" decoding="async" />
-                </div>
-                <div
-                  class="absolute bottom-0 left-0 w-full p-3 z-20 bg-gradient-to-t from-white via-white/90 to-transparent"
-                >
-                  <div
-                    class="h-1 w-8 bg-tool-red mb-1 group-hover:w-full transition-all duration-500"
-                  ></div>
-                  <h3 class="text-xl text-slate-900 font-bold uppercase italic">
-                    Power
-                  </h3>
-                </div>
-              </a>
+            <h2 class="text-3xl md:text-5xl font-black uppercase mb-6 text-gray-900 leading-none teko-font tracking-tight">
+              MEER DAN ALLEEN GEREEDSCHAP<span class="text-tool-red">.</span>
+            </h2>
 
-              <a
-                href="/diagnose"
-                class="group relative bg-white border border-slate-200 h-64 overflow-hidden hover:border-tool-red hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] transition-all duration-500 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08),0_16px_32px_rgba(0,0,0,0.05)] z-10 transform hover:-translate-y-3"
-              >
-                <div
-                  class="absolute inset-0 p-6 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
-                >
-                  <img width="2040" height="1424"                     src="/images/Snap-on-Diagnose.webp"
-                    alt="Diagnose"
-                    class="max-h-full max-w-full object-contain"
-                  loading="lazy" decoding="async" />
-                </div>
-                <div
-                  class="absolute bottom-0 left-0 w-full p-3 z-20 bg-gradient-to-t from-white via-white/90 to-transparent"
-                >
-                  <div
-                    class="h-1 w-8 bg-tool-red mb-1 group-hover:w-full transition-all duration-500"
-                  ></div>
-                  <h3 class="text-xl text-slate-900 font-bold uppercase italic">
-                    Diagnose
-                  </h3>
-                </div>
-              </a>
+            <p class="mb-6 text-gray-700 leading-relaxed text-base md:text-lg">
+              Voor onze producten werken wij primair samen met
+              <span class="font-bold">Snap-on</span>. Met deze duurzame en
+              ijzersterke producten garanderen wij u monsterprestaties!
+              Daarnaast bieden wij ook het gespecialiseerde assortiment van
+              <span class="font-bold">Wallmek</span> aan.
+            </p>
 
-              <a
-                href="/specials"
-                class="group relative bg-white border border-slate-200 h-64 overflow-hidden hover:border-tool-red hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] transition-all duration-500 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08),0_16px_32px_rgba(0,0,0,0.05)] z-10 transform hover:-translate-y-3"
-              >
-                <div
-                  class="absolute inset-0 p-6 flex items-center justify-center z-10 transition-transform duration-700 group-hover:scale-110"
-                >
-                  <img width="2048" height="1496"                     src="/images/Snap-on-Equipment.webp"
-                    alt="Specials"
-                    class="max-h-full max-w-full object-contain"
-                  loading="lazy" decoding="async" />
-                </div>
-                <div
-                  class="absolute bottom-0 left-0 w-full p-3 z-20 bg-gradient-to-t from-white via-white/90 to-transparent"
-                >
-                  <div
-                    class="h-1 w-8 bg-tool-red mb-1 group-hover:w-full transition-all duration-500"
-                  ></div>
-                  <h3 class="text-xl text-slate-900 font-bold uppercase italic">
-                    Specials
-                  </h3>
-                </div>
-              </a>
-            </div>
+            <p class="mb-8 text-gray-700 leading-relaxed text-base md:text-lg">
+              Wij staan u ook graag bij met raad en advies. Dankzij onze
+              opleiding en constante bijscholing zijn wij steeds op de hoogte
+              van de nieuwste technieken en innovaties. Zo garanderen we u
+              niet alleen
+              <span class="text-tool-red font-bold">kwaliteitsvolle producten</span>, maar ook een kwaliteitsvolle service. U kan ons altijd
+              bereiken voor een
+              <a href="/contact" class="text-tool-red font-bold hover:underline">afspraak</a>
+              te maken.
+            </p>
 
-            <div class="pl-0 lg:pl-10">
-              <span
-                class="inline-block py-1 px-3 bg-black text-white text-xs font-bold uppercase tracking-widest mb-4 rounded"
-              >
-                Official Snap-On Dealer
-              </span>
+            <p class="mb-10 text-gray-600 text-lg md:text-xl font-medium italic">
+              "Wij leveren niet alleen gereedschap, maar ook oplossingen."
+            </p>
 
-              <h2
-                class="text-2xl md:text-4xl font-black uppercase mb-4 text-gray-900 leading-none"
-              >
-                MEER DAN ALLEEN GEREEDSCHAP<span class="text-tool-red">.</span>
-              </h2>
+            <ul class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-10">
+              <li class="flex items-center">
+                <span class="w-6 h-6 bg-tool-red text-white rounded-full flex items-center justify-center mr-2 text-xs font-bold">✓</span>
+                <span class="font-bold text-gray-800">De Beste garantie</span>
+              </li>
+              <li class="flex items-center">
+                <span class="w-6 h-6 bg-tool-red text-white rounded-full flex items-center justify-center mr-2 text-xs font-bold">✓</span>
+                <span class="font-bold text-gray-800">Innovatieve Technologie</span>
+              </li>
+              <li class="flex items-center">
+                <span class="w-6 h-6 bg-tool-red text-white rounded-full flex items-center justify-center mr-2 text-xs font-bold">✓</span>
+                <span class="font-bold text-gray-800">Directe Service aan de deur</span>
+              </li>
+            </ul>
 
-              <p class="mb-4 text-gray-700 leading-relaxed text-base">
-                Voor onze producten werken wij samen met een vaste leverancier,
-                <span class="font-bold">Snap-on</span>. Met deze duurzame en
-                ijzersterke producten garanderen wij u monsterprestaties!
-              </p>
+            <a href="/contact" class="inline-flex items-center bg-tool-red text-white px-8 py-4 font-bold uppercase tracking-wide hover:bg-black transition duration-300 shadow-lg transform hover:-translate-y-1 rounded-xl">
+              Maak een afspraak
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
 
-              <p class="mb-6 text-gray-700 leading-relaxed text-lg">
-                Wij staan u ook graag bij met raad en advies. Dankzij onze
-                opleiding en constante bijscholing zijn wij steeds op de hoogte
-                van de nieuwste technieken en innovaties. Zo garanderen we u
-                niet alleen
-                <span class="text-tool-red font-bold"
-                  >kwaliteitsvolle producten</span
-                >, maar ook een kwaliteitsvolle service. U kan ons altijd
-                bereiken voor een
-                <a
-                  href="/contact"
-                  class="text-tool-red font-bold hover:underline"
-                  >afspraak</a
-                >
-                te maken.
-              </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 max-w-5xl mx-auto">
+            <a href="/handtools" class="group flex items-center p-3 md:p-4 bg-white border border-slate-200 rounded-xl hover:border-tool-red hover:shadow-md transition-all duration-300">
+              <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mr-3 md:mr-4 group-hover:bg-red-50 transition-colors">
+                <svg class="w-6 h-6 text-slate-400 group-hover:text-tool-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              </div>
+              <span class="font-bold text-slate-800 uppercase italic teko-font text-xl tracking-wide group-hover:text-tool-red transition-colors mt-1">Handtools</span>
+              <svg class="ml-auto w-5 h-5 text-slate-300 group-hover:text-tool-red group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
 
-              <p
-                class="mb-8 text-gray-600 text-lg border-l-4 border-tool-red pl-4 italic"
-              >
-                "Wij leveren niet alleen gereedschap, maar ook oplossingen."
-              </p>
+            <a href="/powertools" class="group flex items-center p-3 md:p-4 bg-white border border-slate-200 rounded-xl hover:border-tool-red hover:shadow-md transition-all duration-300">
+              <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mr-3 md:mr-4 group-hover:bg-red-50 transition-colors">
+                <svg class="w-6 h-6 text-slate-400 group-hover:text-tool-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              </div>
+              <span class="font-bold text-slate-800 uppercase italic teko-font text-xl tracking-wide group-hover:text-tool-red transition-colors mt-1">Power Tools</span>
+              <svg class="ml-auto w-5 h-5 text-slate-300 group-hover:text-tool-red group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
 
-              <ul class="space-y-4 mb-8">
-                <li class="flex items-center">
-                  <span
-                    class="w-6 h-6 bg-tool-red text-white rounded-full flex items-center justify-center mr-3 text-xs font-bold"
-                    >✓</span
-                  >
-                  <span class="font-bold text-gray-800">De Beste garantie</span>
-                </li>
-                <li class="flex items-center">
-                  <span
-                    class="w-6 h-6 bg-tool-red text-white rounded-full flex items-center justify-center mr-3 text-xs font-bold"
-                    >✓</span
-                  >
-                  <span class="font-bold text-gray-800"
-                    >Innovatieve Technologie</span
-                  >
-                </li>
-                <li class="flex items-center">
-                  <span
-                    class="w-6 h-6 bg-tool-red text-white rounded-full flex items-center justify-center mr-3 text-xs font-bold"
-                    >✓</span
-                  >
-                  <span class="font-bold text-gray-800"
-                    >Directe Service aan de deur</span
-                  >
-                </li>
-              </ul>
+            <a href="/diagnose" class="group flex items-center p-3 md:p-4 bg-white border border-slate-200 rounded-xl hover:border-tool-red hover:shadow-md transition-all duration-300">
+              <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mr-3 md:mr-4 group-hover:bg-red-50 transition-colors">
+                <svg class="w-6 h-6 text-slate-400 group-hover:text-tool-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+              </div>
+              <span class="font-bold text-slate-800 uppercase italic teko-font text-xl tracking-wide group-hover:text-tool-red transition-colors mt-1">Diagnose</span>
+              <svg class="ml-auto w-5 h-5 text-slate-300 group-hover:text-tool-red group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
 
-              <a
-                href="/contact"
-                class="inline-flex items-center bg-tool-red text-white px-8 py-4 font-bold uppercase tracking-wide hover:bg-black transition duration-300 shadow-lg transform hover:-translate-y-1"
-              >
-                Maak een afspraak
-                <svg
-                  class="w-5 h-5 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  ></path>
-                </svg>
-              </a>
-            </div>
+            <a href="/specials" class="group flex items-center p-3 md:p-4 bg-white border border-slate-200 rounded-xl hover:border-tool-red hover:shadow-md transition-all duration-300">
+              <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mr-3 md:mr-4 group-hover:bg-red-50 transition-colors">
+                <svg class="w-6 h-6 text-slate-400 group-hover:text-tool-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+              </div>
+              <span class="font-bold text-slate-800 uppercase italic teko-font text-xl tracking-wide group-hover:text-tool-red transition-colors mt-1">Equipment</span>
+              <svg class="ml-auto w-5 h-5 text-slate-300 group-hover:text-tool-red group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+
+            <a href="/gereedschapskisten" class="group flex items-center p-3 md:p-4 bg-white border border-slate-200 rounded-xl hover:border-tool-red hover:shadow-md transition-all duration-300">
+              <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mr-3 md:mr-4 group-hover:bg-red-50 transition-colors">
+                <svg class="w-6 h-6 text-slate-400 group-hover:text-tool-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+              </div>
+              <span class="font-bold text-slate-800 uppercase italic teko-font text-xl tracking-wide group-hover:text-tool-red transition-colors mt-1">Kisten & Wagens</span>
+              <svg class="ml-auto w-5 h-5 text-slate-300 group-hover:text-tool-red group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+
+            <a href="/wallmek" class="group flex items-center p-3 md:p-4 bg-white border border-slate-200 rounded-xl hover:border-tool-red hover:shadow-md transition-all duration-300">
+              <div class="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mr-3 md:mr-4 group-hover:bg-red-50 transition-colors">
+                <svg class="w-6 h-6 text-slate-400 group-hover:text-tool-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+              </div>
+              <span class="font-bold text-slate-800 uppercase italic teko-font text-xl tracking-wide group-hover:text-tool-red transition-colors mt-1">Wallmek</span>
+              <svg class="ml-auto w-5 h-5 text-slate-300 group-hover:text-tool-red group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+          </div>
+          
+          <div class="mt-8 flex justify-center">
+            <a href="/producten" class="inline-flex items-center text-sm font-bold text-tool-red uppercase tracking-wider hover:text-red-700 transition-colors">
+              Bekijk alle producten
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
           </div>
         </div>
       </section>
@@ -469,7 +397,7 @@
                 <div class="flex items-center gap-3 md:gap-4">
                   <span class="text-3xl md:text-4xl font-black text-slate-400 teko-font group-hover:text-tool-red transition-colors duration-500">01</span>
                   <h3 class="text-xl font-bold text-black uppercase italic teko-font tracking-wide">
-                    Komt u ook bij particulieren?
+                    Wie zijn onze klanten?
                   </h3>
                 </div>
                 <div class="w-10 h-10 rounded-full border-2 border-slate-100 flex items-center justify-center group-hover:border-tool-red group-hover:bg-tool-red group-hover:text-white transition-all duration-300 flex-shrink-0">
@@ -506,7 +434,7 @@
                 <div class="faq-content-inner px-4 pb-4 md:px-6 md:pb-6 ml-10 md:ml-16">
                   <div class="h-1 w-12 bg-tool-red mb-4"></div>
                   <p class="text-slate-600 text-sm leading-relaxed font-medium">
-                    Snap-on biedt levenslange garantie op materiaalfouten bij handgereedschap. Bij een defect ruilen we het meestal direct om.
+                    Bij garantie contacteert u mij best. Ik los het zo snel mogelijk en op de best mogelijke manier op.
                   </p>
                 </div>
               </div>
@@ -517,7 +445,7 @@
                 <div class="flex items-center gap-3 md:gap-4">
                   <span class="text-3xl md:text-4xl font-black text-slate-400 teko-font group-hover:text-tool-red transition-colors duration-500">03</span>
                   <h3 class="text-xl font-bold text-black uppercase italic teko-font tracking-wide">
-                    Wat is uw werkregio?
+                    Wat is mijn werkregio?
                   </h3>
                 </div>
                 <div class="w-10 h-10 rounded-full border-2 border-slate-100 flex items-center justify-center group-hover:border-tool-red group-hover:bg-tool-red group-hover:text-white transition-all duration-300 flex-shrink-0">
@@ -541,7 +469,7 @@
                 <div class="flex items-center gap-3 md:gap-4">
                   <span class="text-3xl md:text-4xl font-black text-slate-400 teko-font group-hover:text-tool-red transition-colors duration-500">04</span>
                   <h3 class="text-xl font-bold text-black uppercase italic teko-font tracking-wide">
-                    Financieringsopties?
+                    Hoe kan ik bestellen?
                   </h3>
                 </div>
                 <div class="w-10 h-10 rounded-full border-2 border-slate-100 flex items-center justify-center group-hover:border-tool-red group-hover:bg-tool-red group-hover:text-white transition-all duration-300 flex-shrink-0">
@@ -554,7 +482,7 @@
                 <div class="faq-content-inner px-6 pb-6 ml-14 md:ml-16">
                   <div class="h-1 w-12 bg-tool-red mb-4"></div>
                   <p class="text-slate-600 text-sm leading-relaxed font-medium">
-                    Via Snap-on Credit bieden we diverse leasing- en afbetalingsplannen aan op maat van uw zaak.
+                    Bestellen is heel eenvoudig! Neem rechtstreeks contact met mij op via WhatsApp, telefoon (GSM) of stuur een e-mail. Ik help u dan persoonlijk en snel verder met uw bestelling.
                   </p>
                 </div>
               </div>
