@@ -15,7 +15,6 @@
         clip-path: polygon(0 8%, 10% 0, 90% 0, 100% 8%, 100% 100%, 0 100%);
       }
 
-      /* Truck Animation */
       @keyframes truckDrive {
         0% { left: -50px; opacity: 0; }
         5% { opacity: 1; }
@@ -30,13 +29,12 @@
         z-index: 10;
       }
 
-      /* Subtle Step Cards Animation - Scale-free to prevent blurriness */
       @keyframes floatPulse1 {
         0%, 10%, 24%, 100% { 
-          transform: translate3d(0, 0, 0);
+          transform: translateY(0) scale(1);
         }
         17% { 
-          transform: translate3d(0, -8px, 0);
+          transform: translateY(-6px) scale(1.015);
         }
       }
       @keyframes cardPulse1 {
@@ -62,10 +60,10 @@
 
       @keyframes floatPulse2 {
         0%, 43%, 57%, 100% { 
-          transform: translate3d(0, 0, 0);
+          transform: translateY(0) scale(1);
         }
         50% { 
-          transform: translate3d(0, -8px, 0);
+          transform: translateY(-6px) scale(1.015);
         }
       }
       @keyframes cardPulse2 {
@@ -91,10 +89,10 @@
 
       @keyframes floatPulse3 {
         0%, 76%, 90%, 100% { 
-          transform: translate3d(0, 0, 0);
+          transform: translateY(0) scale(1);
         }
         83% { 
-          transform: translate3d(0, -8px, 0);
+          transform: translateY(-6px) scale(1.015);
         }
       }
       @keyframes cardPulse3 {
@@ -116,17 +114,6 @@
         83% { 
           transform: scale(1.05) rotate(0deg);
         }
-      }
-
-      /* Hardware acceleration and rendering stability for text */
-      .animate-float-1,
-      .animate-float-2,
-      .animate-float-3 {
-        will-change: transform;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        -webkit-transform-style: preserve-3d;
-        transform-style: preserve-3d;
       }
 
       .animate-float-1 { animation: floatPulse1 24s linear infinite; }
@@ -211,25 +198,20 @@
               href="/contact"
               class="group relative top-0 hover:-top-1 transition-all duration-300 inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wider text-sm text-center w-full sm:w-auto"
             >
-              <!-- Skewed background shape -->
               <div class="absolute inset-0 bg-tool-red transform -skew-x-12 group-hover:bg-white transition-colors duration-300 shadow-[0_0_15px_rgba(204,0,0,0.3)] group-hover:shadow-[0_0_25px_rgba(204,0,0,0.6)] rounded-sm"></div>
               
-              <!-- Sliding white shine glint contained within skewed shape -->
               <div class="absolute inset-0 overflow-hidden transform -skew-x-12 rounded-sm pointer-events-none z-0">
                 <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
               </div>
               
-              <!-- Upright, native and perfectly crisp text -->
               <span class="relative z-10 text-white group-hover:text-tool-red transition-colors duration-300">Maak Afspraak</span>
             </a>
             <a
               href="#services"
               class="group relative top-0 hover:-top-1 transition-all duration-300 inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wider text-sm text-center w-full sm:w-auto"
             >
-              <!-- Skewed border/background shape -->
               <div class="absolute inset-0 border border-gray-400 bg-black/20 backdrop-blur-sm transform -skew-x-12 group-hover:border-white group-hover:bg-white transition-all duration-300 rounded-sm"></div>
               
-              <!-- Sliding white shine glint contained within skewed shape -->
               <div class="absolute inset-0 overflow-hidden transform -skew-x-12 rounded-sm pointer-events-none z-0">
                 <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
               </div>
@@ -239,14 +221,14 @@
           </div>
         </div>
       </section>
-      <section
+
+      <section
         id="services"
         class="relative py-24 bg-slate-100 overflow-hidden -mt-12 pt-28 md:pt-32"
       >
         <div class="absolute top-[40%] left-1/4 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(255,255,255,0.9)_0%,rgba(241,245,249,0)_70%)] z-0 pointer-events-none"></div>
         <div class="absolute inset-0 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:24px_24px] opacity-35 z-0"></div>
         
-        <!-- Decorative Grid Layout matching Subpages -->
         <div class="container mx-auto px-4 max-w-6xl relative z-10">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-16 relative -mt-8">
             <div class="flex flex-col justify-center">
@@ -293,15 +275,12 @@
 
               <div class="flex flex-col sm:flex-row gap-4">
                 <a href="/contact" class="group relative top-0 hover:-top-1 transition-all duration-300 inline-flex items-center justify-center px-10 py-4 font-bold uppercase tracking-wider text-sm w-full sm:w-max">
-                  <!-- Skewed background shape -->
                   <div class="absolute inset-0 bg-tool-red transform -skew-x-12 group-hover:bg-slate-900 transition-all duration-300 shadow-[0_5px_15px_rgba(204,0,0,0.3)] group-hover:shadow-[0_8px_25px_rgba(204,0,0,0.5)]"></div>
                   
-                  <!-- Sliding white shine glint contained within skewed shape -->
                   <div class="absolute inset-0 overflow-hidden transform -skew-x-12 pointer-events-none z-0">
                     <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
                   </div>
                   
-                  <!-- Upright, perfectly crisp text -->
                   <span class="relative z-10 text-white inline-flex items-center justify-center w-full">
                     Maak een afspraak
                     <svg class="w-5 h-5 ml-2 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -312,12 +291,9 @@
               </div>
             </div>
 
-            <!-- Modern Transparent Product Collage -->
             <div class="hidden lg:flex relative group h-[500px] w-full items-center justify-center">
-              <!-- Extremely subtle, near-invisible red radial background glow -->
               <div class="absolute w-[75%] h-[75%] bg-red-500 opacity-5 rounded-full blur-3xl pointer-events-none select-none z-0"></div>
 
-              <!-- Red Snap-on tool wagon in the background, slightly rotated -->
               <img 
                 src="/images/gereedschapskist.png" 
                 alt="Snap-on Gereedschapswagen" 
@@ -326,7 +302,6 @@
                 decoding="async" 
               />
               
-              <!-- Snap-on powertool overlapping in the foreground -->
               <img 
                 src="/images/Snap-on-Power-Tools.webp" 
                 alt="Snap-on Power Tools" 
@@ -422,7 +397,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10 w-full">
               <div class="group relative flex flex-col items-center animate-float-1">
                 <div class="relative mb-12 z-20">
-                  <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-black text-white rounded-3xl flex items-center justify-center transform transition-all duration-500 relative overflow-hidden">
+                  <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-black text-white rounded-3xl flex items-center justify-center transform transition-all duration-500 shadow-[0_15px_30px_rgba(0,0,0,0.3)] relative overflow-hidden">
                     <div class="absolute inset-0 animate-icon-1 z-0"></div>
                     <svg class="w-12 h-12 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
@@ -441,7 +416,7 @@
 
               <div class="group relative flex flex-col items-center animate-float-2">
                 <div class="relative mb-12 z-20">
-                  <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-black text-white rounded-3xl flex items-center justify-center transform transition-all duration-500 relative overflow-hidden">
+                  <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-black text-white rounded-3xl flex items-center justify-center transform transition-all duration-500 shadow-[0_15px_30px_rgba(0,0,0,0.3)] relative overflow-hidden">
                     <div class="absolute inset-0 animate-icon-2 z-0"></div>
                     <svg class="w-12 h-12 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path>
@@ -461,7 +436,7 @@
 
               <div class="group relative flex flex-col items-center animate-float-3">
                 <div class="relative mb-12 z-20">
-                  <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-black text-white rounded-3xl flex items-center justify-center transform transition-all duration-500 relative overflow-hidden">
+                  <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-black text-white rounded-3xl flex items-center justify-center transform transition-all duration-500 shadow-[0_15px_30px_rgba(0,0,0,0.3)] relative overflow-hidden">
                     <div class="absolute inset-0 animate-icon-3 z-0"></div>
                     <svg class="w-12 h-12 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
@@ -621,15 +596,12 @@
 
             <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
               <a href="/catalogus" class="group relative top-0 hover:-top-1 transition-all duration-300 inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wider text-sm min-w-[220px]">
-                <!-- Skewed background shape -->
                 <div class="absolute inset-0 bg-tool-red transform -skew-x-12 group-hover:bg-slate-900 transition-all duration-300 shadow-[0_5px_15px_rgba(204,0,0,0.3)] group-hover:shadow-[0_8px_25px_rgba(204,0,0,0.5)]"></div>
                 
-                <!-- Sliding white shine glint contained within skewed shape -->
                 <div class="absolute inset-0 overflow-hidden transform -skew-x-12 pointer-events-none z-0">
                   <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
                 </div>
                 
-                <!-- Upright, perfectly crisp content -->
                 <span class="relative z-10 text-white inline-flex items-center justify-center w-full">
                   Catalogus
                   <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -639,10 +611,8 @@
               </a>
 
               <a href="/contact" class="group relative top-0 hover:-top-1 transition-all duration-300 inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wider text-sm min-w-[180px]">
-                <!-- Skewed background border shape -->
                 <div class="absolute inset-0 border border-slate-300 bg-white transform -skew-x-12 group-hover:bg-slate-900 group-hover:border-slate-900 transition-all duration-300 shadow-sm"></div>
                 
-                <!-- Sliding dark shine glint contained within skewed shape -->
                 <div class="absolute inset-0 overflow-hidden transform -skew-x-12 pointer-events-none z-0">
                   <div class="absolute inset-0 bg-gradient-to-r from-transparent via-slate-900/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
                 </div>
