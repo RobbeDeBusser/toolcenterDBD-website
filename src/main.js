@@ -104,7 +104,8 @@ window.addEventListener("load", () => {
 
     const onScroll = () => {
       if (window.scrollY > 20) {
-        mainHeader.classList.add("shadow-xl");
+        mainHeader.classList.remove("bg-[#cc0000]", "shadow-md", "border-transparent");
+        mainHeader.classList.add("bg-[#cc0000]/85", "shadow-xl", "border-white/20");
         mainHeader.style.height = "48px";
         headerInner.style.paddingTop = "0";
         headerInner.style.paddingBottom = "0";
@@ -112,7 +113,8 @@ window.addEventListener("load", () => {
         headerLogo.style.height = "24px";
         mainContent.style.paddingTop = "48px";
       } else {
-        mainHeader.classList.remove("shadow-xl");
+        mainHeader.classList.remove("bg-[#cc0000]/85", "shadow-xl", "border-white/20");
+        mainHeader.classList.add("bg-[#cc0000]", "shadow-md", "border-transparent");
         mainHeader.style.height = "56px";
         headerInner.style.paddingTop = "0.5rem";
         headerInner.style.paddingBottom = "0.5rem";
