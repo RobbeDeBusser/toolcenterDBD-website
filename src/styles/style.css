@@ -37,7 +37,6 @@ main {
   transform: scale(1.1) translateY(-10px);
 }
 
-
 .back-to-top-container.visible {
   opacity: 1;
   visibility: visible;
@@ -47,34 +46,32 @@ main {
 .back-to-top-btn {
   width: 48px;
   height: 48px;
-  background-color: rgba(204, 0, 0, 0.85); /* 85% opacity, matching scrolled header */
+  background-color: rgba(204, 0, 0, 0.85);
   color: white;
   border-radius: 9999px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 
-    0 10px 30px -5px rgba(150, 0, 0, 0.6), /* Stronger dark red drop shadow */
-    inset 0 2px 5px 0 rgba(255, 255, 255, 0.7), /* Wet upper highlight */
-    inset 0 -3px 6px 0 rgba(100, 0, 0, 0.5); /* Darker bottom reflection */
+  box-shadow:
+    0 10px 30px -5px rgba(150, 0, 0, 0.6),
+    inset 0 2px 5px 0 rgba(255, 255, 255, 0.7),
+    inset 0 -3px 6px 0 rgba(100, 0, 0, 0.5);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   backdrop-filter: blur(12px) saturate(150%);
   -webkit-backdrop-filter: blur(12px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle white glossy edge */
+  border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
   z-index: 10;
 }
 
-/* Hover: Fills up with solid red and scales up via container */
 .back-to-top-container:hover .back-to-top-btn {
   background-color: rgba(204, 0, 0, 1);
-  box-shadow: 
+  box-shadow:
     0 12px 40px -10px rgba(204, 0, 0, 0.8),
     inset 0 3px 6px 0 rgba(255, 255, 255, 0.8);
   border-color: rgba(255, 255, 255, 0.8);
 }
-
 
 .back-to-top-progress {
   position: absolute;
@@ -94,19 +91,18 @@ main {
   transition: stroke-dashoffset 0.1s linear, stroke 0.3s ease;
 }
 
-/* Stronger Red Line */
 #btt-progress-bar {
   stroke: #cc0000;
   filter: drop-shadow(0 0 2px rgba(204, 0, 0, 0.5));
 }
 
 .back-to-top-container:hover #btt-progress-bar {
-  stroke: #111111; /* Turns dark (footer color) on hover for contrast against white backgrounds */
+  stroke: #111111;
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
 }
 
 .back-to-top-progress .progress-bg {
-  stroke: rgba(255, 255, 255, 0.15); /* Faint frosted glass ring */
+  stroke: rgba(255, 255, 255, 0.15);
 }
 
  .carbon-bg {
@@ -120,57 +116,56 @@ main {
         background-attachment: fixed;
       }
 
-/* ==========================================================================
-   Navbar Dropdown Premium Animations (Springy Liquid Droplet Reveal)
-   ========================================================================== */
 .nav-dropdown {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transform: translateY(-8px) scaleY(0.9);
   transform-origin: top center;
-  /* Begint als een bolle, volledig geclipte druppel */
+
   clip-path: inset(0 0 100% 0 round 0 0 100px 100px);
   will-change: opacity, transform, visibility, clip-path;
-  transition: 
+  transition:
     opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.48s cubic-bezier(0.34, 1.56, 0.64, 1),
     clip-path 0.48s cubic-bezier(0.34, 1.56, 0.64, 1),
-    visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  /* Sluitingsvertraging voor optimaal comfort (hover-out delay) */
+    visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    padding-top 0.3s ease-in-out;
+
   transition-delay: 150ms;
+  padding-top: 22px;
 }
 
-/* Bij hover direct, vloeiend en met een elastische plop openen */
+#main-header.scrolled .nav-dropdown {
+  padding-top: 16px;
+}
+
 .group:hover .nav-dropdown {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
   transform: translateY(0) scaleY(1);
-  /* Settle naar een strak paneel met normale afgeronde hoeken */
+
   clip-path: inset(0 0 0 0 round 0 0 12px 12px);
   transition-delay: 0ms;
 }
 
-
-/* Individual Dropdown Item (Zwevende Kaarten) */
 .nav-dropdown-item {
   position: relative;
   display: block;
   padding: 0.75rem 1rem 0.75rem 1.25rem;
-  border-radius: 0.5rem; /* rounded-lg */
+  border-radius: 0.5rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-size: 0.75rem; /* text-xs */
+  font-size: 0.75rem;
   color: #ffffff;
-  transition: 
+  transition:
     background-color 0.3s ease,
     transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: background-color, transform;
 }
 
-/* Witte verticale indicatorlijn */
 .nav-dropdown-item::before {
   content: '';
   position: absolute;
@@ -186,29 +181,23 @@ main {
   will-change: transform;
 }
 
-/* Hover effecten */
 .nav-dropdown-item:hover {
-  background-color: rgba(255, 255, 255, 0.12); /* Frosted glaseffect */
-  transform: translateX(4px); /* Vloeiende shift naar rechts */
+  background-color: rgba(255, 255, 255, 0.12);
+  transform: translateX(4px);
 }
 
 .nav-dropdown-item:hover::before {
-  transform: scaleY(1); /* Indicator groeit verticaal open */
+  transform: scaleY(1);
 }
 
-/* Actieve status voor submenu-items */
 .nav-dropdown-item.active {
-  background-color: rgba(255, 255, 255, 0.18); /* Iets helderder frosted glas */
-  transform: translateX(4px); /* Permanent verschoven naar rechts */
+  background-color: rgba(255, 255, 255, 0.18);
+  transform: translateX(4px);
 }
 
 .nav-dropdown-item.active::before {
-  transform: scaleY(1); /* Verticale indicator permanent actief */
+  transform: scaleY(1);
 }
-
-/* ==========================================================================
-   Mobile Hamburger Morphing to 'X' & Liquid Reveal Menu
-   ========================================================================== */
 
 #mobile-menu-btn span {
   display: block;
@@ -250,16 +239,16 @@ main {
   overflow: hidden;
   transform: translateY(-8px) scaleY(0.9);
   transform-origin: top center;
-  /* Vloeibare druppel clip-path */
+
   clip-path: inset(0 0 100% 0 round 0 0 100px 100px);
-  transition: 
+  transition:
     opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
     max-height 0.48s cubic-bezier(0.34, 1.56, 0.64, 1),
     transform 0.48s cubic-bezier(0.34, 1.56, 0.64, 1),
     clip-path 0.48s cubic-bezier(0.34, 1.56, 0.64, 1),
     visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, max-height, transform, clip-path, visibility;
-  background-color: rgba(204, 0, 0, 0.95); /* Frosted premium rood */
+  background-color: rgba(204, 0, 0, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -285,4 +274,33 @@ main {
   max-height: 500px;
   transform: translateY(0) scaleY(1);
   clip-path: inset(0 0 0 0 round 0 0 20px 20px);
+}
+
+.nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.4);
+}
+
+.nav-link:hover .nav-link-line {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+.nav-link-line.w-full {
+  transform: scaleX(1) !important;
+  transform-origin: center center !important;
 }

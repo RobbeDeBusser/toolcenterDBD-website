@@ -65,7 +65,6 @@ window.addEventListener("load", () => {
     }
   });
 
-  // Active submenu item highlight (desktop dropdown)
   const dropdownLinks = document.querySelectorAll(".nav-dropdown-item");
   dropdownLinks.forEach((link) => {
     const linkDoel = link.getAttribute("href");
@@ -74,10 +73,9 @@ window.addEventListener("load", () => {
     }
   });
 
-  
   const mobileMenuBtn = document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
-  
+
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener("click", () => {
       mobileMenuBtn.classList.toggle("open");
@@ -85,28 +83,25 @@ window.addEventListener("load", () => {
     });
   }
 
-  // Highlight active mobile menu links
   const mobileLinks = document.querySelectorAll("#mobile-menu a");
   mobileLinks.forEach((link) => {
     const linkDoel = link.getAttribute("href");
     if (linkDoel === huidigePagina) {
       link.classList.add("text-white", "font-black");
       link.classList.remove("text-gray-300");
-      
-      // Indent nested mobile links if they are subpages
+
       if (link.classList.contains("text-xs")) {
         link.classList.add("border-l-2", "border-white", "pl-2");
       }
     }
   });
 
-  
   const cookieBanner = document.getElementById("cookie-banner");
   const cookieAccept = document.getElementById("cookie-accept");
 
   if (cookieBanner && cookieAccept) {
     if (!localStorage.getItem("cookiesAccepted")) {
-      
+
       setTimeout(() => {
         cookieBanner.classList.remove("translate-y-full");
       }, 800);
@@ -117,7 +112,7 @@ window.addEventListener("load", () => {
       cookieBanner.classList.add("translate-y-full");
     });
   }
-  
+
   const mainHeader = document.getElementById("main-header");
   const headerInner = document.getElementById("header-inner");
   const headerLogo = document.getElementById("header-logo");
@@ -129,22 +124,22 @@ window.addEventListener("load", () => {
     const onScroll = () => {
       if (window.scrollY > 20) {
         mainHeader.classList.remove("bg-[#cc0000]", "shadow-md", "border-transparent");
-        mainHeader.classList.add("bg-[#cc0000]/85", "shadow-xl", "border-white/20");
-        mainHeader.style.height = "48px";
-        headerInner.style.paddingTop = "0";
-        headerInner.style.paddingBottom = "0";
-        headerInner.style.height = "48px";
-        headerLogo.style.height = "24px";
-        mainContent.style.paddingTop = "48px";
-      } else {
-        mainHeader.classList.remove("bg-[#cc0000]/85", "shadow-xl", "border-white/20");
-        mainHeader.classList.add("bg-[#cc0000]", "shadow-md", "border-transparent");
+        mainHeader.classList.add("bg-[#cc0000]/85", "shadow-xl", "border-white/20", "scrolled");
         mainHeader.style.height = "56px";
-        headerInner.style.paddingTop = "0.5rem";
-        headerInner.style.paddingBottom = "0.5rem";
+        headerInner.style.paddingTop = "0.25rem";
+        headerInner.style.paddingBottom = "0.25rem";
         headerInner.style.height = "56px";
         headerLogo.style.height = "28px";
         mainContent.style.paddingTop = "56px";
+      } else {
+        mainHeader.classList.remove("bg-[#cc0000]/85", "shadow-xl", "border-white/20", "scrolled");
+        mainHeader.classList.add("bg-[#cc0000]", "shadow-md", "border-transparent");
+        mainHeader.style.height = "72px";
+        headerInner.style.paddingTop = "0.75rem";
+        headerInner.style.paddingBottom = "0.75rem";
+        headerInner.style.height = "72px";
+        headerLogo.style.height = "36px";
+        mainContent.style.paddingTop = "72px";
       }
     };
 
@@ -234,5 +229,4 @@ window.loadFlipbook = function (button) {
     iframe.classList.add("opacity-100");
   }
 };
-
 
