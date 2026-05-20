@@ -18,10 +18,15 @@ export default {
           "70%": { opacity: "1" },
           "100%": { opacity: "0" },
         },
+        "bounce-x": {
+          "0%, 100%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(25%)" },
+        },
       },
       animation: {
         "logo-zoom": "zoom-hole 7.2s ease-in forwards",
         "bg-fade": "fade-out 1.2s ease-out forwards",
+        "bounce-x": "bounce-x 1s infinite",
       },
     },
   },

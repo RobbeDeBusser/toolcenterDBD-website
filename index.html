@@ -116,18 +116,24 @@
         }
       }
 
-      .animate-float-1 { animation: floatPulse1 24s linear infinite; }
-      .animate-step-1 { animation: cardPulse1 24s linear infinite; }
-      .animate-bar-1 { animation: barPulse1 24s linear infinite; }
-      .animate-icon-1 { animation: iconPulse1 24s linear infinite; }
-      .animate-float-2 { animation: floatPulse2 24s linear infinite; }
-      .animate-step-2 { animation: cardPulse2 24s linear infinite; }
-      .animate-bar-2 { animation: barPulse2 24s linear infinite; }
-      .animate-icon-2 { animation: iconPulse2 24s linear infinite; }
-      .animate-float-3 { animation: floatPulse3 24s linear infinite; }
-      .animate-step-3 { animation: cardPulse3 24s linear infinite; }
-      .animate-bar-3 { animation: barPulse3 24s linear infinite; }
-      .animate-icon-3 { animation: iconPulse3 24s linear infinite; }
+      @media (min-width: 768px) {
+        .animate-float-1 { animation: floatPulse1 24s linear infinite; }
+        .animate-step-1 { animation: cardPulse1 24s linear infinite; }
+        .animate-bar-1 { animation: barPulse1 24s linear infinite; }
+        .animate-icon-1 { animation: iconPulse1 24s linear infinite; }
+        .animate-float-2 { animation: floatPulse2 24s linear infinite; }
+        .animate-step-2 { animation: cardPulse2 24s linear infinite; }
+        .animate-bar-2 { animation: barPulse2 24s linear infinite; }
+        .animate-icon-2 { animation: iconPulse2 24s linear infinite; }
+        .animate-float-3 { animation: floatPulse3 24s linear infinite; }
+        .animate-step-3 { animation: cardPulse3 24s linear infinite; }
+        .animate-bar-3 { animation: barPulse3 24s linear infinite; }
+        .animate-icon-3 { animation: iconPulse3 24s linear infinite; }
+
+        .animate-box-bg-1 { animation: boxBgPulse1 24s linear infinite; }
+        .animate-box-bg-2 { animation: boxBgPulse2 24s linear infinite; }
+        .animate-box-bg-3 { animation: boxBgPulse3 24s linear infinite; }
+      }
 
       .faq-details[open] summary svg {
         transform: rotate(180deg);
@@ -240,11 +246,9 @@
               </h2>
               
               <p class="text-gray-800 leading-relaxed font-medium mb-4 text-lg">
-                Voor onze producten werken wij primair samen met
+                Voor onze producten werken wij samen met een vaste leverancier,
                 <span class="font-black text-black">Snap-on</span>. Met deze duurzame en
                 ijzersterke producten garanderen wij u monsterprestaties!
-                Dankzij het gespecialiseerde assortiment van
-                <span class="font-black text-black">Wallmek</span> bieden wij ook de meest geavanceerde speciaalgereedschappen aan.
               </p>
               
               <p class="text-gray-600 leading-relaxed font-medium mb-8 text-base">
@@ -363,9 +367,10 @@
           </div>
           
           <div class="mt-8 flex justify-center">
-            <a href="/producten" class="inline-flex items-center text-sm font-bold text-tool-red uppercase tracking-wider hover:text-red-700 transition-colors">
+            <a href="/producten" class="group relative inline-flex items-center text-sm font-bold text-tool-red uppercase tracking-wider hover:text-red-700 transition-colors py-1">
               Bekijk alle producten
-              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-tool-red transition-all duration-300 group-hover:w-full"></span>
+              <svg class="w-4 h-4 ml-1 group-hover:animate-bounce-x" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
           </div>
         </div>
@@ -398,15 +403,15 @@
               <div class="group relative flex flex-col items-center animate-float-1">
                 <div class="relative mb-12 z-20">
                   <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-black text-white rounded-3xl flex items-center justify-center transform transition-all duration-500 shadow-[0_15px_30px_rgba(0,0,0,0.3)] relative overflow-hidden">
-                    <div class="absolute inset-0 animate-icon-1 z-0"></div>
-                    <svg class="w-12 h-12 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="absolute inset-0 bg-[#cc0000] rounded-3xl animate-box-bg-1 z-0 opacity-0 transition-opacity"></div>
+                    <svg class="w-12 h-12 relative z-10 animate-icon-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
                     </svg>
                   </div>
                 </div>
                 
-                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-center group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden animate-step-1">
-                  <div class="absolute top-0 left-0 w-full h-[4px] bg-slate-200 group-hover:bg-tool-red transition-colors animate-bar-1"></div>
+                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-[0_30px_70px_rgba(0,0,0,0.1)] md:shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-center md:group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden animate-step-1">
+                  <div class="absolute top-0 left-0 w-full h-[4px] bg-tool-red md:bg-slate-200 md:group-hover:bg-tool-red transition-colors animate-bar-1"></div>
                   <h3 class="text-3xl font-bold text-gray-900 mb-6 uppercase italic teko-font tracking-wide">Contact & Analyse</h3>
                   <p class="text-gray-600 leading-relaxed font-medium">
                     U neemt contact op. Wij luisteren naar uw specifieke noden en kijken welk gereedschap uw efficiëntie kan verhogen.
@@ -417,16 +422,16 @@
               <div class="group relative flex flex-col items-center animate-float-2">
                 <div class="relative mb-12 z-20">
                   <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-black text-white rounded-3xl flex items-center justify-center transform transition-all duration-500 shadow-[0_15px_30px_rgba(0,0,0,0.3)] relative overflow-hidden">
-                    <div class="absolute inset-0 animate-icon-2 z-0"></div>
-                    <svg class="w-12 h-12 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="absolute inset-0 bg-[#cc0000] rounded-3xl animate-box-bg-2 z-0 opacity-0 transition-opacity"></div>
+                    <svg class="w-12 h-12 relative z-10 animate-icon-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path>
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path>
                     </svg>
                   </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-center group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden animate-step-2">
-                  <div class="absolute top-0 left-0 w-full h-[4px] bg-slate-200 group-hover:bg-tool-red transition-colors animate-bar-2"></div>
+                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-[0_30px_70px_rgba(0,0,0,0.1)] md:shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-center md:group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden animate-step-2">
+                  <div class="absolute top-0 left-0 w-full h-[4px] bg-tool-red md:bg-slate-200 md:group-hover:bg-tool-red transition-colors animate-bar-2"></div>
                   <h3 class="text-3xl font-bold text-gray-900 mb-6 uppercase italic teko-font tracking-wide">Mobiele Showroom</h3>
                   <p class="text-gray-600 leading-relaxed font-medium">
                     Ik kom bij u langs met de vrachtwagen. U kunt het gereedschap direct vastnemen, voelen en testen in uw eigen omgeving.
@@ -437,15 +442,15 @@
               <div class="group relative flex flex-col items-center animate-float-3">
                 <div class="relative mb-12 z-20">
                   <div class="w-24 h-24 bg-gradient-to-br from-gray-800 to-black text-white rounded-3xl flex items-center justify-center transform transition-all duration-500 shadow-[0_15px_30px_rgba(0,0,0,0.3)] relative overflow-hidden">
-                    <div class="absolute inset-0 animate-icon-3 z-0"></div>
-                    <svg class="w-12 h-12 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="absolute inset-0 bg-[#cc0000] rounded-3xl animate-box-bg-3 z-0 opacity-0 transition-opacity"></div>
+                    <svg class="w-12 h-12 relative z-10 animate-icon-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                     </svg>
                   </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-center group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden animate-step-3">
-                  <div class="absolute top-0 left-0 w-full h-[4px] bg-slate-200 group-hover:bg-tool-red transition-colors animate-bar-3"></div>
+                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-[0_30px_70px_rgba(0,0,0,0.1)] md:shadow-[0_20px_50px_rgba(0,0,0,0.06)] text-center md:group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] transition-all duration-500 w-full relative overflow-hidden animate-step-3">
+                  <div class="absolute top-0 left-0 w-full h-[4px] bg-tool-red md:bg-slate-200 md:group-hover:bg-tool-red transition-colors animate-bar-3"></div>
                   <h3 class="text-3xl font-bold text-gray-900 mb-6 uppercase italic teko-font tracking-wide">Service & Garantie</h3>
                   <p class="text-gray-600 leading-relaxed font-medium">
                     Aankoop gedaan? Wij blijven langskomen voor service, updates en de beste garantie waar Snap-on om bekend staat.
