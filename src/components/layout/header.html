@@ -21,21 +21,21 @@
       <div class="relative group">
         <a href="/producten" class="nav-link relative flex items-center py-2">
           Producten
-          <svg class="w-4 h-4 ml-1 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          <svg class="w-4 h-4 ml-1 opacity-80 transform transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           <span
             class="absolute bottom-0 left-0 w-0 h-1 bg-white transition-all duration-300 group-hover:w-full"
           ></span>
         </a>
         
-        <div class="absolute left-0 top-full pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-          <div class="bg-[#cc0000]/85 backdrop-blur-md text-white shadow-2xl rounded-sm border border-white/20 overflow-hidden transform origin-top translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-            <a href="/handtools" class="block px-5 py-3 hover:bg-white/15 transition-colors border-b border-white/10 font-bold uppercase tracking-wide text-xs text-white">Handtools</a>
-            <a href="/powertools" class="block px-5 py-3 hover:bg-white/15 transition-colors border-b border-white/10 font-bold uppercase tracking-wide text-xs text-white">Power Tools</a>
-            <a href="/diagnose" class="block px-5 py-3 hover:bg-white/15 transition-colors border-b border-white/10 font-bold uppercase tracking-wide text-xs text-white">Diagnose</a>
-            <a href="/specials" class="block px-5 py-3 hover:bg-white/15 transition-colors border-b border-white/10 font-bold uppercase tracking-wide text-xs text-white">Equipment</a>
-            <a href="/gereedschapskisten" class="block px-5 py-3 hover:bg-white/15 transition-colors border-b border-white/10 font-bold uppercase tracking-wide text-xs text-white">Gereedschapskisten</a>
-            <a href="/gereedschapssets" class="block px-5 py-3 hover:bg-white/15 transition-colors border-b border-white/10 font-bold uppercase tracking-wide text-xs text-white">Gereedschapssets</a>
-            <a href="/wallmek" class="block px-5 py-3 hover:bg-white/15 transition-colors font-bold uppercase tracking-wide text-xs text-white">Wallmek</a>
+        <div class="nav-dropdown absolute left-0 top-full pt-4 w-56 z-50">
+          <div class="bg-[#cc0000]/85 backdrop-blur-md text-white shadow-2xl rounded-xl border border-white/15 p-2 overflow-hidden">
+            <a href="/handtools" class="nav-dropdown-item">Handtools</a>
+            <a href="/powertools" class="nav-dropdown-item">Power Tools</a>
+            <a href="/diagnose" class="nav-dropdown-item">Diagnose</a>
+            <a href="/specials" class="nav-dropdown-item">Equipment</a>
+            <a href="/gereedschapskisten" class="nav-dropdown-item">Gereedschapskisten</a>
+            <a href="/gereedschapssets" class="nav-dropdown-item">Gereedschapssets</a>
+            <a href="/wallmek" class="nav-dropdown-item">Wallmek</a>
           </div>
         </div>
       </div>
@@ -55,26 +55,28 @@
       </a>
     </nav>
 
-    <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none" aria-label="Open menu">
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+    <button id="mobile-menu-btn" class="md:hidden relative w-8 h-8 focus:outline-none" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
 
   
-  <div id="mobile-menu" class="hidden md:hidden bg-red-800 text-white shadow-inner">
+  <div id="mobile-menu" class="md:hidden text-white shadow-inner">
     <div class="container mx-auto px-4 py-6 flex flex-col space-y-5 font-bold uppercase tracking-wide text-sm">
       <a href="/" class="hover:text-gray-300 transition-colors">Home</a>
       
       <div class="flex flex-col space-y-3">
         <a href="/producten" class="hover:text-gray-300 transition-colors">Producten</a>
-        <div class="pl-4 flex flex-col space-y-3 pt-1 pb-1 border-l-2 border-red-900/50">
-          <a href="/handtools" class="hover:text-gray-300 transition-colors text-xs">Handtools</a>
-          <a href="/powertools" class="hover:text-gray-300 transition-colors text-xs">Power Tools</a>
-          <a href="/diagnose" class="hover:text-gray-300 transition-colors text-xs">Diagnose</a>
-          <a href="/specials" class="hover:text-gray-300 transition-colors text-xs">Equipment</a>
-          <a href="/gereedschapskisten" class="hover:text-gray-300 transition-colors text-xs">Gereedschapskisten</a>
-          <a href="/gereedschapssets" class="hover:text-gray-300 transition-colors text-xs">Gereedschapssets</a>
-          <a href="/wallmek" class="hover:text-gray-300 transition-colors text-xs">Wallmek</a>
+        <div class="pl-4 flex flex-col space-y-3 pt-1 pb-1 border-l-2 border-white/20">
+          <a href="/handtools" class="hover:text-white transition-colors text-xs text-gray-300">Handtools</a>
+          <a href="/powertools" class="hover:text-white transition-colors text-xs text-gray-300">Power Tools</a>
+          <a href="/diagnose" class="hover:text-white transition-colors text-xs text-gray-300">Diagnose</a>
+          <a href="/specials" class="hover:text-white transition-colors text-xs text-gray-300">Equipment</a>
+          <a href="/gereedschapskisten" class="hover:text-white transition-colors text-xs text-gray-300">Gereedschapskisten</a>
+          <a href="/gereedschapssets" class="hover:text-white transition-colors text-xs text-gray-300">Gereedschapssets</a>
+          <a href="/wallmek" class="hover:text-white transition-colors text-xs text-gray-300">Wallmek</a>
         </div>
       </div>
       

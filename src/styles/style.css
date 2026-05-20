@@ -119,3 +119,170 @@ main {
         background-size: 16px 16px;
         background-attachment: fixed;
       }
+
+/* ==========================================================================
+   Navbar Dropdown Premium Animations (Springy Liquid Droplet Reveal)
+   ========================================================================== */
+.nav-dropdown {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px) scaleY(0.9);
+  transform-origin: top center;
+  /* Begint als een bolle, volledig geclipte druppel */
+  clip-path: inset(0 0 100% 0 round 0 0 100px 100px);
+  will-change: opacity, transform, visibility, clip-path;
+  transition: 
+    opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.48s cubic-bezier(0.34, 1.56, 0.64, 1),
+    clip-path 0.48s cubic-bezier(0.34, 1.56, 0.64, 1),
+    visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Sluitingsvertraging voor optimaal comfort (hover-out delay) */
+  transition-delay: 150ms;
+}
+
+/* Bij hover direct, vloeiend en met een elastische plop openen */
+.group:hover .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scaleY(1);
+  /* Settle naar een strak paneel met normale afgeronde hoeken */
+  clip-path: inset(0 0 0 0 round 0 0 12px 12px);
+  transition-delay: 0ms;
+}
+
+
+/* Individual Dropdown Item (Zwevende Kaarten) */
+.nav-dropdown-item {
+  position: relative;
+  display: block;
+  padding: 0.75rem 1rem 0.75rem 1.25rem;
+  border-radius: 0.5rem; /* rounded-lg */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem; /* text-xs */
+  color: #ffffff;
+  transition: 
+    background-color 0.3s ease,
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: background-color, transform;
+}
+
+/* Witte verticale indicatorlijn */
+.nav-dropdown-item::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 25%;
+  height: 50%;
+  width: 3px;
+  background-color: #ffffff;
+  border-radius: 9999px;
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* Hover effecten */
+.nav-dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.12); /* Frosted glaseffect */
+  transform: translateX(4px); /* Vloeiende shift naar rechts */
+}
+
+.nav-dropdown-item:hover::before {
+  transform: scaleY(1); /* Indicator groeit verticaal open */
+}
+
+/* Actieve status voor submenu-items */
+.nav-dropdown-item.active {
+  background-color: rgba(255, 255, 255, 0.18); /* Iets helderder frosted glas */
+  transform: translateX(4px); /* Permanent verschoven naar rechts */
+}
+
+.nav-dropdown-item.active::before {
+  transform: scaleY(1); /* Verticale indicator permanent actief */
+}
+
+/* ==========================================================================
+   Mobile Hamburger Morphing to 'X' & Liquid Reveal Menu
+   ========================================================================== */
+
+#mobile-menu-btn span {
+  display: block;
+  position: absolute;
+  height: 2.5px;
+  width: 28px;
+  background: #ffffff;
+  border-radius: 9px;
+  opacity: 1;
+  left: 2px;
+  transform: rotate(0deg);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#mobile-menu-btn span:nth-child(1) { top: 6px; }
+#mobile-menu-btn span:nth-child(2) { top: 14.5px; }
+#mobile-menu-btn span:nth-child(3) { top: 23px; }
+
+#mobile-menu-btn.open span:nth-child(1) {
+  top: 14.5px;
+  transform: rotate(135deg);
+}
+
+#mobile-menu-btn.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+#mobile-menu-btn.open span:nth-child(3) {
+  top: 14.5px;
+  transform: rotate(-135deg);
+}
+
+#mobile-menu {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(-8px) scaleY(0.9);
+  transform-origin: top center;
+  /* Vloeibare druppel clip-path */
+  clip-path: inset(0 0 100% 0 round 0 0 100px 100px);
+  transition: 
+    opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    max-height 0.48s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.48s cubic-bezier(0.34, 1.56, 0.64, 1),
+    clip-path 0.48s cubic-bezier(0.34, 1.56, 0.64, 1),
+    visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, max-height, transform, clip-path, visibility;
+  background-color: rgba(204, 0, 0, 0.95); /* Frosted premium rood */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 40;
+}
+
+@media (min-width: 768px) {
+  #mobile-menu {
+    display: none !important;
+  }
+}
+
+#mobile-menu.open {
+  opacity: 1;
+  visibility: visible;
+  max-height: 500px;
+  transform: translateY(0) scaleY(1);
+  clip-path: inset(0 0 0 0 round 0 0 20px 20px);
+}

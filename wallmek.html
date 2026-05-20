@@ -34,16 +34,24 @@
       </section>
 
       <div class="container mx-auto px-4 max-w-6xl mt-8 mb-6">
-        <a href="/producten" class="inline-flex items-center text-slate-500 hover:text-tool-red font-bold uppercase text-sm tracking-widest transition-colors">
-          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-          Terug naar Categorieën
+        <a href="/producten" class="group inline-flex items-center text-slate-500 hover:text-tool-red font-bold uppercase text-xs md:text-sm tracking-widest transition-colors duration-300">
+          <span class="w-8 h-8 rounded-full border border-slate-300/80 group-hover:border-tool-red group-hover:bg-tool-red flex items-center justify-center mr-3 transition-all duration-300 transform group-hover:-translate-x-0.5">
+            <svg class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+            </svg>
+          </span>
+          <span class="relative py-1">
+            Terug naar Categorieën
+            <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-tool-red transition-all duration-300 group-hover:w-full"></span>
+          </span>
         </a>
       </div>
 
       <section class="container mx-auto px-4 max-w-6xl relative z-20 mb-20">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div class="flex flex-col justify-center">
-            <span class="inline-block py-1 px-3 bg-black text-white text-xs font-bold uppercase tracking-widest mb-4 rounded w-max">
+            <span class="inline-flex items-center gap-1.5 py-0.5 px-2.5 bg-slate-900 text-white text-[10px] font-bold uppercase tracking-wider mb-4 rounded-full border border-slate-800 shadow-sm w-max">
+              <span class="w-1 h-1 rounded-full bg-tool-red animate-pulse"></span>
               Specialistisch Gereedschap
             </span>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-black uppercase text-slate-900 teko-font mb-4 leading-none">
@@ -68,19 +76,27 @@
               </li>
             </ul>
 
-            <a href="/contact" class="inline-flex items-center bg-tool-red text-white px-8 py-4 font-bold uppercase tracking-wide hover:bg-black transition duration-300 shadow-lg transform hover:-translate-y-1 w-max rounded-sm">
-              Meer Informatie
-              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
+            <a href="/contact" class="group relative top-0 hover:-top-1 transition-all duration-300 inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wider text-sm w-max">
+              <div class="absolute inset-0 bg-tool-red transform -skew-x-12 group-hover:bg-slate-900 transition-all duration-300 shadow-[0_5px_15px_rgba(204,0,0,0.3)] group-hover:shadow-[0_8px_25px_rgba(204,0,0,0.5)] rounded-sm"></div>
+              <div class="absolute inset-0 overflow-hidden transform -skew-x-12 pointer-events-none z-0">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+              </div>
+              <span class="relative z-10 text-white inline-flex items-center justify-center">
+                Meer Informatie
+                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </span>
             </a>
           </div>
 
           <div class="relative group h-[400px] lg:h-[500px] w-full mt-8 lg:mt-0 flex items-center justify-center">
-             <div class="absolute inset-0 bg-white shadow-xl rounded-sm border border-gray-200 overflow-hidden">
+             <div class="absolute inset-0 bg-gradient-to-br from-white to-slate-50/50 shadow-[0_20px_50px_rgba(0,0,0,0.04)] rounded-[2rem] border border-slate-200/60 overflow-hidden transition-all duration-500 group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.12)]">
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-tool-red opacity-5 rounded-full blur-3xl transition-all duration-700 group-hover:opacity-10 group-hover:scale-110"></div>
+                <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-slate-900 opacity-5 rounded-full blur-3xl transition-all duration-700 group-hover:opacity-10 group-hover:scale-110"></div>
              </div>
              
-             <img src="/images/Wallmek-Snap-on-Tools.png" alt="Wallmek Gereedschap" class="max-h-full max-w-full object-contain relative z-20 p-8 transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
+             <img src="/images/Wallmek-Snap-on-Tools.png" alt="Wallmek Gereedschap" class="max-h-full max-w-full object-contain relative z-20 mix-blend-multiply p-8 transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
           </div>
         </div>
       </section>
@@ -100,9 +116,9 @@
             </p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             
-            <div class="bg-white p-4 md:p-6 shadow-xl rounded-sm border border-gray-200 flex flex-col h-full">
+            <div class="bg-gradient-to-br from-white to-slate-50/50 shadow-[0_20px_50px_rgba(0,0,0,0.04)] rounded-[2rem] border border-slate-200/60 p-4 md:p-6 transition-all duration-500 hover:shadow-[0_30px_70px_rgba(0,0,0,0.12)] flex flex-col h-full overflow-hidden">
               <div class="mb-4 flex flex-col md:flex-row gap-4 border-l-4 border-tool-red pl-4 min-h-[96px]">
                 <div class="flex-grow">
                   <h2 class="font-bold text-2xl uppercase text-slate-900 teko-font tracking-wide mb-1">
@@ -113,20 +129,44 @@
                   </p>
                 </div>
               </div>
-              <div class="w-full h-[450px] bg-[#323639] relative rounded-sm shadow-inner overflow-hidden flex items-center justify-center group mt-auto">
-                 <iframe class="w-full h-full border-0 absolute top-0 left-0 z-20" src="https://issuu.com/snap-on_tools_benelux/docs/wallmek-speciaalgereedschap-voor-truck-bus-en-trai?fr=sNjZhODg0ODA3MjY" title="Hoofdcatalogus Flipbook" allow="clipboard-write" allowfullscreen></iframe>
+              <div class="w-full h-[450px] bg-[#323639] relative rounded-[1.5rem] shadow-inner overflow-hidden flex items-center justify-center group mt-auto">
+                 <iframe class="w-full h-full border-0 absolute top-0 left-0 z-20 opacity-0 transition-opacity duration-500" data-src="https://issuu.com/snap-on_tools_benelux/docs/wallmek-speciaalgereedschap-voor-truck-bus-en-trai?fr=sNjZhODg0ODA3MjY" title="Hoofdcatalogus Flipbook" allow="clipboard-write" allowfullscreen></iframe>
                  
-                 <div class="absolute z-10 flex flex-col items-center justify-center text-gray-500 text-center p-8">
-                    <svg class="w-12 h-12 mb-3 text-tool-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                    </svg>
-                    <span class="font-bold text-white mb-2">Issuu Flipbook Viewer</span>
-                    <span class="text-sm">Plaats hier je Issuu embed link in de code.</span>
+                 <div class="absolute inset-0 z-30 flex flex-col items-center justify-center bg-slate-950 p-8 text-center transition-all duration-500 group/cover">
+                    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#cc0000_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+                    <div class="absolute w-48 h-48 bg-tool-red opacity-10 rounded-full blur-3xl pointer-events-none z-0"></div>
+                    
+                    <div class="relative z-10 w-16 h-16 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center mb-4 shadow-lg group-hover/cover:border-tool-red transition-colors duration-500">
+                       <svg class="w-8 h-8 text-tool-red group-hover/cover:scale-110 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                       </svg>
+                    </div>
+                    
+                    <span class="relative z-10 font-black text-2xl text-white uppercase teko-font tracking-wide mb-1">
+                       Truck & Heavy Duty
+                    </span>
+                    <span class="relative z-10 text-xs text-gray-400 max-w-[220px] mb-6 leading-relaxed">
+                       Klik op de knop om de online folder direct in uw browser te openen.
+                    </span>
+                    
+                    <button
+                       onclick="loadFlipbook(this)"
+                       class="relative z-10 group/btn-load relative top-0 hover:-top-0.5 transition-all duration-300 inline-flex items-center justify-center py-2.5 px-6 font-bold uppercase tracking-wider text-xs w-max cursor-pointer"
+                    >
+                       <div class="absolute inset-0 bg-tool-red transform -skew-x-12 group-hover/btn-load:bg-white transition-all duration-300 shadow-[0_4px_10px_rgba(204,0,0,0.3)]"></div>
+                       
+                       <span class="relative z-10 text-white group-hover/btn-load:text-slate-900 inline-flex items-center justify-center w-full transition-colors duration-300">
+                          Catalogus Openen
+                          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                          </svg>
+                       </span>
+                    </button>
                  </div>
               </div>
             </div>
 
-            <div class="bg-white p-4 md:p-6 shadow-xl rounded-sm border border-gray-200 flex flex-col h-full">
+            <div class="bg-gradient-to-br from-white to-slate-50/50 shadow-[0_20px_50px_rgba(0,0,0,0.04)] rounded-[2rem] border border-slate-200/60 p-4 md:p-6 transition-all duration-500 hover:shadow-[0_30px_70px_rgba(0,0,0,0.12)] flex flex-col h-full overflow-hidden">
               <div class="mb-4 flex flex-col md:flex-row gap-4 border-l-4 border-tool-red pl-4 min-h-[96px]">
                 <div class="flex-grow">
                   <h2 class="font-bold text-2xl uppercase text-slate-900 teko-font tracking-wide mb-1">
@@ -137,15 +177,39 @@
                   </p>
                 </div>
               </div>
-              <div class="w-full h-[450px] bg-[#323639] relative rounded-sm shadow-inner overflow-hidden flex items-center justify-center group mt-auto">
-                 <iframe class="w-full h-full border-0 absolute top-0 left-0 z-20" src="https://issuu.com/snap-on_tools_benelux/docs/passenger_car_light_commercial_v12_en_mail?fr=sNmM5ODg0ODA3MjY" title="Specials & Info Flipbook" allow="clipboard-write" allowfullscreen></iframe>
+              <div class="w-full h-[450px] bg-[#323639] relative rounded-[1.5rem] shadow-inner overflow-hidden flex items-center justify-center group mt-auto">
+                 <iframe class="w-full h-full border-0 absolute top-0 left-0 z-20 opacity-0 transition-opacity duration-500" data-src="https://issuu.com/snap-on_tools_benelux/docs/passenger_car_light_commercial_v12_en_mail?fr=sNmM5ODg0ODA3MjY" title="Specials & Info Flipbook" allow="clipboard-write" allowfullscreen></iframe>
                  
-                 <div class="absolute z-10 flex flex-col items-center justify-center text-gray-500 text-center p-8">
-                    <svg class="w-12 h-12 mb-3 text-tool-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                    </svg>
-                    <span class="font-bold text-white mb-2">Issuu Flipbook Viewer</span>
-                    <span class="text-sm">Plaats hier je Issuu embed link in de code.</span>
+                 <div class="absolute inset-0 z-30 flex flex-col items-center justify-center bg-slate-950 p-8 text-center transition-all duration-500 group/cover">
+                    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#cc0000_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+                    <div class="absolute w-48 h-48 bg-tool-red opacity-10 rounded-full blur-3xl pointer-events-none z-0"></div>
+                    
+                    <div class="relative z-10 w-16 h-16 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center mb-4 shadow-lg group-hover/cover:border-tool-red transition-colors duration-500">
+                       <svg class="w-8 h-8 text-tool-red group-hover/cover:scale-110 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                       </svg>
+                    </div>
+                    
+                    <span class="relative z-10 font-black text-2xl text-white uppercase teko-font tracking-wide mb-1">
+                       Passenger & Light Duty
+                    </span>
+                    <span class="relative z-10 text-xs text-gray-400 max-w-[220px] mb-6 leading-relaxed">
+                       Klik op de knop om de online folder direct in uw browser te openen.
+                    </span>
+                    
+                    <button
+                       onclick="loadFlipbook(this)"
+                       class="relative z-10 group/btn-load relative top-0 hover:-top-0.5 transition-all duration-300 inline-flex items-center justify-center py-2.5 px-6 font-bold uppercase tracking-wider text-xs w-max cursor-pointer"
+                    >
+                       <div class="absolute inset-0 bg-tool-red transform -skew-x-12 group-hover/btn-load:bg-white transition-all duration-300 shadow-[0_4px_10px_rgba(204,0,0,0.3)]"></div>
+                       
+                       <span class="relative z-10 text-white group-hover/btn-load:text-slate-900 inline-flex items-center justify-center w-full transition-colors duration-300">
+                          Catalogus Openen
+                          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                          </svg>
+                       </span>
+                    </button>
                  </div>
               </div>
             </div>

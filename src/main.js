@@ -65,16 +65,40 @@ window.addEventListener("load", () => {
     }
   });
 
+  // Active submenu item highlight (desktop dropdown)
+  const dropdownLinks = document.querySelectorAll(".nav-dropdown-item");
+  dropdownLinks.forEach((link) => {
+    const linkDoel = link.getAttribute("href");
+    if (linkDoel === huidigePagina) {
+      link.classList.add("active");
+    }
+  });
+
   
   const mobileMenuBtn = document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
   
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-      mobileMenu.classList.toggle("flex");
+      mobileMenuBtn.classList.toggle("open");
+      mobileMenu.classList.toggle("open");
     });
   }
+
+  // Highlight active mobile menu links
+  const mobileLinks = document.querySelectorAll("#mobile-menu a");
+  mobileLinks.forEach((link) => {
+    const linkDoel = link.getAttribute("href");
+    if (linkDoel === huidigePagina) {
+      link.classList.add("text-white", "font-black");
+      link.classList.remove("text-gray-300");
+      
+      // Indent nested mobile links if they are subpages
+      if (link.classList.contains("text-xs")) {
+        link.classList.add("border-l-2", "border-white", "pl-2");
+      }
+    }
+  });
 
   
   const cookieBanner = document.getElementById("cookie-banner");
@@ -187,4 +211,28 @@ function initBackToTop() {
 
   updateProgress();
 }
+
+window.loadFlipbook = function (button) {
+  const container = button.closest(".w-full") || button.closest(".relative");
+  if (!container) return;
+
+  const iframe = container.querySelector("iframe");
+  const cover = container.querySelector(".z-30");
+
+  if (iframe && iframe.hasAttribute("data-src")) {
+    iframe.setAttribute("src", iframe.getAttribute("data-src"));
+    iframe.removeAttribute("data-src");
+
+    if (cover) {
+      cover.classList.add("opacity-0", "pointer-events-none");
+      setTimeout(() => {
+        cover.remove();
+      }, 500);
+    }
+
+    iframe.classList.remove("opacity-0");
+    iframe.classList.add("opacity-100");
+  }
+};
+
 

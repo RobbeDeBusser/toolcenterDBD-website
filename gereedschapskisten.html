@@ -34,16 +34,24 @@
       </section>
 
       <div class="container mx-auto px-4 max-w-6xl mt-8 mb-6">
-        <a href="/producten" class="inline-flex items-center text-slate-500 hover:text-tool-red font-bold uppercase text-sm tracking-widest transition-colors">
-          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-          Terug naar Categorieën
+        <a href="/producten" class="group inline-flex items-center text-slate-500 hover:text-tool-red font-bold uppercase text-xs md:text-sm tracking-widest transition-colors duration-300">
+          <span class="w-8 h-8 rounded-full border border-slate-300/80 group-hover:border-tool-red group-hover:bg-tool-red flex items-center justify-center mr-3 transition-all duration-300 transform group-hover:-translate-x-0.5">
+            <svg class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+            </svg>
+          </span>
+          <span class="relative py-1">
+            Terug naar Categorieën
+            <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-tool-red transition-all duration-300 group-hover:w-full"></span>
+          </span>
         </a>
       </div>
 
       <section class="container mx-auto px-4 max-w-6xl relative z-20 mb-20">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div class="flex flex-col justify-center">
-            <span class="inline-block py-1 px-3 bg-black text-white text-xs font-bold uppercase tracking-widest mb-4 rounded w-max">
+            <span class="inline-flex items-center gap-1.5 py-0.5 px-2.5 bg-slate-900 text-white text-[10px] font-bold uppercase tracking-wider mb-4 rounded-full border border-slate-800 shadow-sm w-max">
+              <span class="w-1 h-1 rounded-full bg-tool-red animate-pulse"></span>
               Robuust & Veilig
             </span>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-black uppercase text-slate-900 teko-font mb-4 leading-none">
@@ -69,23 +77,35 @@
             </ul>
 
             <div class="flex flex-col sm:flex-row gap-4">
-              <a href="https://ultimator.snaponpromotion.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-slate-900 text-white px-8 py-4 font-bold uppercase tracking-wide hover:bg-tool-red transition duration-300 shadow-lg transform hover:-translate-y-1 w-full sm:w-max rounded-sm">
-                Stel Je Eigen Kist Samen
-                <svg class="w-5 h-5 ml-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                </svg>
+              <a href="https://ultimator.snaponpromotion.com" target="_blank" rel="noopener noreferrer" class="group relative top-0 hover:-top-1 transition-all duration-300 inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wider text-sm w-full sm:w-max">
+                <div class="absolute inset-0 bg-slate-900 transform -skew-x-12 group-hover:bg-tool-red transition-all duration-300 shadow-sm group-hover:shadow-[0_8px_25px_rgba(204,0,0,0.4)] rounded-sm"></div>
+                <div class="absolute inset-0 overflow-hidden transform -skew-x-12 pointer-events-none z-0">
+                  <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+                </div>
+                <span class="relative z-10 text-white inline-flex items-center justify-center">
+                  Stel Je Eigen Kist Samen
+                  <svg class="w-5 h-5 ml-2 flex-shrink-0 group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                </span>
               </a>
-              <a href="/contact" class="inline-flex items-center justify-center bg-tool-red text-white px-8 py-4 font-bold uppercase tracking-wide hover:bg-black transition duration-300 shadow-lg transform hover:-translate-y-1 w-full sm:w-max rounded-sm">
-                Vraag Meer Info
-                <svg class="w-5 h-5 ml-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
+              <a href="/contact" class="group relative top-0 hover:-top-1 transition-all duration-300 inline-flex items-center justify-center px-8 py-3.5 font-bold uppercase tracking-wider text-sm w-full sm:w-max">
+                <div class="absolute inset-0 bg-tool-red transform -skew-x-12 group-hover:bg-slate-900 transition-all duration-300 shadow-[0_5px_15px_rgba(204,0,0,0.3)] group-hover:shadow-[0_8px_25px_rgba(204,0,0,0.5)] rounded-sm"></div>
+                <div class="absolute inset-0 overflow-hidden transform -skew-x-12 pointer-events-none z-0">
+                  <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+                </div>
+                <span class="relative z-10 text-white inline-flex items-center justify-center">
+                  Vraag Meer Info
+                  <svg class="w-5 h-5 ml-2 flex-shrink-0 group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </span>
               </a>
             </div>
           </div>
 
           <div class="relative group h-[400px] lg:h-[500px] w-full mt-8 lg:mt-0 flex items-center justify-center">
-             <div class="absolute inset-0 bg-gradient-to-br from-white to-gray-100 shadow-xl rounded-sm border border-gray-200 overflow-hidden">
+             <div class="absolute inset-0 bg-gradient-to-br from-white to-slate-50/50 shadow-[0_20px_50px_rgba(0,0,0,0.04)] rounded-[2rem] border border-slate-200/60 overflow-hidden transition-all duration-500 group-hover:shadow-[0_30px_70px_rgba(0,0,0,0.12)]">
                 <div class="absolute -top-20 -right-20 w-64 h-64 bg-tool-red opacity-5 rounded-full blur-3xl transition-all duration-700 group-hover:opacity-10 group-hover:scale-110"></div>
                 <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-slate-900 opacity-5 rounded-full blur-3xl transition-all duration-700 group-hover:opacity-10 group-hover:scale-110"></div>
              </div>
